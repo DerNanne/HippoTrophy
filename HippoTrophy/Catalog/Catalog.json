@@ -1358,19 +1358,6 @@
       "offersAssistance": false
     },
     {
-      "key": "ab-wheel-rollout",
-      "name": "Ab Wheel Rollout",
-      "muscleGroupNames": [
-        "core"
-      ],
-      "secondaryMuscleGroupNames": [
-        "back",
-        "shoulders"
-      ],
-      "sides": "both",
-      "offersAssistance": false
-    },
-    {
       "key": "crunch",
       "name": "Crunch",
       "muscleGroupNames": [

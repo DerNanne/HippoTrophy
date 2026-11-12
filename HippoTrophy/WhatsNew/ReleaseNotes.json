@@ -1,6 +1,13 @@
 {
   "builds": [
     {
+      "build": 31,
+      "highlights": [],
+      "changes": [
+        "Ab Wheel Rollout is no longer in the catalog. If you logged it, it stays in your list as an exercise of your own, with its whole history."
+      ]
+    },
+    {
       "build": 30,
       "highlights": [],
       "changes": [
