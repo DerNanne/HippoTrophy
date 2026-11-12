@@ -1,0 +1,428 @@
+{
+  "builds": [
+    {
+      "build": 30,
+      "highlights": [],
+      "changes": [
+        "Templates brought in from a backup now stand first among your templates, like one you make here, instead of at the end of the row.",
+        "The keyboard no longer comes up on its own when you tick a set off or a rest is over; Next on the keyboard still takes you on to the next set's field.",
+        "The FAQ now names the chart icon that opens an exercise's history, not the clock it used to be."
+      ]
+    },
+    {
+      "build": 29,
+      "highlights": [
+        {
+          "symbol": "camera",
+          "title": "Photos for Your Own Exercises",
+          "text": "Give an exercise of your own a picture, so you know at a glance which machine it is.",
+          "points": [
+            "Pick one from your photo library or from Files when you edit the exercise.",
+            "It is made smaller to save space, and where it was taken is left out.",
+            "A backup can take the photos along: it then is a ZIP file."
+          ]
+        },
+        {
+          "symbol": "photo",
+          "title": "Photos for Machines",
+          "text": "Give a machine a picture, so you can tell the two chest presses in your gym apart.",
+          "points": [
+            "Add one when you create the machine, or later on its page under Gyms → Machines.",
+            "It shows beside the machine's name in the list.",
+            "A backup with photos takes the machines' photos along too."
+          ]
+        },
+        {
+          "symbol": "crop",
+          "title": "Choose What a Photo Shows",
+          "text": "Pick the part of a photo that its tile shows, for exercises and machines alike.",
+          "points": [
+            "Change Photo → Adjust Framing: drag to move, pinch to zoom.",
+            "The whole photo stays: tap the preview to see all of it.",
+            "The framing goes along in a backup with photos."
+          ]
+        }
+      ],
+      "changes": [
+        "New Machine can now say right away which gyms a machine stands in. It is optional, as before.",
+        "On a gym's page, New Machine now stands above the list of machines.",
+        "In the lists to tick machines and gyms, names are no longer blue: only the tick says it is ticked.",
+        "While music plays, the Dynamic Island now shows the time left of a rest instead of only an icon. The time has the color of the rest: purple between sides.",
+        "The start screen now says HippoTrophy, not the app's old name.",
+        "A number field no longer makes 1215 out of 12-15, pasted or typed on a keyboard. What it cannot read as a number, it refuses.",
+        "The exercise editor now asks before Cancel throws away what you entered.",
+        "Importing a backup with Replace All now warns when it would delete the workout you are training.",
+        "Discard Changes? now always offers Keep Editing, also when you leave a workout.",
+        "Discard Workout while training now asks \"Discard Workout?\" and says how many logged sets go with it, instead of speaking of unsaved changes.",
+        "A template adjusted for a day more than a week ago now goes to the archive as soon as a backup brings it, instead of showing first on the shelf and leaving a moment later.",
+        "Under Gyms, a name that is taken is no longer dropped without a word. New Gym is now a sheet like New Machine: it says so while you type, and Add waits for a name of its own. A gym's or machine's page says under its name that it stays as it was.",
+        "New Machine on a gym's page now opens the same sheet as under Machines, with that gym already ticked, so you can add a photo right away.",
+        "Export Backup now shows the photos' count and size as \"2 · 1.3 MB\": with a decimal comma, \"2, 1,3 MB\" read like one number.",
+        "A workout's page and an exercise's history now put Weight and Reps over the sets once, like other fields, and each set reads 80 kg and 8 beneath them instead of 80 kg x8. A superset whose exercises log the same fields gets one such line above its sets.",
+        "A new category, Isometrics, for exercises you hold rather than repeat: a plank, a wall sit, a hold on the leg extension.",
+        "The catalog has its first exercise beyond weight and reps: Isometric Leg Extension, one leg at a time, with the weight, how long you hold and the knee angle.",
+        "Categories now show their colour in menus too: in the exercise editor, the heat map's filter and the activity graphs' menu.",
+        "Exercise Bike and Treadmill are in the catalog, for the warm-up: once per workout, with duration, distance, level or incline, and heart rate. Fill in what the machine shows.",
+        "Sets no longer carry a drag handle: it was easy to catch while logging and pushed a row with three fields off the edge. To move a set, touch and hold the exercise's name and choose Reorder Sets."
+      ]
+    },
+    {
+      "build": 28,
+      "highlights": [
+        {
+          "symbol": "square.grid.2x2",
+          "title": "Exercises at a Glance",
+          "text": "The list of exercises is easier to look through, and it is the same list when you add one to a workout.",
+          "points": [
+            "One button at the top switches between the list and big pictures.",
+            "Chips narrow it to a category. Beside the search, the person shows only your own exercises and the biceps narrows it to a muscle.",
+            "While adding to a workout, the plus adds an exercise. A tap on it shows it first.",
+            "Add Own at the top left makes an exercise of your own. Import, Review and Merge are in the menu at the top right; a yellow dot on it says there are exercises to review."
+          ]
+        },
+        {
+          "symbol": "square.and.pencil",
+          "title": "A Simpler Exercise Editor",
+          "text": "New Own Exercise now asks one question: what do you log?",
+          "points": [
+            "Weight & Reps keeps those two fixed and takes more fields beside them. Custom is only the fields you pick.",
+            "A small preview shows how your sets will look in a workout, and changes as you go.",
+            "Custom asks whether it has sets. No sets is one entry, like a run or a stretch.",
+            "Category is always in view, and sides are in plain words."
+          ]
+        },
+        {
+          "symbol": "platter.filled.bottom.iphone",
+          "title": "Four Tabs",
+          "text": "Exercises, Gyms and Statistics now have a tab of their own, beside Workouts.",
+          "points": [
+            "Exercises holds your exercises. Gyms holds your gyms, with your machines one switch away. They are no longer in Settings.",
+            "Statistics is the muscle heat map and the muscle groups, once an icon at the top of the workouts.",
+            "Settings keeps what you set: units, the workout editor, templates.",
+            "A workout in progress stays at the top of every tab. A tap goes back to it."
+          ]
+        },
+        {
+          "symbol": "circle.lefthalf.filled",
+          "title": "Two Ticks for Same Weight",
+          "text": "A set in Unilateral, Same Weight now takes two ticks, one per side.",
+          "points": [
+            "The first tick fills half the circle and starts a short rest in purple, marked Switch Sides.",
+            "The second finishes the set and starts the normal rest.",
+            "Logged L/R, the same rest follows the first side of a set, when its other side is next.",
+            "Settings → Rest Between Sides sets how long it lasts, or turns it off."
+          ]
+        },
+        {
+          "symbol": "arrow.left.arrow.right",
+          "title": "Starts With",
+          "text": "A unilateral exercise says which side you start with, and the workout keeps it.",
+          "points": [
+            "A template can prescribe it. Otherwise it proposes the side you started with last time, or Left if there is none. What you pick holds for this workout and is proposed next time.",
+            "Logged L/R, its tab is marked 1st and the guide goes there first.",
+            "Workouts logged before say nothing about it, and stay that way."
+          ]
+        },
+        {
+          "symbol": "list.bullet",
+          "title": "Left and Right in One List",
+          "text": "An exercise logged L/R can show both sides in one list instead of tabs.",
+          "points": [
+            "Settings → Show Left and Right chooses between Tabs and One List.",
+            "One List goes from side to side and has an Add button for each.",
+            "Drag a set in the list and the order is yours; the workout keeps it and its page shows it."
+          ]
+        },
+        {
+          "symbol": "slider.horizontal.3",
+          "title": "Editor Settings",
+          "text": "The workout editor has its settings at hand.",
+          "points": [
+            "While training they are in the … menu at the top; otherwise behind the slider icon.",
+            "What you change there holds for that workout only. Settings → Workout Editor stays what every workout starts with."
+          ]
+        }
+      ],
+      "changes": [
+        "Review My Exercises now lists every exercise it counts under Might Be in the Catalog.",
+        "Saving a Strength exercise without a muscle group now asks first: its sets would not count on the muscle heat map."
+      ]
+    },
+    {
+      "build": 26,
+      "highlights": [
+        {
+          "symbol": "trophy",
+          "title": "Personal Records",
+          "text": "An exercise's history shows its personal record at the top: the heaviest weight you lifted, with the reps and the day — or, for an exercise you never did with weight, the most reps in one set.",
+          "points": [
+            "At the same weight, more reps beat fewer. Doing the record again does not move it: it stays with the day you got there first.",
+            "A trophy marks the set in the workouts below.",
+            "Once you log a set with weight, that counts first. Sets with assistance set no record. One-sided weights keep a record of their own, and an exercise logged L/R has one per side."
+          ]
+        },
+        {
+          "symbol": "list.bullet.clipboard",
+          "title": "Instructions",
+          "text": "Every exercise in a workout has instructions besides its note: how to do it this time.",
+          "points": [
+            "Tap an exercise's note icon: the instructions on top, the note below. A template has instructions only.",
+            "The instructions show under the exercise's name while you train; tap them to edit.",
+            "Copies and templates take the instructions along. The note stays with its workout, as it says what happened there.",
+            "The notes in your templates are their instructions now."
+          ]
+        },
+        {
+          "symbol": "building.2",
+          "title": "Gyms and Machines",
+          "text": "Say where a workout was trained, and at which machine an exercise was done.",
+          "points": [
+            "Pick a gym at the top of a workout, next to its name, or add one there.",
+            "Pick a machine next to an exercise's Add Set. The machines of the workout's gym come first; one picked from elsewhere stands in that gym from then on.",
+            "Settings → Gyms and Machines keep the lists: which machines stand in which gym, renaming, deleting. The same kind of machine can stand in several gyms.",
+            "A copy or a template keeps the gym and the machines. An exercise added at a gym starts at the machine it was last done at there.",
+            "The workout's page, the history and the workout list show where."
+          ]
+        },
+        {
+          "symbol": "stopwatch",
+          "title": "Workout Time",
+          "text": "A new workout times itself, from Start Workout to Finish.",
+          "points": [
+            "The clock runs at the top of the workout. Finish ends it and keeps how long it took; the workout's page shows it.",
+            "Save is now Finish for a workout being trained. Opened again later, a workout is only saved.",
+            "A workout given another date is being logged afterwards and is not timed."
+          ]
+        },
+        {
+          "symbol": "play.circle",
+          "title": "Leave a Workout Running",
+          "text": "Back in a workout goes to the start screen and leaves it running, with a banner on top that leads back in.",
+          "points": [
+            "The banner shows the workout's clock and the rest, if one runs. Tap it, or Resume, to go on.",
+            "One workout runs at a time: until it is finished, Start Workout and starting from a template wait.",
+            "Discard Workout is in the ••• menu next to Finish.",
+            "A workout still running when the app is closed is there again when it opens."
+          ]
+        },
+        {
+          "symbol": "timer",
+          "title": "Rest Timer",
+          "text": "Tick a set off and a rest counts down under it. At the bottom it shows what is left beside the whole rest, with −15 s, +15 s, Pause and Skip.",
+          "points": [
+            "Every exercise can have a rest of its own: tap the time next to Add Set. Default follows Settings, where the rest can also be turned off.",
+            "When the rest is over, a notification sounds, also with the phone locked. The lock screen and the Dynamic Island count down with it.",
+            "A superset rests after each round, not between its two exercises.",
+            "The timer button at the top starts a rest by hand."
+          ]
+        },
+        {
+          "symbol": "arrow.right.circle",
+          "title": "Guided Workout",
+          "text": "A workout being trained leads from set to set: the set to do next is highlighted.",
+          "points": [
+            "Next above the keyboard goes from weight to reps; on the last value it ticks the set off and starts the rest.",
+            "When the rest is over or skipped, the next set opens with the cursor in its first field.",
+            "Settings can turn the guide off."
+          ]
+        }
+      ],
+      "changes": [
+        "An exercise's note now shows under its name in the editor too, beside its instructions. Settings → Show Instructions and Notes turns both off.",
+        "Skull Crusher is now two exercises, EZ Bar Skull Crusher and Dumbbell Skull Crusher. Yours moves to My Exercises with everything logged under it; Review My Exercises offers the two to move it to.",
+        "The catalog has a new exercise, Smith Machine Lunge, trained one side at a time.",
+        "The catalog has four new exercises for the other grips on the cable: Lat Pulldown and Seated Cable Row, each with a Neutral Grip and a Close Grip.",
+        "Finishing a workout started without a template no longer asks whether to keep it as one. Hold it in the history and choose Save as Template when you want one.",
+        "A workout with nothing in it — no set, no plan, no note — no longer offers Save as Template in the history's menu.",
+        "An exercise's history now opens from a chart icon instead of the clock, in the exercise list, in a workout and in the muscle views.",
+        "An exercise's history lists only the sets you ticked off. Sets planned and not done stay greyed out on the workout's own page.",
+        "Templates have day variants: Adjust for Today in a template's menu makes a variant for one day, tinted and first in the row, and leaves the template as it is. Finishing a workout from it uses it up; one not used goes to the archive after a week, or is deleted if you choose so in Settings.",
+        "Entering a value no longer ticks a set off by itself. Tap its tick, or use Next on the keyboard after its last value."
+      ]
+    },
+    {
+      "build": 24,
+      "highlights": [
+        {
+          "symbol": "rectangle.stack",
+          "title": "Templates",
+          "text": "Keep the workouts you do again and again as templates, on the start screen below the activity graph.",
+          "points": [
+            "Saving a new workout asks whether to keep it as a template too. Any workout in the list can become one: hold it and choose Save as Template. Or tap New Template at the end of the row.",
+            "Tap a template to see what it plans, then Start Workout. Its menu edits, renames, duplicates or archives it.",
+            "Hold a template and drag it onto another to change the order.",
+            "Archived templates wait under Archived next to the heading; that is also where they can be deleted."
+          ]
+        },
+        {
+          "symbol": "checkmark.circle",
+          "title": "Tick Off Sets",
+          "text": "Every set has a tick, and only ticked sets count — in the history, This Week, the muscles and Last Time.",
+          "points": [
+            "Entering a value ticks the set off. Take the tick out to enter the next set ahead; Settings can turn the automatic tick off.",
+            "Sets from a template or a copied workout start unticked, with their values as a plan.",
+            "Saving a new workout with sets not ticked off asks whether to keep them as not done, count them as done or remove them. Kept, they stay greyed out in the workout.",
+            "Workouts logged before count as they did."
+          ]
+        }
+      ],
+      "changes": [
+        "The catalog has a new exercise, Smith Machine Good Morning.",
+        "The catalog has two new exercises, High Cable Fly and Low Cable Fly; Cable Fly stays the one from the middle.",
+        "Export and import count My Exercises only: catalog exercises come with the app, so a backup no longer reads as a hundred exercises when a handful are yours.",
+        "When an exercise in a backup differs from the catalog exercise of its name, the review now shows what differs, and the message afterwards no longer calls it left out.",
+        "Reorder Exercises shows a superset as one row and moves it as a whole, so the list matches the workout afterwards.",
+        "Merge Two Exercises says when an exercise cannot go into a catalog exercise because the catalog one has no field for some of its values, instead of asking for a mapping that is not there.",
+        "Exercise pictograms: the elbows in Push-Up and Dip bend the right way, Dumbbell Fly is drawn from behind the head, and Low Cable Fly ends at chest height.",
+        "Swiping a workout away now asks before deleting it.",
+        "The Workout Date sheet shows the time right away instead of a clipped, empty row.",
+        "A new exercise with fields no longer opens with a red warning about missing fields before you have entered anything.",
+        "The progress graph leaves room after the newest workout, and its dates sit centred under their marks: the newest point no longer sits on the value labels, and the last date is no longer cut short.",
+        "The progress graph's legend names only what the graph shows: a left/right history no longer lists Both and Unilateral.",
+        "Switching the progress graph to another number no longer cuts its name short, as in “lax Weight”.",
+        "With very large text, This Week moves under the title instead of losing its numbers.",
+        "With very large text, the activity graph's weekdays stay level with their rows.",
+        "This Week no longer counts a workout dated in a later week.",
+        "Swiping an exercise of your own away now asks first and says that its workouts keep what was logged.",
+        "A workout or template now opens with every exercise expanded; fold them away with the arrow if they are in the way."
+      ]
+    },
+    {
+      "build": 23,
+      "highlights": [],
+      "changes": [
+        "Review My Exercises now comes up for every exercise of your own that could move to the catalog, not only for those with a suggestion: you can search the catalog yourself, or keep it as yours. After an import, it follows “Bilateral or Unilateral?” right away instead of waiting for the next launch."
+      ]
+    },
+    {
+      "build": 22,
+      "highlights": [
+        {
+          "symbol": "figure.climbing",
+          "title": "Assisted Dips and Pull-Ups",
+          "text": "Dip, Pull-Up and Chin-Up can now be logged with the help of an assist machine.",
+          "points": [
+            "Tap the “Unassisted” capsule next to the name and pick Machine Assisted. The weight field becomes Assist, for the kilograms the machine takes off.",
+            "The progress graph counts help below zero: 25 kg of help is −25, bodyweight is 0, added weight goes above. Less help reads as progress.",
+            "Your own exercises can offer it too: Can Be Assisted in the exercise editor."
+          ]
+        }
+      ],
+      "changes": [
+        "The catalog has new exercises: High Row Machine and Low Row Machine, each with a unilateral form, and Smith Machine Shoulder Press.",
+        "Rows no longer count the shoulders as a secondary muscle: the heat map now credits them to the back, biceps and traps only. The same goes for the pulldowns.",
+        "Exercises of your own that were never logged — no set, no note — were removed once more. “Bilateral or Unilateral?” no longer asks about one, and an exercise leaving the catalog goes with it if you never logged it."
+      ]
+    },
+    {
+      "build": 21,
+      "highlights": [
+        {
+          "symbol": "books.vertical",
+          "title": "Exercise Catalog",
+          "text": "HippoTrophy now comes with a catalog of exercises.",
+          "points": [
+            "Please use catalog exercises wherever you can: the heat map and more depend on exercises being set up right, and catalog exercises come set up.",
+            "I keep adding to the catalog. You're more than welcome to suggest exercises for it."
+          ],
+          "important": true
+        },
+        {
+          "symbol": "figure.strengthtraining.functional",
+          "title": "Bilateral and Unilateral",
+          "text": "Every exercise is now either bilateral or unilateral.",
+          "points": [
+            "If an exercise has a unilateral version, pick that one for one side at a time. It carries “(Unilateral)” in its name, like Leg Press (Unilateral).",
+            "Bilateral: one way to log it.",
+            "Unilateral: each time you log it, either the same sets and weight for both sides (“Same Weight”) or each side on its own (“Log L/R”), not both."
+          ],
+          "important": true
+        },
+        {
+          "symbol": "exclamationmark.circle",
+          "title": "Action Needed",
+          "text": "This is an important change: a lot of the app depends on exercises being set up right. Two assistants help with your own exercises.",
+          "points": [
+            "First, sort them into bilateral and unilateral.",
+            "Then move them to catalog exercises where they match (Settings → Exercises → Review My Exercises).",
+            "Please take a quick moment for both. Sorry for the inconvenience!",
+            "Need help moving your data? Write to hippotrophy@gmail.com."
+          ],
+          "important": true
+        },
+        {
+          "symbol": "photo.on.rectangle",
+          "title": "Pictures of the Exercises",
+          "text": "Every catalog exercise now comes with a pictogram: start and end of the movement.",
+          "points": [
+            "It helps make sure you picked the exercise you mean.",
+            "They were drawn by an AI-written script, and I'm still correcting them."
+          ],
+          "image": "pictogram-bulgarian-split-squat"
+        },
+        {
+          "symbol": "figure.strengthtraining.traditional",
+          "title": "Main and Secondary Muscles",
+          "text": "An exercise now has main muscles and secondary ones: a squat is for Quads and Glutes, with Adductors secondary.",
+          "points": [
+            "Under Muscle Groups, sets where a muscle only helps are shown apart, in grey.",
+            "The heat map counts them as half.",
+            "For your own exercises, pick Main or Secondary for each muscle group in the exercise editor."
+          ]
+        }
+      ],
+      "changes": [
+        "An exercise with fields of its own reads as a table on the workout page and in its history: the field names once on top, each set's values beneath. One logged once per workout lists its fields line by line. Labels no longer break mid-word or look greyed out.",
+        "In Add Exercise and the exercise list, “Standard” and “Custom” are now called “Weight & Reps” and “Custom Fields”: they say what an exercise logs, not where it came from. The list that used to ship for import is the catalog now.",
+        "Your own exercises are marked “User defined”, the catalog's are not. You can give one the name of a catalog exercise; the editor says so when you type such a name.",
+        "Traps is a muscle group of its own. On the heat map it is the upper trapezius, between the neck and the shoulders; the part below stays with Back, where rows train it.",
+        "Settings → Exercises: an exercise of your own is Bilateral or Unilateral; a new one starts Bilateral. A bilateral and a unilateral exercise can no longer be merged, since their weights are not comparable.",
+        "Where the catalog has no unilateral form yet, entries logged one side at a time moved to an exercise of your own named after it, such as Chest Press Machine (Unilateral). It joins the catalog by itself once the catalog has that form.",
+        "Backups written before this build can no longer be imported. Send one to hippotrophy@gmail.com and it will be converted for you.",
+        "Exercises of your own that were never logged — no set, no note — were removed.",
+        "“Bilateral or Unilateral?” can export a backup before you decide, so nothing is lost whatever you choose."
+      ]
+    },
+    {
+      "build": 20,
+      "highlights": [
+        {
+          "symbol": "list.bullet.indent",
+          "title": "Exercises by Muscle Group",
+          "text": "Add Exercise now lists your exercises under their muscle groups: tap one to open it. An exercise that trains several is under each of them, and the ones without a muscle group come first. Settings → Exercises is sorted the same way.",
+          "page": "uebung-hinzufuegen"
+        },
+        {
+          "symbol": "chart.xyaxis.line",
+          "title": "Progress Graph",
+          "text": "Every exercise's history now starts with a graph: estimated one-rep max, top weight, volume or most reps, one point per workout. Touch a point to see the set behind it. The history opens from the clock icon beside an exercise.",
+          "image": "whats-new-20-progress-graph",
+          "page": "fortschritt"
+        },
+        {
+          "symbol": "square.grid.3x3.fill",
+          "title": "An Activity Graph per Category",
+          "text": "The graph on the home screen shows one category at a time, in its colour: Strength and Cardio to begin with. Swipe across a graph's title to turn to the next. The ⋯ menu adds, moves and removes graphs.",
+          "page": "aktivitaet"
+        },
+        {
+          "symbol": "figure.strengthtraining.traditional",
+          "title": "Heat Map by Category",
+          "text": "The muscle heat map now counts strength training only. Add Cardio, Mobility or your own categories with the filter button at the top right.",
+          "page": "heatmap"
+        },
+        {
+          "symbol": "square.and.arrow.down",
+          "title": "Push-Up in Nannes Favorites",
+          "text": "Imported the list before? Import it again under Settings → Exercises → Import, and Push-Up shows up as new. Nothing you already have is changed.",
+          "page": "liste-importieren"
+        }
+      ],
+      "changes": [
+        "Within a muscle group, exercises are in alphabetical order. The Edit button that reordered the exercise list is gone; swipe left on an exercise to delete it.",
+        "The muscle filter above the picker and the exercise list gave way to the muscle groups.",
+        "Two FAQ entries explain the progress graph and how the one-rep max is estimated."
+      ]
+    }
+  ]
+}

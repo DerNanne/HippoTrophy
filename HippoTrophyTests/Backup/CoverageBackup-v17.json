@@ -1,0 +1,2786 @@
+{
+  "exercises": [
+    {
+      "category": "Strength",
+      "fields": [
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "weight"
+        },
+        {
+          "key": "reps",
+          "label": "Reps",
+          "type": "reps"
+        }
+      ],
+      "muscleGroupNames": [
+        "chest",
+        "triceps",
+        "shoulders"
+      ],
+      "name": "Barbell Bench Press",
+      "offersAssistance": false,
+      "restSeconds": 180,
+      "secondaryMuscleGroupNames": [],
+      "sides": "either",
+      "tracksSets": true
+    },
+    {
+      "catalogKey": "back-squat",
+      "category": "Strength",
+      "fields": [
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "weight"
+        },
+        {
+          "key": "reps",
+          "label": "Reps",
+          "type": "reps"
+        }
+      ],
+      "muscleGroupNames": [
+        "quads",
+        "glutes"
+      ],
+      "name": "Back Squat",
+      "offersAssistance": false,
+      "restSeconds": 240,
+      "secondaryMuscleGroupNames": [
+        "adductors",
+        "back"
+      ],
+      "sides": "both",
+      "tracksSets": true
+    },
+    {
+      "category": "Strength",
+      "fields": [
+        {
+          "key": "reps",
+          "label": "Reps",
+          "type": "reps"
+        },
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "weight"
+        }
+      ],
+      "muscleGroupNames": [
+        "back",
+        "biceps"
+      ],
+      "name": "Pull-Up",
+      "offersAssistance": true,
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "tracksSets": true
+    },
+    {
+      "category": "Strength",
+      "fields": [
+        {
+          "key": "reps",
+          "label": "Reps",
+          "type": "reps"
+        }
+      ],
+      "muscleGroupNames": [
+        "chest",
+        "triceps"
+      ],
+      "name": "Push-Up",
+      "offersAssistance": false,
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "tracksSets": true
+    },
+    {
+      "catalogKey": "bulgarian-split-squat",
+      "category": "Strength",
+      "fields": [
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "weight"
+        },
+        {
+          "key": "reps",
+          "label": "Reps",
+          "type": "reps"
+        }
+      ],
+      "muscleGroupNames": [
+        "quads",
+        "glutes"
+      ],
+      "name": "Bulgarian Split Squat",
+      "offersAssistance": false,
+      "secondaryMuscleGroupNames": [
+        "adductors",
+        "hamstrings"
+      ],
+      "sides": "one",
+      "tracksSets": true
+    },
+    {
+      "category": "Strength",
+      "fields": [
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "weight"
+        },
+        {
+          "key": "reps",
+          "label": "Reps",
+          "type": "reps"
+        }
+      ],
+      "muscleGroupNames": [
+        "back"
+      ],
+      "name": "Dumbbell Row",
+      "offersAssistance": false,
+      "secondaryMuscleGroupNames": [],
+      "sides": "either",
+      "tracksSets": true
+    },
+    {
+      "category": "Strength",
+      "fields": [
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "weight"
+        },
+        {
+          "key": "reps",
+          "label": "Reps",
+          "type": "reps"
+        }
+      ],
+      "muscleGroupNames": [
+        "quads"
+      ],
+      "name": "Leg Extension",
+      "offersAssistance": false,
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "tracksSets": true
+    },
+    {
+      "catalogKey": "cable-fly",
+      "category": "Strength",
+      "fields": [
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "weight"
+        },
+        {
+          "key": "reps",
+          "label": "Reps",
+          "type": "reps"
+        }
+      ],
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "name": "Cable Fly",
+      "offersAssistance": false,
+      "secondaryMuscleGroupNames": [
+        "shoulders"
+      ],
+      "sides": "both",
+      "tracksSets": true
+    },
+    {
+      "category": "Strength",
+      "fields": [
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "weight"
+        },
+        {
+          "key": "reps",
+          "label": "Reps",
+          "type": "reps"
+        }
+      ],
+      "muscleGroupNames": [],
+      "name": "Lat Pulldown (Neutral Grip)",
+      "offersAssistance": false,
+      "secondaryMuscleGroupNames": [],
+      "sides": "either",
+      "tracksSets": true
+    },
+    {
+      "category": "Strength",
+      "fields": [
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "weight"
+        },
+        {
+          "key": "reps",
+          "label": "Reps",
+          "type": "reps"
+        },
+        {
+          "key": "f1",
+          "label": "Tempo",
+          "type": "text"
+        }
+      ],
+      "muscleGroupNames": [
+        "back",
+        "glutes",
+        "hamstrings"
+      ],
+      "name": "Rückenstrecker",
+      "offersAssistance": false,
+      "secondaryMuscleGroupNames": [],
+      "sides": "either",
+      "tracksSets": true
+    },
+    {
+      "category": "Strength",
+      "fields": [
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "weight"
+        },
+        {
+          "key": "f1",
+          "label": "Distance (m)",
+          "type": "number"
+        },
+        {
+          "key": "f2",
+          "label": "Duration",
+          "type": "time"
+        }
+      ],
+      "muscleGroupNames": [
+        "forearms",
+        "core"
+      ],
+      "name": "Farmer's Carry",
+      "offersAssistance": false,
+      "secondaryMuscleGroupNames": [],
+      "sides": "either",
+      "tracksSets": true
+    },
+    {
+      "category": "Cardio",
+      "fields": [
+        {
+          "key": "f1",
+          "label": "Duration",
+          "type": "time"
+        },
+        {
+          "key": "f2",
+          "label": "Distance (m)",
+          "type": "number"
+        },
+        {
+          "key": "f3",
+          "label": "Avg. Watts",
+          "type": "number"
+        },
+        {
+          "key": "f4",
+          "label": "Stroke Rate",
+          "type": "number"
+        },
+        {
+          "key": "f5",
+          "label": "Damper",
+          "type": "number"
+        },
+        {
+          "key": "f6",
+          "label": "Feel",
+          "type": "text"
+        }
+      ],
+      "muscleGroupNames": [
+        "back",
+        "quads"
+      ],
+      "name": "Rowing Erg",
+      "offersAssistance": false,
+      "secondaryMuscleGroupNames": [
+        "glutes",
+        "biceps"
+      ],
+      "sides": "both",
+      "tracksSets": false
+    },
+    {
+      "category": "Cardio",
+      "fields": [
+        {
+          "key": "f1",
+          "label": "Distance (km)",
+          "type": "number"
+        },
+        {
+          "key": "f3",
+          "label": "Duration",
+          "type": "time"
+        },
+        {
+          "key": "f4",
+          "label": "Route",
+          "type": "text"
+        }
+      ],
+      "muscleGroupNames": [],
+      "name": "Running",
+      "offersAssistance": false,
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "tracksSets": false
+    },
+    {
+      "category": "Mobility",
+      "fields": [
+        {
+          "key": "f1",
+          "label": "Hold",
+          "type": "time"
+        }
+      ],
+      "muscleGroupNames": [
+        "quads"
+      ],
+      "name": "Couch Stretch",
+      "offersAssistance": false,
+      "restSeconds": 0,
+      "secondaryMuscleGroupNames": [],
+      "sides": "one",
+      "tracksSets": true
+    },
+    {
+      "category": "Mobility",
+      "fields": [
+        {
+          "key": "f1",
+          "label": "Hold",
+          "type": "time"
+        }
+      ],
+      "muscleGroupNames": [
+        "forearms",
+        "back"
+      ],
+      "name": "Dead Hang",
+      "offersAssistance": false,
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "tracksSets": true
+    },
+    {
+      "category": "Climbing",
+      "fields": [
+        {
+          "key": "f1",
+          "label": "Hardest Grade",
+          "type": "text"
+        },
+        {
+          "key": "f2",
+          "label": "Tops",
+          "type": "number"
+        },
+        {
+          "key": "f3",
+          "label": "Session",
+          "type": "time"
+        }
+      ],
+      "muscleGroupNames": [
+        "forearms",
+        "back"
+      ],
+      "name": "Bouldering",
+      "offersAssistance": false,
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "tracksSets": false
+    },
+    {
+      "category": "",
+      "fields": [
+        {
+          "key": "f1",
+          "label": "Areas",
+          "type": "text"
+        }
+      ],
+      "muscleGroupNames": [],
+      "name": "Foam Rolling",
+      "offersAssistance": false,
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "tracksSets": false
+    },
+    {
+      "category": "Strength",
+      "fields": [
+        {
+          "key": "reps",
+          "label": "Reps",
+          "type": "reps"
+        }
+      ],
+      "muscleGroupNames": [
+        "hamstrings"
+      ],
+      "name": "Nordic Curl",
+      "offersAssistance": false,
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "tracksSets": true
+    }
+  ],
+  "exportedAt": "2026-10-03T12:00:00Z",
+  "formatVersion": 17,
+  "templates": [
+    {
+      "archived": false,
+      "exercises": [
+        {
+          "assistance": "unassisted",
+          "effortScale": "levels",
+          "exercise": "Barbell Bench Press",
+          "mode": "bilateral",
+          "notes": "Pause auf der Brust, jede Wiederholung.",
+          "sets": [
+            {
+              "done": false,
+              "effort": 0,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 80,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 8,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "effort": 1,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 82.5,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 6,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "effort": 2,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 82.5,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 6,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 85,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 4,
+                  "type": "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "rir",
+          "exercise": "Pull-Up",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": false,
+              "effort": 2,
+              "side": "both",
+              "supersetPosition": 1,
+              "values": [
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                },
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 0,
+                  "type": "weight"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "effort": 1,
+              "side": "both",
+              "supersetPosition": 3,
+              "values": [
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 8,
+                  "type": "reps"
+                },
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 5,
+                  "type": "weight"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "effort": 0,
+              "side": "both",
+              "supersetPosition": 4,
+              "values": [
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 6,
+                  "type": "reps"
+                },
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 10,
+                  "type": "weight"
+                }
+              ]
+            }
+          ],
+          "supersetGroup": 1
+        },
+        {
+          "assistance": "unassisted",
+          "catalogKey": "cable-fly",
+          "effortScale": "levels",
+          "exercise": "Cable Fly",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": false,
+              "effort": 0,
+              "side": "both",
+              "supersetPosition": 2,
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 11.25,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 12,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "effort": 1,
+              "side": "both",
+              "supersetPosition": 5,
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 11.25,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 12,
+                  "type": "reps"
+                }
+              ]
+            }
+          ],
+          "supersetGroup": 1
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "levels",
+          "exercise": "Dumbbell Row",
+          "mode": "oneSided",
+          "notes": "",
+          "sets": [
+            {
+              "done": false,
+              "effort": 1,
+              "side": "both",
+              "supersetPosition": 1,
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 32.5,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "effort": 1,
+              "side": "both",
+              "supersetPosition": 3,
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 32.5,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "effort": 2,
+              "side": "both",
+              "supersetPosition": 5,
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 32.5,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 8,
+                  "type": "reps"
+                }
+              ]
+            }
+          ],
+          "supersetGroup": 2
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "off",
+          "exercise": "Push-Up",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": false,
+              "side": "both",
+              "supersetPosition": 2,
+              "values": [
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 20,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "side": "both",
+              "supersetPosition": 4,
+              "values": [
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 18,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "side": "both",
+              "supersetPosition": 6,
+              "values": [
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 15,
+                  "type": "reps"
+                }
+              ]
+            }
+          ],
+          "supersetGroup": 2
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "off",
+          "exercise": "Farmer's Carry",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": false,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 32,
+                  "type": "weight"
+                },
+                {
+                  "key": "f1",
+                  "label": "Distance (m)",
+                  "number": 40,
+                  "type": "number"
+                },
+                {
+                  "key": "f2",
+                  "label": "Duration",
+                  "number": 45,
+                  "type": "time"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 32,
+                  "type": "weight"
+                },
+                {
+                  "key": "f1",
+                  "label": "Distance (m)",
+                  "number": 40,
+                  "type": "number"
+                },
+                {
+                  "key": "f2",
+                  "label": "Duration",
+                  "type": "time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "levels",
+          "exercise": "Rowing Erg",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": false,
+              "effort": 2,
+              "side": "both",
+              "values": [
+                {
+                  "key": "f1",
+                  "label": "Duration",
+                  "number": 600,
+                  "type": "time"
+                },
+                {
+                  "key": "f2",
+                  "label": "Distance (m)",
+                  "number": 2500,
+                  "type": "number"
+                },
+                {
+                  "key": "f3",
+                  "label": "Avg. Watts",
+                  "number": 187,
+                  "type": "number"
+                },
+                {
+                  "key": "f4",
+                  "label": "Stroke Rate",
+                  "number": 24,
+                  "type": "number"
+                },
+                {
+                  "key": "f5",
+                  "label": "Damper",
+                  "number": 5.5,
+                  "type": "number"
+                },
+                {
+                  "key": "f6",
+                  "label": "Feel",
+                  "text": "zäh, aber ok 👍",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "5E1A0001-0000-4000-8000-000000000001",
+      "name": "Push Day",
+      "notes": "Schulter vorher 10 Minuten aufgewärmt.\nBank fühlte sich schwer an, Klimmzüge dafür gut.\n\nNächstes Mal: Fly vor dem Rudern."
+    },
+    {
+      "archived": false,
+      "exercises": [
+        {
+          "assistance": "unassisted",
+          "catalogKey": "back-squat",
+          "effortScale": "rir",
+          "exercise": "Back Squat",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": false,
+              "effort": 4,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 102.05828325,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 5,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "effort": 2.5,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 102.05828325,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 5,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "effort": 0.5,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 102.05828325,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 5,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "effort": 0,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 102.05828325,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 4,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 102.05828325,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 5,
+                  "type": "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "catalogKey": "bulgarian-split-squat",
+          "effortScale": "levels",
+          "exercise": "Bulgarian Split Squat",
+          "mode": "perSide",
+          "notes": "",
+          "sets": [
+            {
+              "done": false,
+              "effort": 1,
+              "side": "left",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 20,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "effort": 1,
+              "side": "right",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 20,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "effort": 2,
+              "side": "left",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 20,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 8,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "effort": 2,
+              "side": "right",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 20,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 9,
+                  "type": "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "levels",
+          "exercise": "Leg Extension",
+          "mode": "oneSided",
+          "notes": "",
+          "sets": [
+            {
+              "done": false,
+              "effort": 0,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 25,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 12,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "effort": 1,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 25,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 12,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "effort": 2,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 25,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "off",
+          "exercise": "Rückenstrecker",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": false,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 20,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 12,
+                  "type": "reps"
+                },
+                {
+                  "key": "f1",
+                  "label": "Tempo",
+                  "text": "3-1-1",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 15,
+                  "type": "reps"
+                },
+                {
+                  "key": "f1",
+                  "label": "Tempo",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 0,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 20,
+                  "type": "reps"
+                },
+                {
+                  "key": "f1",
+                  "label": "Tempo",
+                  "text": "langsam",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "5E1A0001-0000-4000-8000-000000000002",
+      "name": "Legs",
+      "notes": "Squat heavy,\nthe rest for volume."
+    },
+    {
+      "archived": false,
+      "exercises": [],
+      "id": "5E1A0001-0000-4000-8000-000000000003",
+      "name": "Blank",
+      "notes": ""
+    },
+    {
+      "archived": true,
+      "exercises": [
+        {
+          "assistance": "unassisted",
+          "effortScale": "levels",
+          "exercise": "Bouldering",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": false,
+              "effort": 2,
+              "side": "both",
+              "values": [
+                {
+                  "key": "f1",
+                  "label": "Hardest Grade",
+                  "text": "6B+",
+                  "type": "text"
+                },
+                {
+                  "key": "f2",
+                  "label": "Tops",
+                  "number": 7,
+                  "type": "number"
+                },
+                {
+                  "key": "f3",
+                  "label": "Session",
+                  "number": 5400,
+                  "type": "time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "off",
+          "exercise": "Dead Hang",
+          "mode": "bilateral",
+          "notes": "Finger zu müde, ausgelassen.",
+          "sets": []
+        }
+      ],
+      "id": "5E1A0001-0000-4000-8000-000000000004",
+      "name": "Old Climbing",
+      "notes": ""
+    }
+  ],
+  "workouts": [
+    {
+      "date": "2026-09-28T16:00:00Z",
+      "durationSeconds": 4140,
+      "exercises": [
+        {
+          "assistance": "unassisted",
+          "effortScale": "levels",
+          "exercise": "Barbell Bench Press",
+          "mode": "bilateral",
+          "notes": "Pause auf der Brust, jede Wiederholung.",
+          "sets": [
+            {
+              "done": true,
+              "effort": 0,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 80,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 8,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 1,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 82.5,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 6,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 2,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 82.5,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 6,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 85,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 4,
+                  "type": "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "rir",
+          "exercise": "Pull-Up",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "effort": 2,
+              "side": "both",
+              "supersetPosition": 1,
+              "values": [
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                },
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 0,
+                  "type": "weight"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 1,
+              "side": "both",
+              "supersetPosition": 3,
+              "values": [
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 8,
+                  "type": "reps"
+                },
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 5,
+                  "type": "weight"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 0,
+              "side": "both",
+              "supersetPosition": 4,
+              "values": [
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 6,
+                  "type": "reps"
+                },
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 10,
+                  "type": "weight"
+                }
+              ]
+            }
+          ],
+          "supersetGroup": 1
+        },
+        {
+          "assistance": "unassisted",
+          "catalogKey": "cable-fly",
+          "effortScale": "levels",
+          "exercise": "Cable Fly",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "effort": 0,
+              "side": "both",
+              "supersetPosition": 2,
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 11.25,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 12,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 1,
+              "side": "both",
+              "supersetPosition": 5,
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 11.25,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 12,
+                  "type": "reps"
+                }
+              ]
+            }
+          ],
+          "supersetGroup": 1
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "levels",
+          "exercise": "Dumbbell Row",
+          "mode": "oneSided",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "effort": 1,
+              "side": "both",
+              "supersetPosition": 1,
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 32.5,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 1,
+              "side": "both",
+              "supersetPosition": 3,
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 32.5,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 2,
+              "side": "both",
+              "supersetPosition": 5,
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 32.5,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 8,
+                  "type": "reps"
+                }
+              ]
+            }
+          ],
+          "supersetGroup": 2
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "off",
+          "exercise": "Push-Up",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "side": "both",
+              "supersetPosition": 2,
+              "values": [
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 20,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "side": "both",
+              "supersetPosition": 4,
+              "values": [
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 18,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "side": "both",
+              "supersetPosition": 6,
+              "values": [
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 15,
+                  "type": "reps"
+                }
+              ]
+            }
+          ],
+          "supersetGroup": 2
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "off",
+          "exercise": "Farmer's Carry",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 32,
+                  "type": "weight"
+                },
+                {
+                  "key": "f1",
+                  "label": "Distance (m)",
+                  "number": 40,
+                  "type": "number"
+                },
+                {
+                  "key": "f2",
+                  "label": "Duration",
+                  "number": 45,
+                  "type": "time"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 32,
+                  "type": "weight"
+                },
+                {
+                  "key": "f1",
+                  "label": "Distance (m)",
+                  "number": 40,
+                  "type": "number"
+                },
+                {
+                  "key": "f2",
+                  "label": "Duration",
+                  "type": "time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "levels",
+          "exercise": "Rowing Erg",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "effort": 2,
+              "side": "both",
+              "values": [
+                {
+                  "key": "f1",
+                  "label": "Duration",
+                  "number": 600,
+                  "type": "time"
+                },
+                {
+                  "key": "f2",
+                  "label": "Distance (m)",
+                  "number": 2500,
+                  "type": "number"
+                },
+                {
+                  "key": "f3",
+                  "label": "Avg. Watts",
+                  "number": 187,
+                  "type": "number"
+                },
+                {
+                  "key": "f4",
+                  "label": "Stroke Rate",
+                  "number": 24,
+                  "type": "number"
+                },
+                {
+                  "key": "f5",
+                  "label": "Damper",
+                  "number": 5.5,
+                  "type": "number"
+                },
+                {
+                  "key": "f6",
+                  "label": "Feel",
+                  "text": "zäh, aber ok 👍",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "0C0FFEE0-0000-4000-8000-000000000001",
+      "name": "Push A",
+      "notes": "Schulter vorher 10 Minuten aufgewärmt.\nBank fühlte sich schwer an, Klimmzüge dafür gut.\n\nNächstes Mal: Fly vor dem Rudern."
+    },
+    {
+      "date": "2026-09-26T22:30:00Z",
+      "exercises": [
+        {
+          "assistance": "unassisted",
+          "effortScale": "off",
+          "exercise": "Running",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "side": "both",
+              "values": [
+                {
+                  "key": "f1",
+                  "label": "Distance (km)",
+                  "number": 5.2,
+                  "type": "number"
+                },
+                {
+                  "key": "f3",
+                  "label": "Duration",
+                  "number": 1745,
+                  "type": "time"
+                },
+                {
+                  "key": "f4",
+                  "label": "Route",
+                  "text": "Riverside, Old Mill – Harbour, \"Runde 2\"",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "off",
+          "exercise": "Couch Stretch",
+          "mode": "perSide",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "side": "left",
+              "values": [
+                {
+                  "key": "f1",
+                  "label": "Hold",
+                  "number": 90,
+                  "type": "time"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "side": "right",
+              "values": [
+                {
+                  "key": "f1",
+                  "label": "Hold",
+                  "number": 90,
+                  "type": "time"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "side": "left",
+              "values": [
+                {
+                  "key": "f1",
+                  "label": "Hold",
+                  "number": 60,
+                  "type": "time"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "0C0FFEE0-0000-4000-8000-000000000002",
+      "name": "",
+      "notes": ""
+    },
+    {
+      "date": "2026-09-24T18:00:00Z",
+      "exercises": [
+        {
+          "assistance": "unassisted",
+          "effortScale": "off",
+          "exercise": "Dead Hang",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "side": "both",
+              "values": [
+                {
+                  "key": "f1",
+                  "label": "Hold",
+                  "number": 60,
+                  "type": "time"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "side": "both",
+              "values": [
+                {
+                  "key": "f1",
+                  "label": "Hold",
+                  "number": 45,
+                  "type": "time"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "side": "both",
+              "values": [
+                {
+                  "key": "f1",
+                  "label": "Hold",
+                  "number": 30,
+                  "type": "time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "off",
+          "exercise": "Foam Rolling",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "side": "both",
+              "values": [
+                {
+                  "key": "f1",
+                  "label": "Areas",
+                  "text": "Waden, Quads, oberer Rücken",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "off",
+          "exercise": "Couch Stretch",
+          "mode": "perSide",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "side": "left",
+              "values": [
+                {
+                  "key": "f1",
+                  "label": "Hold",
+                  "number": 120,
+                  "type": "time"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "side": "right",
+              "values": [
+                {
+                  "key": "f1",
+                  "label": "Hold",
+                  "number": 120,
+                  "type": "time"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "0C0FFEE0-0000-4000-8000-000000000003",
+      "name": "Evening Mobility",
+      "notes": ""
+    },
+    {
+      "date": "2026-09-24T05:15:00Z",
+      "durationSeconds": 2715,
+      "exercises": [
+        {
+          "assistance": "unassisted",
+          "catalogKey": "back-squat",
+          "effortScale": "rir",
+          "exercise": "Back Squat",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "effort": 4,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 102.05828325,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 5,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 2.5,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 102.05828325,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 5,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 0.5,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 102.05828325,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 5,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 0,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 102.05828325,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 4,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 102.05828325,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 5,
+                  "type": "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "catalogKey": "bulgarian-split-squat",
+          "effortScale": "levels",
+          "exercise": "Bulgarian Split Squat",
+          "mode": "perSide",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "effort": 1,
+              "side": "left",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 20,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 1,
+              "side": "right",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 20,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 2,
+              "side": "left",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 20,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 8,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 2,
+              "side": "right",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 20,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 9,
+                  "type": "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "levels",
+          "exercise": "Leg Extension",
+          "mode": "oneSided",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "effort": 0,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 25,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 12,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 1,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 25,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 12,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 2,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 25,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "off",
+          "exercise": "Rückenstrecker",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 20,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 12,
+                  "type": "reps"
+                },
+                {
+                  "key": "f1",
+                  "label": "Tempo",
+                  "text": "3-1-1",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 15,
+                  "type": "reps"
+                },
+                {
+                  "key": "f1",
+                  "label": "Tempo",
+                  "type": "text"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 0,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 20,
+                  "type": "reps"
+                },
+                {
+                  "key": "f1",
+                  "label": "Tempo",
+                  "text": "langsam",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "0C0FFEE0-0000-4000-8000-000000000004",
+      "name": "Legs",
+      "notes": ""
+    },
+    {
+      "date": "2026-09-20T13:00:00Z",
+      "exercises": [
+        {
+          "assistance": "unassisted",
+          "effortScale": "levels",
+          "exercise": "Bouldering",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "effort": 2,
+              "side": "both",
+              "values": [
+                {
+                  "key": "f1",
+                  "label": "Hardest Grade",
+                  "text": "6B+",
+                  "type": "text"
+                },
+                {
+                  "key": "f2",
+                  "label": "Tops",
+                  "number": 7,
+                  "type": "number"
+                },
+                {
+                  "key": "f3",
+                  "label": "Session",
+                  "number": 5400,
+                  "type": "time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "off",
+          "exercise": "Dead Hang",
+          "mode": "bilateral",
+          "notes": "Finger zu müde, ausgelassen.",
+          "sets": []
+        }
+      ],
+      "id": "0C0FFEE0-0000-4000-8000-000000000005",
+      "name": "Climbing",
+      "notes": ""
+    },
+    {
+      "date": "2026-09-17T16:30:00Z",
+      "exercises": [
+        {
+          "assistance": "unassisted",
+          "effortScale": "off",
+          "exercise": "Barbell Bench Press",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 80,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 8,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 80,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 8,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 80,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 7,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": false,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "type": "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "off",
+          "exercise": "Lat Pulldown (Neutral Grip)",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": []
+        },
+        {
+          "assistance": "machine",
+          "effortScale": "levels",
+          "exercise": "Pull-Up",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "effort": 0,
+              "side": "both",
+              "values": [
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 12,
+                  "type": "reps"
+                },
+                {
+                  "key": "weight",
+                  "label": "Assist",
+                  "number": 25,
+                  "type": "assistance"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 1,
+              "side": "both",
+              "values": [
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                },
+                {
+                  "key": "weight",
+                  "label": "Assist",
+                  "number": 20,
+                  "type": "assistance"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "0C0FFEE0-0000-4000-8000-000000000006",
+      "name": "Push B",
+      "notes": ""
+    },
+    {
+      "date": "2026-09-10T16:00:00Z",
+      "exercises": [
+        {
+          "assistance": "unassisted",
+          "effortScale": "rir",
+          "exercise": "Lat Pulldown (Neutral Grip)",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "effort": 10,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 40,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 12,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 2,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 59,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 1,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 59,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 9,
+                  "type": "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance": "unassisted",
+          "effortScale": "levels",
+          "exercise": "Dumbbell Row",
+          "mode": "perSide",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "effort": 1,
+              "side": "left",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 30,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 1,
+              "side": "right",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 30,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 2,
+              "side": "left",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 30,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 9,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 1,
+              "side": "right",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 30,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 10,
+                  "type": "reps"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "0C0FFEE0-0000-4000-8000-000000000007",
+      "name": "Pull A",
+      "notes": ""
+    },
+    {
+      "date": "2026-09-03T16:00:00Z",
+      "exercises": [
+        {
+          "assistance": "unassisted",
+          "effortScale": "rir",
+          "exercise": "Barbell Bench Press",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "effort": 3,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 77.5,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 8,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 2,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 77.5,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 8,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 1.5,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 80,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 6,
+                  "type": "reps"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "0C0FFEE0-0000-4000-8000-000000000008",
+      "name": "Push A",
+      "notes": ""
+    },
+    {
+      "date": "2026-09-01T17:00:00Z",
+      "exercises": [],
+      "id": "0C0FFEE0-0000-4000-8000-000000000009",
+      "name": "Rest",
+      "notes": "Nur aufgewärmt, Schulter zwickt."
+    },
+    {
+      "date": "2025-07-15T16:00:00Z",
+      "exercises": [
+        {
+          "assistance": "unassisted",
+          "effortScale": "levels",
+          "exercise": "Barbell Bench Press",
+          "mode": "bilateral",
+          "notes": "",
+          "sets": [
+            {
+              "done": true,
+              "effort": 1,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 70,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 8,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 1,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 70,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 8,
+                  "type": "reps"
+                }
+              ]
+            },
+            {
+              "done": true,
+              "effort": 2,
+              "side": "both",
+              "values": [
+                {
+                  "key": "weight",
+                  "label": "Weight",
+                  "number": 72.5,
+                  "type": "weight"
+                },
+                {
+                  "key": "reps",
+                  "label": "Reps",
+                  "number": 6,
+                  "type": "reps"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id": "0C0FFEE0-0000-4000-8000-00000000000A",
+      "name": "Push A",
+      "notes": ""
+    }
+  ]
+}

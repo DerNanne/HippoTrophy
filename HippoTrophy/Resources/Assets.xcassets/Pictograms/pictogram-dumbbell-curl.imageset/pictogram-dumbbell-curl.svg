@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <line x1="8.0" y1="186.0" x2="142.0" y2="186.0" stroke="#D5D9DF" stroke-width="3" stroke-linecap="round"/>
+  <line x1="73.8" y1="70.5" x2="73.8" y2="95.5" stroke="#8E96A3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="73.8" y1="95.5" x2="73.8" y2="118.5" stroke="#8E96A3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="73.8" y1="114.5" x2="73.8" y2="148.5" stroke="#8E96A3" stroke-width="9" stroke-linecap="round"/>
+  <line x1="73.8" y1="148.5" x2="73.8" y2="181.5" stroke="#8E96A3" stroke-width="9" stroke-linecap="round"/>
+  <line x1="73.8" y1="181.5" x2="82.8" y2="181.5" stroke="#8E96A3" stroke-width="7" stroke-linecap="round"/>
+  <line x1="73.8" y1="114.5" x2="73.8" y2="70.5" stroke="#2F3540" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="73.8" cy="53.5" r="10.0" fill="#2F3540"/>
+  <line x1="73.8" y1="114.5" x2="73.8" y2="148.5" stroke="#2F3540" stroke-width="9" stroke-linecap="round"/>
+  <line x1="73.8" y1="148.5" x2="73.8" y2="181.5" stroke="#2F3540" stroke-width="9" stroke-linecap="round"/>
+  <line x1="73.8" y1="181.5" x2="82.8" y2="181.5" stroke="#2F3540" stroke-width="7" stroke-linecap="round"/>
+  <line x1="73.8" y1="70.5" x2="73.8" y2="95.5" stroke="#2F3540" stroke-width="8" stroke-linecap="round"/>
+  <line x1="73.8" y1="95.5" x2="73.8" y2="118.5" stroke="#2F3540" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="73.8" cy="118.5" r="7.5" fill="#F4C08C"/>
+  <circle cx="73.8" cy="118.5" r="2.5" fill="#B9661A"/>
+  <circle cx="73.8" cy="118.5" r="7.5" fill="#E8862A"/>
+  <circle cx="73.8" cy="118.5" r="2.5" fill="#B9661A"/>
+  <line x1="158.0" y1="186.0" x2="292.0" y2="186.0" stroke="#D5D9DF" stroke-width="3" stroke-linecap="round"/>
+  <line x1="217.2" y1="70.5" x2="219.9" y2="95.4" stroke="#8E96A3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="219.9" y1="95.4" x2="235.3" y2="78.3" stroke="#8E96A3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="217.2" y1="114.5" x2="217.2" y2="148.5" stroke="#8E96A3" stroke-width="9" stroke-linecap="round"/>
+  <line x1="217.2" y1="148.5" x2="217.2" y2="181.5" stroke="#8E96A3" stroke-width="9" stroke-linecap="round"/>
+  <line x1="217.2" y1="181.5" x2="226.2" y2="181.5" stroke="#8E96A3" stroke-width="7" stroke-linecap="round"/>
+  <line x1="217.2" y1="114.5" x2="217.2" y2="70.5" stroke="#2F3540" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="217.2" cy="53.5" r="10.0" fill="#2F3540"/>
+  <line x1="217.2" y1="114.5" x2="217.2" y2="148.5" stroke="#2F3540" stroke-width="9" stroke-linecap="round"/>
+  <line x1="217.2" y1="148.5" x2="217.2" y2="181.5" stroke="#2F3540" stroke-width="9" stroke-linecap="round"/>
+  <line x1="217.2" y1="181.5" x2="226.2" y2="181.5" stroke="#2F3540" stroke-width="7" stroke-linecap="round"/>
+  <line x1="217.2" y1="70.5" x2="219.9" y2="95.4" stroke="#2F3540" stroke-width="8" stroke-linecap="round"/>
+  <line x1="219.9" y1="95.4" x2="235.3" y2="78.3" stroke="#2F3540" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="235.3" cy="78.3" r="7.5" fill="#F4C08C"/>
+  <circle cx="235.3" cy="78.3" r="2.5" fill="#B9661A"/>
+  <circle cx="235.3" cy="78.3" r="7.5" fill="#E8862A"/>
+  <circle cx="235.3" cy="78.3" r="2.5" fill="#B9661A"/>
+</svg>

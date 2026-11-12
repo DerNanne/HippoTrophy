@@ -1,0 +1,25 @@
+# macOS
+.DS_Store
+
+# Xcode: Build-Ergebnisse
+build/
+DerivedData/
+*.ipa
+*.dSYM.zip
+*.dSYM
+*.xcarchive
+
+# Signing: Zertifikate, Schlüssel und Profile gehören nie ins Repo
+*.mobileprovision
+*.p8
+*.p12
+*.cer
+
+# Xcode: persönlicher Editor-Zustand, gehört niemandem außer dem lokalen Rechner
+xcuserdata/
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+
+# Claude Code: lokale Einstellungen, gehören nur diesem Rechner
+.claude/settings.local.json

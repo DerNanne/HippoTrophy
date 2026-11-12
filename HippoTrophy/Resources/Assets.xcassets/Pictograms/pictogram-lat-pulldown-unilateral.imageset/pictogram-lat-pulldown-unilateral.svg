@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="200" viewBox="0 0 300 200">
+  <line x1="8.0" y1="186.0" x2="142.0" y2="186.0" stroke="#D5D9DF" stroke-width="3" stroke-linecap="round"/>
+  <line x1="49.2" y1="163.0" x2="49.2" y2="185.0" stroke="#B9661A" stroke-width="6" stroke-linecap="butt"/>
+  <rect x="36.2" y="157.0" width="26.0" height="8.0" rx="3" fill="#E8862A"/>
+  <line x1="110.2" y1="18.0" x2="110.2" y2="185.0" stroke="#B9661A" stroke-width="7" stroke-linecap="butt"/>
+  <line x1="110.2" y1="20.0" x2="60.2" y2="20.0" stroke="#B9661A" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="88.2" cy="141.0" r="6.0" fill="#E8862A"/>
+  <line x1="49.7" y1="106.2" x2="56.1" y2="130.4" stroke="#8E96A3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="56.1" y1="130.4" x2="78.8" y2="134.4" stroke="#8E96A3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="54.2" y1="150.0" x2="88.2" y2="150.0" stroke="#8E96A3" stroke-width="9" stroke-linecap="round"/>
+  <line x1="88.2" y1="150.0" x2="88.2" y2="183.0" stroke="#8E96A3" stroke-width="9" stroke-linecap="round"/>
+  <line x1="88.2" y1="183.0" x2="97.2" y2="183.0" stroke="#8E96A3" stroke-width="7" stroke-linecap="round"/>
+  <line x1="60.2" y1="20.0" x2="54.7" y2="58.5" stroke="#E8862A" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="60.2" cy="20.0" r="5.0" fill="#E8862A"/>
+  <circle cx="54.7" cy="58.5" r="4.5" fill="#B9661A"/>
+  <line x1="54.2" y1="150.0" x2="49.7" y2="106.2" stroke="#2F3540" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="47.9" cy="89.3" r="10.0" fill="#2F3540"/>
+  <line x1="54.2" y1="150.0" x2="88.2" y2="150.0" stroke="#2F3540" stroke-width="9" stroke-linecap="round"/>
+  <line x1="88.2" y1="150.0" x2="88.2" y2="183.0" stroke="#2F3540" stroke-width="9" stroke-linecap="round"/>
+  <line x1="88.2" y1="183.0" x2="97.2" y2="183.0" stroke="#2F3540" stroke-width="7" stroke-linecap="round"/>
+  <line x1="49.7" y1="106.2" x2="53.1" y2="81.5" stroke="#2F3540" stroke-width="8" stroke-linecap="round"/>
+  <line x1="53.1" y1="81.5" x2="54.7" y2="58.5" stroke="#2F3540" stroke-width="8" stroke-linecap="round"/>
+  <line x1="158.0" y1="186.0" x2="292.0" y2="186.0" stroke="#D5D9DF" stroke-width="3" stroke-linecap="round"/>
+  <line x1="201.6" y1="163.0" x2="201.6" y2="185.0" stroke="#B9661A" stroke-width="6" stroke-linecap="butt"/>
+  <rect x="188.6" y="157.0" width="26.0" height="8.0" rx="3" fill="#E8862A"/>
+  <line x1="262.6" y1="18.0" x2="262.6" y2="185.0" stroke="#B9661A" stroke-width="7" stroke-linecap="butt"/>
+  <line x1="262.6" y1="20.0" x2="212.6" y2="20.0" stroke="#B9661A" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="240.6" cy="141.0" r="6.0" fill="#E8862A"/>
+  <line x1="197.4" y1="107.0" x2="203.9" y2="131.1" stroke="#8E96A3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="203.9" y1="131.1" x2="226.6" y2="135.1" stroke="#8E96A3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="206.6" y1="150.0" x2="240.6" y2="150.0" stroke="#8E96A3" stroke-width="9" stroke-linecap="round"/>
+  <line x1="240.6" y1="150.0" x2="240.6" y2="183.0" stroke="#8E96A3" stroke-width="9" stroke-linecap="round"/>
+  <line x1="240.6" y1="183.0" x2="249.6" y2="183.0" stroke="#8E96A3" stroke-width="7" stroke-linecap="round"/>
+  <line x1="212.6" y1="20.0" x2="200.5" y2="110.4" stroke="#E8862A" stroke-width="2.5" stroke-linecap="round"/>
+  <circle cx="212.6" cy="20.0" r="5.0" fill="#E8862A"/>
+  <circle cx="200.5" cy="110.4" r="4.5" fill="#B9661A"/>
+  <line x1="206.6" y1="150.0" x2="197.4" y2="107.0" stroke="#2F3540" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="193.9" cy="90.3" r="10.0" fill="#2F3540"/>
+  <line x1="206.6" y1="150.0" x2="240.6" y2="150.0" stroke="#2F3540" stroke-width="9" stroke-linecap="round"/>
+  <line x1="240.6" y1="150.0" x2="240.6" y2="183.0" stroke="#2F3540" stroke-width="9" stroke-linecap="round"/>
+  <line x1="240.6" y1="183.0" x2="249.6" y2="183.0" stroke="#2F3540" stroke-width="7" stroke-linecap="round"/>
+  <line x1="197.4" y1="107.0" x2="189.7" y2="130.7" stroke="#2F3540" stroke-width="8" stroke-linecap="round"/>
+  <line x1="189.7" y1="130.7" x2="200.5" y2="110.4" stroke="#2F3540" stroke-width="8" stroke-linecap="round"/>
+</svg>

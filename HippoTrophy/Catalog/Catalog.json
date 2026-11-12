@@ -1,0 +1,1501 @@
+{
+  "exercises": [
+    {
+      "key": "barbell-bench-press",
+      "name": "Barbell Bench Press",
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [
+        "triceps",
+        "shoulders"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "dumbbell-bench-press",
+      "name": "Dumbbell Bench Press",
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [
+        "triceps",
+        "shoulders"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "incline-barbell-bench-press",
+      "name": "Incline Barbell Bench Press",
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [
+        "shoulders",
+        "triceps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "incline-dumbbell-bench-press",
+      "name": "Incline Dumbbell Bench Press",
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [
+        "shoulders",
+        "triceps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "decline-barbell-bench-press",
+      "name": "Decline Barbell Bench Press",
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [
+        "triceps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "decline-dumbbell-bench-press",
+      "name": "Decline Dumbbell Bench Press",
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [
+        "triceps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "smith-machine-bench-press",
+      "name": "Smith Machine Bench Press",
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [
+        "triceps",
+        "shoulders"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "chest-press-machine",
+      "name": "Chest Press Machine",
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [
+        "triceps",
+        "shoulders"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "incline-chest-press-machine",
+      "name": "Incline Chest Press Machine",
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [
+        "shoulders",
+        "triceps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "pec-deck",
+      "name": "Pec Deck",
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "high-cable-fly",
+      "name": "High Cable Fly",
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [
+        "shoulders"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "cable-fly",
+      "name": "Cable Fly",
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [
+        "shoulders"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "low-cable-fly",
+      "name": "Low Cable Fly",
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [
+        "shoulders"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "dumbbell-fly",
+      "name": "Dumbbell Fly",
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [
+        "shoulders"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "push-up",
+      "name": "Push-Up",
+      "muscleGroupNames": [
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [
+        "triceps",
+        "shoulders",
+        "core"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "dip",
+      "name": "Dip",
+      "muscleGroupNames": [
+        "chest",
+        "triceps"
+      ],
+      "secondaryMuscleGroupNames": [
+        "shoulders"
+      ],
+      "sides": "both",
+      "offersAssistance": true
+    },
+    {
+      "key": "back-squat",
+      "name": "Back Squat",
+      "muscleGroupNames": [
+        "quads",
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "adductors",
+        "back"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "front-squat",
+      "name": "Front Squat",
+      "muscleGroupNames": [
+        "quads",
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "core",
+        "back"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "goblet-squat",
+      "name": "Goblet Squat",
+      "muscleGroupNames": [
+        "quads",
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "adductors",
+        "core"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "smith-machine-squat",
+      "name": "Smith Machine Squat",
+      "muscleGroupNames": [
+        "quads",
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "adductors"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "hack-squat",
+      "name": "Hack Squat",
+      "muscleGroupNames": [
+        "quads"
+      ],
+      "secondaryMuscleGroupNames": [
+        "glutes",
+        "adductors"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "pendulum-squat",
+      "name": "Pendulum Squat",
+      "muscleGroupNames": [
+        "quads"
+      ],
+      "secondaryMuscleGroupNames": [
+        "glutes",
+        "adductors"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "leg-press",
+      "name": "Leg Press",
+      "muscleGroupNames": [
+        "quads",
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "adductors"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "leg-press-unilateral",
+      "name": "Leg Press (Unilateral)",
+      "muscleGroupNames": [
+        "quads",
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "adductors"
+      ],
+      "sides": "one",
+      "offersAssistance": false,
+      "unilateralOf": "leg-press"
+    },
+    {
+      "key": "bulgarian-split-squat",
+      "name": "Bulgarian Split Squat",
+      "muscleGroupNames": [
+        "quads",
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "adductors",
+        "hamstrings"
+      ],
+      "sides": "one",
+      "offersAssistance": false
+    },
+    {
+      "key": "lunge",
+      "name": "Lunge",
+      "muscleGroupNames": [
+        "quads",
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "adductors",
+        "hamstrings"
+      ],
+      "sides": "one",
+      "offersAssistance": false
+    },
+    {
+      "key": "smith-machine-lunge",
+      "name": "Smith Machine Lunge",
+      "muscleGroupNames": [
+        "quads",
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "adductors",
+        "hamstrings"
+      ],
+      "sides": "one",
+      "offersAssistance": false
+    },
+    {
+      "key": "step-up",
+      "name": "Step-Up",
+      "muscleGroupNames": [
+        "quads",
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "hamstrings"
+      ],
+      "sides": "one",
+      "offersAssistance": false
+    },
+    {
+      "key": "seated-leg-extension",
+      "name": "Seated Leg Extension",
+      "muscleGroupNames": [
+        "quads"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "seated-leg-extension-unilateral",
+      "name": "Seated Leg Extension (Unilateral)",
+      "muscleGroupNames": [
+        "quads"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "one",
+      "offersAssistance": false,
+      "unilateralOf": "seated-leg-extension"
+    },
+    {
+      "key": "lying-leg-extension",
+      "name": "Lying Leg Extension",
+      "muscleGroupNames": [
+        "quads"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "lying-leg-extension-unilateral",
+      "name": "Lying Leg Extension (Unilateral)",
+      "muscleGroupNames": [
+        "quads"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "one",
+      "offersAssistance": false,
+      "unilateralOf": "lying-leg-extension"
+    },
+    {
+      "key": "isometric-leg-extension",
+      "name": "Isometric Leg Extension",
+      "muscleGroupNames": [
+        "quads"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "one",
+      "offersAssistance": false,
+      "category": "Isometrics",
+      "fields": [
+        {
+          "key": "weight",
+          "label": "Weight",
+          "type": "weight"
+        },
+        {
+          "key": "f1",
+          "label": "Hold",
+          "type": "time"
+        },
+        {
+          "key": "f2",
+          "label": "Knee Angle",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "key": "deadlift",
+      "name": "Deadlift",
+      "muscleGroupNames": [
+        "glutes",
+        "hamstrings",
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "quads",
+        "traps",
+        "forearms"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "sumo-deadlift",
+      "name": "Sumo Deadlift",
+      "muscleGroupNames": [
+        "glutes",
+        "quads",
+        "adductors"
+      ],
+      "secondaryMuscleGroupNames": [
+        "hamstrings",
+        "back"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "romanian-deadlift",
+      "name": "Romanian Deadlift",
+      "muscleGroupNames": [
+        "hamstrings",
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "back",
+        "forearms"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "good-morning",
+      "name": "Good Morning",
+      "muscleGroupNames": [
+        "hamstrings",
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "back"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "smith-machine-good-morning",
+      "name": "Smith Machine Good Morning",
+      "muscleGroupNames": [
+        "hamstrings",
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "back"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "hyperextension",
+      "name": "Hyperextension",
+      "muscleGroupNames": [
+        "back",
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "hamstrings"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "seated-leg-curl",
+      "name": "Seated Leg Curl",
+      "muscleGroupNames": [
+        "hamstrings"
+      ],
+      "secondaryMuscleGroupNames": [
+        "calves"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "seated-leg-curl-unilateral",
+      "name": "Seated Leg Curl (Unilateral)",
+      "muscleGroupNames": [
+        "hamstrings"
+      ],
+      "secondaryMuscleGroupNames": [
+        "calves"
+      ],
+      "sides": "one",
+      "offersAssistance": false,
+      "unilateralOf": "seated-leg-curl"
+    },
+    {
+      "key": "lying-leg-curl",
+      "name": "Lying Leg Curl",
+      "muscleGroupNames": [
+        "hamstrings"
+      ],
+      "secondaryMuscleGroupNames": [
+        "calves"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "lying-leg-curl-unilateral",
+      "name": "Lying Leg Curl (Unilateral)",
+      "muscleGroupNames": [
+        "hamstrings"
+      ],
+      "secondaryMuscleGroupNames": [
+        "calves"
+      ],
+      "sides": "one",
+      "offersAssistance": false,
+      "unilateralOf": "lying-leg-curl"
+    },
+    {
+      "key": "nordic-curl",
+      "name": "Nordic Curl",
+      "muscleGroupNames": [
+        "hamstrings"
+      ],
+      "secondaryMuscleGroupNames": [
+        "calves"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "hip-thrust",
+      "name": "Hip Thrust",
+      "muscleGroupNames": [
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "hamstrings",
+        "quads"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "hip-thrust-machine",
+      "name": "Hip Thrust Machine",
+      "muscleGroupNames": [
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "hamstrings",
+        "quads"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "cable-glute-kickback",
+      "name": "Cable Glute Kickback",
+      "muscleGroupNames": [
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "hamstrings"
+      ],
+      "sides": "one",
+      "offersAssistance": false
+    },
+    {
+      "key": "glute-kickback-machine",
+      "name": "Glute Kickback Machine",
+      "muscleGroupNames": [
+        "glutes"
+      ],
+      "secondaryMuscleGroupNames": [
+        "hamstrings"
+      ],
+      "sides": "one",
+      "offersAssistance": false
+    },
+    {
+      "key": "hip-abduction-machine",
+      "name": "Hip Abduction Machine",
+      "muscleGroupNames": [
+        "abductors"
+      ],
+      "secondaryMuscleGroupNames": [
+        "glutes"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "hip-adduction-machine",
+      "name": "Hip Adduction Machine",
+      "muscleGroupNames": [
+        "adductors"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "lat-pulldown",
+      "name": "Lat Pulldown",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "lat-pulldown-unilateral",
+      "name": "Lat Pulldown (Unilateral)",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps"
+      ],
+      "sides": "one",
+      "offersAssistance": false,
+      "unilateralOf": "lat-pulldown"
+    },
+    {
+      "key": "lat-pulldown-neutral-grip",
+      "name": "Lat Pulldown (Neutral Grip)",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "lat-pulldown-close-grip",
+      "name": "Lat Pulldown (Close Grip)",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "straight-arm-pulldown",
+      "name": "Straight-Arm Pulldown",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "triceps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "pull-up",
+      "name": "Pull-Up",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps",
+        "shoulders",
+        "forearms"
+      ],
+      "sides": "both",
+      "offersAssistance": true
+    },
+    {
+      "key": "chin-up",
+      "name": "Chin-Up",
+      "muscleGroupNames": [
+        "back",
+        "biceps"
+      ],
+      "secondaryMuscleGroupNames": [
+        "forearms"
+      ],
+      "sides": "both",
+      "offersAssistance": true
+    },
+    {
+      "key": "seated-cable-row",
+      "name": "Seated Cable Row",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps",
+        "traps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "seated-cable-row-unilateral",
+      "name": "Seated Cable Row (Unilateral)",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps",
+        "traps"
+      ],
+      "sides": "one",
+      "offersAssistance": false,
+      "unilateralOf": "seated-cable-row"
+    },
+    {
+      "key": "seated-cable-row-neutral-grip",
+      "name": "Seated Cable Row (Neutral Grip)",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps",
+        "traps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "seated-cable-row-close-grip",
+      "name": "Seated Cable Row (Close Grip)",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps",
+        "traps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "row-machine",
+      "name": "Row Machine",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps",
+        "traps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "row-machine-unilateral",
+      "name": "Row Machine (Unilateral)",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps",
+        "traps"
+      ],
+      "sides": "one",
+      "offersAssistance": false,
+      "unilateralOf": "row-machine"
+    },
+    {
+      "key": "high-row-machine",
+      "name": "High Row Machine",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps",
+        "traps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "high-row-machine-unilateral",
+      "name": "High Row Machine (Unilateral)",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps",
+        "traps"
+      ],
+      "sides": "one",
+      "offersAssistance": false,
+      "unilateralOf": "high-row-machine"
+    },
+    {
+      "key": "low-row-machine",
+      "name": "Low Row Machine",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps",
+        "traps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "low-row-machine-unilateral",
+      "name": "Low Row Machine (Unilateral)",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps",
+        "traps"
+      ],
+      "sides": "one",
+      "offersAssistance": false,
+      "unilateralOf": "low-row-machine"
+    },
+    {
+      "key": "t-bar-row",
+      "name": "T-Bar Row",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps",
+        "traps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "barbell-row",
+      "name": "Barbell Row",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps",
+        "traps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "dumbbell-row",
+      "name": "Dumbbell Row",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps",
+        "traps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "dumbbell-row-unilateral",
+      "name": "Dumbbell Row (Unilateral)",
+      "muscleGroupNames": [
+        "back"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps",
+        "traps"
+      ],
+      "sides": "one",
+      "offersAssistance": false,
+      "unilateralOf": "dumbbell-row"
+    },
+    {
+      "key": "dumbbell-shrug",
+      "name": "Dumbbell Shrug",
+      "muscleGroupNames": [
+        "traps"
+      ],
+      "secondaryMuscleGroupNames": [
+        "forearms"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "dumbbell-shoulder-press",
+      "name": "Dumbbell Shoulder Press",
+      "muscleGroupNames": [
+        "shoulders"
+      ],
+      "secondaryMuscleGroupNames": [
+        "triceps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "overhead-press",
+      "name": "Overhead Press",
+      "muscleGroupNames": [
+        "shoulders"
+      ],
+      "secondaryMuscleGroupNames": [
+        "triceps",
+        "traps",
+        "core"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "shoulder-press-machine",
+      "name": "Shoulder Press Machine",
+      "muscleGroupNames": [
+        "shoulders"
+      ],
+      "secondaryMuscleGroupNames": [
+        "triceps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "smith-machine-shoulder-press",
+      "name": "Smith Machine Shoulder Press",
+      "muscleGroupNames": [
+        "shoulders"
+      ],
+      "secondaryMuscleGroupNames": [
+        "triceps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "dumbbell-lateral-raise",
+      "name": "Dumbbell Lateral Raise",
+      "muscleGroupNames": [
+        "shoulders"
+      ],
+      "secondaryMuscleGroupNames": [
+        "traps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "cable-lateral-raise",
+      "name": "Cable Lateral Raise",
+      "muscleGroupNames": [
+        "shoulders"
+      ],
+      "secondaryMuscleGroupNames": [
+        "traps"
+      ],
+      "sides": "one",
+      "offersAssistance": false
+    },
+    {
+      "key": "machine-lateral-raise",
+      "name": "Machine Lateral Raise",
+      "muscleGroupNames": [
+        "shoulders"
+      ],
+      "secondaryMuscleGroupNames": [
+        "traps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "reverse-pec-deck",
+      "name": "Reverse Pec Deck",
+      "muscleGroupNames": [
+        "shoulders"
+      ],
+      "secondaryMuscleGroupNames": [
+        "back",
+        "traps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "cable-rear-delt-fly",
+      "name": "Cable Rear Delt Fly",
+      "muscleGroupNames": [
+        "shoulders"
+      ],
+      "secondaryMuscleGroupNames": [
+        "back",
+        "traps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "dumbbell-rear-delt-fly",
+      "name": "Dumbbell Rear Delt Fly",
+      "muscleGroupNames": [
+        "shoulders"
+      ],
+      "secondaryMuscleGroupNames": [
+        "back",
+        "traps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "face-pull",
+      "name": "Face Pull",
+      "muscleGroupNames": [
+        "shoulders"
+      ],
+      "secondaryMuscleGroupNames": [
+        "traps",
+        "back"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "ez-bar-curl",
+      "name": "EZ-Bar Curl",
+      "muscleGroupNames": [
+        "biceps"
+      ],
+      "secondaryMuscleGroupNames": [
+        "forearms"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "barbell-curl",
+      "name": "Barbell Curl",
+      "muscleGroupNames": [
+        "biceps"
+      ],
+      "secondaryMuscleGroupNames": [
+        "forearms"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "dumbbell-curl",
+      "name": "Dumbbell Curl",
+      "muscleGroupNames": [
+        "biceps"
+      ],
+      "secondaryMuscleGroupNames": [
+        "forearms"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "hammer-curl",
+      "name": "Hammer Curl",
+      "muscleGroupNames": [
+        "biceps",
+        "forearms"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "incline-dumbbell-curl",
+      "name": "Incline Dumbbell Curl",
+      "muscleGroupNames": [
+        "biceps"
+      ],
+      "secondaryMuscleGroupNames": [
+        "forearms"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "concentration-curl",
+      "name": "Concentration Curl",
+      "muscleGroupNames": [
+        "biceps"
+      ],
+      "secondaryMuscleGroupNames": [
+        "forearms"
+      ],
+      "sides": "one",
+      "offersAssistance": false
+    },
+    {
+      "key": "cable-curl",
+      "name": "Cable Curl",
+      "muscleGroupNames": [
+        "biceps"
+      ],
+      "secondaryMuscleGroupNames": [
+        "forearms"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "cable-curl-unilateral",
+      "name": "Cable Curl (Unilateral)",
+      "muscleGroupNames": [
+        "biceps"
+      ],
+      "secondaryMuscleGroupNames": [
+        "forearms"
+      ],
+      "sides": "one",
+      "offersAssistance": false,
+      "unilateralOf": "cable-curl"
+    },
+    {
+      "key": "bayesian-cable-curl",
+      "name": "Bayesian Cable Curl",
+      "muscleGroupNames": [
+        "biceps"
+      ],
+      "secondaryMuscleGroupNames": [
+        "forearms"
+      ],
+      "sides": "one",
+      "offersAssistance": false
+    },
+    {
+      "key": "preacher-curl",
+      "name": "Preacher Curl",
+      "muscleGroupNames": [
+        "biceps"
+      ],
+      "secondaryMuscleGroupNames": [
+        "forearms"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "triceps-pushdown",
+      "name": "Triceps Pushdown",
+      "muscleGroupNames": [
+        "triceps"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "triceps-pushdown-unilateral",
+      "name": "Triceps Pushdown (Unilateral)",
+      "muscleGroupNames": [
+        "triceps"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "one",
+      "offersAssistance": false,
+      "unilateralOf": "triceps-pushdown"
+    },
+    {
+      "key": "ez-bar-skull-crusher",
+      "name": "EZ Bar Skull Crusher",
+      "muscleGroupNames": [
+        "triceps"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "dumbbell-skull-crusher",
+      "name": "Dumbbell Skull Crusher",
+      "muscleGroupNames": [
+        "triceps"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "close-grip-bench-press",
+      "name": "Close-Grip Bench Press",
+      "muscleGroupNames": [
+        "triceps",
+        "chest"
+      ],
+      "secondaryMuscleGroupNames": [
+        "shoulders"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "dip-machine",
+      "name": "Dip Machine",
+      "muscleGroupNames": [
+        "triceps"
+      ],
+      "secondaryMuscleGroupNames": [
+        "chest",
+        "shoulders"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "dumbbell-overhead-triceps-extension",
+      "name": "Dumbbell Overhead Triceps Extension",
+      "muscleGroupNames": [
+        "triceps"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "cable-overhead-triceps-extension",
+      "name": "Cable Overhead Triceps Extension",
+      "muscleGroupNames": [
+        "triceps"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "machine-overhead-triceps-extension",
+      "name": "Machine Overhead Triceps Extension",
+      "muscleGroupNames": [
+        "triceps"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "katana-triceps-extension",
+      "name": "Katana Triceps Extension",
+      "muscleGroupNames": [
+        "triceps"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "one",
+      "offersAssistance": false
+    },
+    {
+      "key": "wrist-curl",
+      "name": "Wrist Curl",
+      "muscleGroupNames": [
+        "forearms"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "reverse-curl",
+      "name": "Reverse Curl",
+      "muscleGroupNames": [
+        "forearms"
+      ],
+      "secondaryMuscleGroupNames": [
+        "biceps"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "cable-crunch",
+      "name": "Cable Crunch",
+      "muscleGroupNames": [
+        "core"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "crunch-machine",
+      "name": "Crunch Machine",
+      "muscleGroupNames": [
+        "core"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "hanging-leg-raise",
+      "name": "Hanging Leg Raise",
+      "muscleGroupNames": [
+        "core"
+      ],
+      "secondaryMuscleGroupNames": [
+        "forearms"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "ab-wheel-rollout",
+      "name": "Ab Wheel Rollout",
+      "muscleGroupNames": [
+        "core"
+      ],
+      "secondaryMuscleGroupNames": [
+        "back",
+        "shoulders"
+      ],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "crunch",
+      "name": "Crunch",
+      "muscleGroupNames": [
+        "core"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "sit-up",
+      "name": "Sit-Up",
+      "muscleGroupNames": [
+        "core"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "standing-calf-raise",
+      "name": "Standing Calf Raise",
+      "muscleGroupNames": [
+        "calves"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "standing-calf-raise-unilateral",
+      "name": "Standing Calf Raise (Unilateral)",
+      "muscleGroupNames": [
+        "calves"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "one",
+      "offersAssistance": false,
+      "unilateralOf": "standing-calf-raise"
+    },
+    {
+      "key": "seated-calf-raise",
+      "name": "Seated Calf Raise",
+      "muscleGroupNames": [
+        "calves"
+      ],
+      "secondaryMuscleGroupNames": [],
+      "sides": "both",
+      "offersAssistance": false
+    },
+    {
+      "key": "exercise-bike",
+      "name": "Exercise Bike",
+      "muscleGroupNames": [
+        "quads"
+      ],
+      "secondaryMuscleGroupNames": [
+        "glutes",
+        "hamstrings",
+        "calves"
+      ],
+      "sides": "both",
+      "offersAssistance": false,
+      "category": "Cardio",
+      "tracksSets": false,
+      "fields": [
+        {
+          "key": "f1",
+          "label": "Duration",
+          "type": "time"
+        },
+        {
+          "key": "f2",
+          "label": "Distance (km)",
+          "type": "number"
+        },
+        {
+          "key": "f3",
+          "label": "Level",
+          "type": "number"
+        },
+        {
+          "key": "f4",
+          "label": "Heart Rate",
+          "type": "number"
+        }
+      ]
+    },
+    {
+      "key": "treadmill",
+      "name": "Treadmill",
+      "muscleGroupNames": [
+        "quads",
+        "hamstrings",
+        "calves"
+      ],
+      "secondaryMuscleGroupNames": [
+        "glutes"
+      ],
+      "sides": "both",
+      "offersAssistance": false,
+      "category": "Cardio",
+      "tracksSets": false,
+      "fields": [
+        {
+          "key": "f1",
+          "label": "Duration",
+          "type": "time"
+        },
+        {
+          "key": "f2",
+          "label": "Distance (km)",
+          "type": "number"
+        },
+        {
+          "key": "f3",
+          "label": "Incline (%)",
+          "type": "number"
+        },
+        {
+          "key": "f4",
+          "label": "Heart Rate",
+          "type": "number"
+        }
+      ]
+    }
+  ]
+}

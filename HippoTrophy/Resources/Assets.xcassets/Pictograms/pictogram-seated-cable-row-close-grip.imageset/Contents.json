@@ -1,0 +1,15 @@
+{
+  "images": [
+    {
+      "filename": "pictogram-seated-cable-row-close-grip.svg",
+      "idiom": "universal"
+    }
+  ],
+  "info": {
+    "author": "xcode",
+    "version": 1
+  },
+  "properties": {
+    "preserves-vector-representation": true
+  }
+}
