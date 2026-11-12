@@ -139,6 +139,13 @@ struct CatalogTests {
         }
     }
 
+    /// The ab wheel rollout left the catalog before the first release. Its key
+    /// is retired: whoever logged it keeps it as an exercise of their own.
+    @Test func theAbWheelRolloutIsRetired() {
+        #expect(Catalog.exercise(forKey: "ab-wheel-rollout") == nil)
+        #expect(!Catalog.exercises.contains { $0.name == "Ab Wheel Rollout" })
+    }
+
     /// Shrugs are why Traps is a group of its own rather than part of Back.
     @Test func shrugsTrainTheTraps() throws {
         let shrug = try #require(Catalog.exercise(forKey: "dumbbell-shrug"))
