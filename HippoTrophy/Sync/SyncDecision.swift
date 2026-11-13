@@ -52,7 +52,17 @@ nonisolated enum SyncDecision {
     /// or it is still the one this device wrote last.
     static func serverIsOurs(currentETag: String?, knownETag: String?) -> Bool {
         guard let currentETag else { return true }
-        return currentETag == knownETag
+        guard let knownETag else { return false }
+        return opaque(currentETag) == opaque(knownETag)
+    }
+
+    /// An etag compared the weak way (RFC 9110, 8.8.3.2): `W/"x"` and `"x"`
+    /// are the same file. Apache marks the etag of a file changed within the
+    /// current second as weak and drops the mark a moment later, so the etag
+    /// read right after the move and the one read at the next upload differ
+    /// only by it.
+    static func opaque(_ etag: String) -> String {
+        etag.hasPrefix("W/") ? String(etag.dropFirst(2)) : etag
     }
 }
 

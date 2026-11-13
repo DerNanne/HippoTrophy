@@ -23,6 +23,10 @@ final class FakeWebDAV: @unchecked Sendable {
     private var etagCounter = 0
     /// Every request gets this status instead of an answer, while set.
     private var _forcedStatus: Int?
+    /// Like Apache: a file just written shows its etag as weak, `W/"7"`,
+    /// at the first read, and as `"7"` after.
+    private var _weakRightAfterWrite = false
+    private var justWritten: Set<String> = []
 
     private static let lock = NSLock()
     nonisolated(unsafe) private static var servers: [String: FakeWebDAV] = [:]
@@ -48,6 +52,11 @@ final class FakeWebDAV: @unchecked Sendable {
     var forcedStatus: Int? {
         get { lock.withLock { _forcedStatus } }
         set { lock.withLock { _forcedStatus = newValue } }
+    }
+
+    var weakRightAfterWrite: Bool {
+        get { lock.withLock { _weakRightAfterWrite } }
+        set { lock.withLock { _weakRightAfterWrite = newValue } }
     }
 
     func clearLog() { lock.withLock { _log = [] } }
@@ -79,7 +88,8 @@ final class FakeWebDAV: @unchecked Sendable {
             case "PROPFIND":
                 let depth = request.value(forHTTPHeaderField: "Depth") ?? "1"
                 if let file = _files[path] {
-                    return (207, multistatus([(path, file.etag, false)]))
+                    let weak = _weakRightAfterWrite && justWritten.remove(path) != nil
+                    return (207, multistatus([(path, weak ? "W/" + file.etag : file.etag, false)]))
                 }
                 guard folders.contains(path) else { return (404, Data()) }
                 var entries = [(path + "/", nil as String?, true)]
@@ -97,6 +107,7 @@ final class FakeWebDAV: @unchecked Sendable {
                 guard folders.contains(parent(of: path)) else { return (409, Data()) }
                 let existed = _files[path] != nil
                 _files[path] = File(data: body, etag: nextETag())
+                justWritten.insert(path)
                 return (existed ? 204 : 201, Data())
             case "MOVE", "COPY":
                 guard let source = _files[path] else { return (404, Data()) }
@@ -104,6 +115,7 @@ final class FakeWebDAV: @unchecked Sendable {
                 guard folders.contains(parent(of: destination)) else { return (409, Data()) }
                 let existed = _files[destination] != nil
                 _files[destination] = File(data: source.data, etag: nextETag())
+                justWritten.insert(destination)
                 if method == "MOVE" { _files[path] = nil }
                 return (existed ? 204 : 201, Data())
             case "DELETE":

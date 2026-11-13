@@ -27,6 +27,8 @@ struct SyncSettingsView: View {
         }
         .navigationTitle("Sync")
         .navigationBarTitleDisplayMode(.inline)
+        // A warning about what was typed goes once it is typed anew.
+        .onChange(of: [address, user, password]) { connectProblem = nil }
     }
 
     // MARK: - Not connected
@@ -123,7 +125,8 @@ struct SyncSettingsView: View {
                     Text("Not yet")
                 }
             }
-            if let error = center.state.lastError {
+            // Waiting for the user is said once, in its own section.
+            if let error = center.state.lastError, !center.state.foreignBackupOnServer {
                 warning(error)
             }
             Button {

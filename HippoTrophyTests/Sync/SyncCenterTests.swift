@@ -119,6 +119,16 @@ struct SyncCenterTests {
         #expect(server.log.isEmpty)
     }
 
+    @Test func knowsItsOwnBackupWhenTheServerMarksTheEtagWeak() async throws {
+        server.weakRightAfterWrite = true
+        let center = center()
+        try await connected(center)
+        #expect(await center.sync(.automatic, in: context) == .uploaded)
+        #expect(center.state.lastETag?.hasPrefix("W/") == true)
+        #expect(await center.sync(.manual, in: context) == .uploaded)
+        #expect(!center.state.foreignBackupOnServer)
+    }
+
     @Test func uploadsWhatChanged() async throws {
         let center = center()
         try await connected(center)

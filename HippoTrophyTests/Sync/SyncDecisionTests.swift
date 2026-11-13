@@ -36,6 +36,12 @@ struct SyncDecisionTests {
         #expect(!SyncDecision.serverIsOurs(currentETag: "\"1\"", knownETag: nil))
     }
 
+    @Test func comparesEtagsTheWeakWay() {
+        #expect(SyncDecision.serverIsOurs(currentETag: "\"1\"", knownETag: "W/\"1\""))
+        #expect(SyncDecision.serverIsOurs(currentETag: "W/\"1\"", knownETag: "\"1\""))
+        #expect(!SyncDecision.serverIsOurs(currentETag: "W/\"2\"", knownETag: "\"1\""))
+    }
+
     @Test func namesEveryFailureInWordsOfItsOwn() {
         #expect(SyncProblem.from(URLError(.serverCertificateUntrusted)) == .certificate)
         #expect(SyncProblem.from(URLError(.serverCertificateHasUnknownRoot)) == .certificate)

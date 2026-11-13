@@ -132,6 +132,14 @@ struct SettingsView: View {
         )
     }
 
+    /// Off, On, or waiting for the user over a backup that is not this
+    /// device's.
+    private var syncStatus: String {
+        let center = SyncCenter.shared
+        guard center.isOn else { return "Off" }
+        return center.state.foreignBackupOnServer ? "Waiting for You" : "On"
+    }
+
     var body: some View {
         NavigationStack {
             List {
@@ -218,7 +226,7 @@ struct SettingsView: View {
                         SyncSettingsView()
                     } label: {
                         LabeledContent {
-                            Text(SyncCenter.shared.isOn ? "On" : "Off")
+                            Text(syncStatus)
                         } label: {
                             Label("Sync", systemImage: "arrow.triangle.2.circlepath")
                         }
@@ -226,7 +234,9 @@ struct SettingsView: View {
                 } header: {
                     Text("Your Server")
                 } footer: {
-                    Text("Off unless you connect a WebDAV server of your own. The app then keeps a backup there; it never sends anything anywhere else.")
+                    Text(SyncCenter.shared.isOn
+                         ? "The app keeps a backup on your own WebDAV server and sends nothing anywhere else."
+                         : "Off unless you connect a WebDAV server of your own. The app then keeps a backup there; it never sends anything anywhere else.")
                 }
 
                 Section {
