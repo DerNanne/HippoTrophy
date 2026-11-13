@@ -1,0 +1,5877 @@
+{
+  "exercises" : [
+    {
+      "catalogKey" : "barbell-bench-press",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest"
+      ],
+      "name" : "Barbell Bench Press",
+      "offersAssistance" : false,
+      "restSeconds" : 180,
+      "secondaryMuscleGroupNames" : [
+        "triceps",
+        "shoulders"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "back-squat",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads",
+        "glutes"
+      ],
+      "name" : "Back Squat",
+      "offersAssistance" : false,
+      "restSeconds" : 240,
+      "secondaryMuscleGroupNames" : [
+        "adductors",
+        "back"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "pull-up",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        },
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Pull-Up",
+      "offersAssistance" : true,
+      "secondaryMuscleGroupNames" : [
+        "biceps",
+        "shoulders",
+        "forearms"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest",
+        "triceps"
+      ],
+      "name" : "Push-Up",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "bulgarian-split-squat",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads",
+        "glutes"
+      ],
+      "name" : "Bulgarian Split Squat",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "adductors",
+        "hamstrings"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "dumbbell-row",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Dumbbell Row",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps",
+        "traps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads"
+      ],
+      "name" : "Leg Extension",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "cable-fly",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest"
+      ],
+      "name" : "Cable Fly",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "shoulders"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "lat-pulldown-neutral-grip",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Lat Pulldown (Neutral Grip)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        },
+        {
+          "key" : "f1",
+          "label" : "Tempo",
+          "type" : "text"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back",
+        "glutes",
+        "hamstrings"
+      ],
+      "name" : "Rückenstrecker",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "either",
+      "tracksSets" : true
+    },
+    {
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "f1",
+          "label" : "Distance (m)",
+          "type" : "number"
+        },
+        {
+          "key" : "f2",
+          "label" : "Duration",
+          "type" : "time"
+        }
+      ],
+      "muscleGroupNames" : [
+        "forearms",
+        "core"
+      ],
+      "name" : "Farmer's Carry",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "either",
+      "tracksSets" : true
+    },
+    {
+      "category" : "Cardio",
+      "fields" : [
+        {
+          "key" : "f1",
+          "label" : "Duration",
+          "type" : "time"
+        },
+        {
+          "key" : "f2",
+          "label" : "Distance (m)",
+          "type" : "number"
+        },
+        {
+          "key" : "f3",
+          "label" : "Avg. Watts",
+          "type" : "number"
+        },
+        {
+          "key" : "f4",
+          "label" : "Stroke Rate",
+          "type" : "number"
+        },
+        {
+          "key" : "f5",
+          "label" : "Damper",
+          "type" : "number"
+        },
+        {
+          "key" : "f6",
+          "label" : "Feel",
+          "type" : "text"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back",
+        "quads"
+      ],
+      "name" : "Rowing Erg",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "glutes",
+        "biceps"
+      ],
+      "sides" : "both",
+      "tracksSets" : false
+    },
+    {
+      "category" : "Cardio",
+      "fields" : [
+        {
+          "key" : "f1",
+          "label" : "Distance (km)",
+          "type" : "number"
+        },
+        {
+          "key" : "f3",
+          "label" : "Duration",
+          "type" : "time"
+        },
+        {
+          "key" : "f4",
+          "label" : "Route",
+          "type" : "text"
+        }
+      ],
+      "muscleGroupNames" : [
+
+      ],
+      "name" : "Running",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : false
+    },
+    {
+      "category" : "Mobility",
+      "fields" : [
+        {
+          "key" : "f1",
+          "label" : "Hold",
+          "type" : "time"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads"
+      ],
+      "name" : "Couch Stretch",
+      "offersAssistance" : false,
+      "restSeconds" : 0,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "category" : "Mobility",
+      "fields" : [
+        {
+          "key" : "f1",
+          "label" : "Hold",
+          "type" : "time"
+        }
+      ],
+      "muscleGroupNames" : [
+        "forearms",
+        "back"
+      ],
+      "name" : "Dead Hang",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "category" : "",
+      "fields" : [
+        {
+          "key" : "f1",
+          "label" : "Hardest Grade",
+          "type" : "text"
+        },
+        {
+          "key" : "f2",
+          "label" : "Tops",
+          "type" : "number"
+        },
+        {
+          "key" : "f3",
+          "label" : "Session",
+          "type" : "time"
+        }
+      ],
+      "muscleGroupNames" : [
+        "forearms",
+        "back"
+      ],
+      "name" : "Bouldering",
+      "offersAssistance" : false,
+      "photo" : "photos\/1.jpg",
+      "photoFraming" : {
+        "x" : 0.25,
+        "y" : 0.75,
+        "zoom" : 2
+      },
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : false
+    },
+    {
+      "category" : "",
+      "fields" : [
+        {
+          "key" : "f1",
+          "label" : "Areas",
+          "type" : "text"
+        }
+      ],
+      "muscleGroupNames" : [
+
+      ],
+      "name" : "Foam Rolling",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : false
+    },
+    {
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "hamstrings"
+      ],
+      "name" : "Nordic Curl",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "isometric-leg-extension",
+      "category" : "Isometrics",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "f1",
+          "label" : "Hold",
+          "type" : "time"
+        },
+        {
+          "key" : "f2",
+          "label" : "Knee Angle",
+          "type" : "number"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads"
+      ],
+      "name" : "Isometric Leg Extension",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "exercise-bike",
+      "category" : "Cardio",
+      "fields" : [
+        {
+          "key" : "f1",
+          "label" : "Duration",
+          "type" : "time"
+        },
+        {
+          "key" : "f2",
+          "label" : "Distance (km)",
+          "type" : "number"
+        },
+        {
+          "key" : "f3",
+          "label" : "Level",
+          "type" : "number"
+        },
+        {
+          "key" : "f4",
+          "label" : "Heart Rate",
+          "type" : "number"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads"
+      ],
+      "name" : "Exercise Bike",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "glutes",
+        "hamstrings",
+        "calves"
+      ],
+      "sides" : "both",
+      "tracksSets" : false
+    },
+    {
+      "catalogKey" : "dumbbell-bench-press",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest"
+      ],
+      "name" : "Dumbbell Bench Press",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "triceps",
+        "shoulders"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "incline-barbell-bench-press",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest"
+      ],
+      "name" : "Incline Barbell Bench Press",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "shoulders",
+        "triceps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "incline-dumbbell-bench-press",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest"
+      ],
+      "name" : "Incline Dumbbell Bench Press",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "shoulders",
+        "triceps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "decline-barbell-bench-press",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest"
+      ],
+      "name" : "Decline Barbell Bench Press",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "triceps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "decline-dumbbell-bench-press",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest"
+      ],
+      "name" : "Decline Dumbbell Bench Press",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "triceps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "smith-machine-bench-press",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest"
+      ],
+      "name" : "Smith Machine Bench Press",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "triceps",
+        "shoulders"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "chest-press-machine",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest"
+      ],
+      "name" : "Chest Press Machine",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "triceps",
+        "shoulders"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "incline-chest-press-machine",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest"
+      ],
+      "name" : "Incline Chest Press Machine",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "shoulders",
+        "triceps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "pec-deck",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest"
+      ],
+      "name" : "Pec Deck",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "high-cable-fly",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest"
+      ],
+      "name" : "High Cable Fly",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "shoulders"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "low-cable-fly",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest"
+      ],
+      "name" : "Low Cable Fly",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "shoulders"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "dumbbell-fly",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest"
+      ],
+      "name" : "Dumbbell Fly",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "shoulders"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "push-up",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest"
+      ],
+      "name" : "Push-Up",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "triceps",
+        "shoulders",
+        "core"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "dip",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "chest",
+        "triceps"
+      ],
+      "name" : "Dip",
+      "offersAssistance" : true,
+      "secondaryMuscleGroupNames" : [
+        "shoulders"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "front-squat",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads",
+        "glutes"
+      ],
+      "name" : "Front Squat",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "core",
+        "back"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "goblet-squat",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads",
+        "glutes"
+      ],
+      "name" : "Goblet Squat",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "adductors",
+        "core"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "smith-machine-squat",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads",
+        "glutes"
+      ],
+      "name" : "Smith Machine Squat",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "adductors"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "hack-squat",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads"
+      ],
+      "name" : "Hack Squat",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "glutes",
+        "adductors"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "pendulum-squat",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads"
+      ],
+      "name" : "Pendulum Squat",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "glutes",
+        "adductors"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "leg-press",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads",
+        "glutes"
+      ],
+      "name" : "Leg Press",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "adductors"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "leg-press-unilateral",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads",
+        "glutes"
+      ],
+      "name" : "Leg Press (Unilateral)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "adductors"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "lunge",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads",
+        "glutes"
+      ],
+      "name" : "Lunge",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "adductors",
+        "hamstrings"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "smith-machine-lunge",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads",
+        "glutes"
+      ],
+      "name" : "Smith Machine Lunge",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "adductors",
+        "hamstrings"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "step-up",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads",
+        "glutes"
+      ],
+      "name" : "Step-Up",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "hamstrings"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "seated-leg-extension",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads"
+      ],
+      "name" : "Seated Leg Extension",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "seated-leg-extension-unilateral",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads"
+      ],
+      "name" : "Seated Leg Extension (Unilateral)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "lying-leg-extension",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads"
+      ],
+      "name" : "Lying Leg Extension",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "lying-leg-extension-unilateral",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads"
+      ],
+      "name" : "Lying Leg Extension (Unilateral)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "deadlift",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "glutes",
+        "hamstrings",
+        "back"
+      ],
+      "name" : "Deadlift",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "quads",
+        "traps",
+        "forearms"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "sumo-deadlift",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "glutes",
+        "quads",
+        "adductors"
+      ],
+      "name" : "Sumo Deadlift",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "hamstrings",
+        "back"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "romanian-deadlift",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "hamstrings",
+        "glutes"
+      ],
+      "name" : "Romanian Deadlift",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "back",
+        "forearms"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "good-morning",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "hamstrings",
+        "glutes"
+      ],
+      "name" : "Good Morning",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "back"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "smith-machine-good-morning",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "hamstrings",
+        "glutes"
+      ],
+      "name" : "Smith Machine Good Morning",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "back"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "hyperextension",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back",
+        "glutes"
+      ],
+      "name" : "Hyperextension",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "hamstrings"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "seated-leg-curl",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "hamstrings"
+      ],
+      "name" : "Seated Leg Curl",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "calves"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "seated-leg-curl-unilateral",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "hamstrings"
+      ],
+      "name" : "Seated Leg Curl (Unilateral)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "calves"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "lying-leg-curl",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "hamstrings"
+      ],
+      "name" : "Lying Leg Curl",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "calves"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "lying-leg-curl-unilateral",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "hamstrings"
+      ],
+      "name" : "Lying Leg Curl (Unilateral)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "calves"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "nordic-curl",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "hamstrings"
+      ],
+      "name" : "Nordic Curl",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "calves"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "hip-thrust",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "glutes"
+      ],
+      "name" : "Hip Thrust",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "hamstrings",
+        "quads"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "hip-thrust-machine",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "glutes"
+      ],
+      "name" : "Hip Thrust Machine",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "hamstrings",
+        "quads"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "cable-glute-kickback",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "glutes"
+      ],
+      "name" : "Cable Glute Kickback",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "hamstrings"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "glute-kickback-machine",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "glutes"
+      ],
+      "name" : "Glute Kickback Machine",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "hamstrings"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "hip-abduction-machine",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "abductors"
+      ],
+      "name" : "Hip Abduction Machine",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "glutes"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "hip-adduction-machine",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "adductors"
+      ],
+      "name" : "Hip Adduction Machine",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "lat-pulldown",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Lat Pulldown",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "lat-pulldown-unilateral",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Lat Pulldown (Unilateral)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "lat-pulldown-close-grip",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Lat Pulldown (Close Grip)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "straight-arm-pulldown",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Straight-Arm Pulldown",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "triceps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "chin-up",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back",
+        "biceps"
+      ],
+      "name" : "Chin-Up",
+      "offersAssistance" : true,
+      "secondaryMuscleGroupNames" : [
+        "forearms"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "seated-cable-row",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Seated Cable Row",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps",
+        "traps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "seated-cable-row-unilateral",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Seated Cable Row (Unilateral)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps",
+        "traps"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "seated-cable-row-neutral-grip",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Seated Cable Row (Neutral Grip)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps",
+        "traps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "seated-cable-row-close-grip",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Seated Cable Row (Close Grip)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps",
+        "traps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "row-machine",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Row Machine",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps",
+        "traps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "row-machine-unilateral",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Row Machine (Unilateral)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps",
+        "traps"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "high-row-machine",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "High Row Machine",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps",
+        "traps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "high-row-machine-unilateral",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "High Row Machine (Unilateral)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps",
+        "traps"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "low-row-machine",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Low Row Machine",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps",
+        "traps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "low-row-machine-unilateral",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Low Row Machine (Unilateral)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps",
+        "traps"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "t-bar-row",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "T-Bar Row",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps",
+        "traps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "barbell-row",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Barbell Row",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps",
+        "traps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "dumbbell-row-unilateral",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "back"
+      ],
+      "name" : "Dumbbell Row (Unilateral)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps",
+        "traps"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "dumbbell-shrug",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "traps"
+      ],
+      "name" : "Dumbbell Shrug",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "forearms"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "dumbbell-shoulder-press",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "shoulders"
+      ],
+      "name" : "Dumbbell Shoulder Press",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "triceps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "overhead-press",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "shoulders"
+      ],
+      "name" : "Overhead Press",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "triceps",
+        "traps",
+        "core"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "shoulder-press-machine",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "shoulders"
+      ],
+      "name" : "Shoulder Press Machine",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "triceps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "smith-machine-shoulder-press",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "shoulders"
+      ],
+      "name" : "Smith Machine Shoulder Press",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "triceps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "dumbbell-lateral-raise",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "shoulders"
+      ],
+      "name" : "Dumbbell Lateral Raise",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "traps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "cable-lateral-raise",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "shoulders"
+      ],
+      "name" : "Cable Lateral Raise",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "traps"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "machine-lateral-raise",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "shoulders"
+      ],
+      "name" : "Machine Lateral Raise",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "traps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "reverse-pec-deck",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "shoulders"
+      ],
+      "name" : "Reverse Pec Deck",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "back",
+        "traps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "cable-rear-delt-fly",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "shoulders"
+      ],
+      "name" : "Cable Rear Delt Fly",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "back",
+        "traps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "dumbbell-rear-delt-fly",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "shoulders"
+      ],
+      "name" : "Dumbbell Rear Delt Fly",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "back",
+        "traps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "face-pull",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "shoulders"
+      ],
+      "name" : "Face Pull",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "traps",
+        "back"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "ez-bar-curl",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "biceps"
+      ],
+      "name" : "EZ-Bar Curl",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "forearms"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "barbell-curl",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "biceps"
+      ],
+      "name" : "Barbell Curl",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "forearms"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "dumbbell-curl",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "biceps"
+      ],
+      "name" : "Dumbbell Curl",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "forearms"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "hammer-curl",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "biceps",
+        "forearms"
+      ],
+      "name" : "Hammer Curl",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "incline-dumbbell-curl",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "biceps"
+      ],
+      "name" : "Incline Dumbbell Curl",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "forearms"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "concentration-curl",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "biceps"
+      ],
+      "name" : "Concentration Curl",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "forearms"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "cable-curl",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "biceps"
+      ],
+      "name" : "Cable Curl",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "forearms"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "cable-curl-unilateral",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "biceps"
+      ],
+      "name" : "Cable Curl (Unilateral)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "forearms"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "bayesian-cable-curl",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "biceps"
+      ],
+      "name" : "Bayesian Cable Curl",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "forearms"
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "preacher-curl",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "biceps"
+      ],
+      "name" : "Preacher Curl",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "forearms"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "triceps-pushdown",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "triceps"
+      ],
+      "name" : "Triceps Pushdown",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "triceps-pushdown-unilateral",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "triceps"
+      ],
+      "name" : "Triceps Pushdown (Unilateral)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "ez-bar-skull-crusher",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "triceps"
+      ],
+      "name" : "EZ Bar Skull Crusher",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "dumbbell-skull-crusher",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "triceps"
+      ],
+      "name" : "Dumbbell Skull Crusher",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "close-grip-bench-press",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "triceps",
+        "chest"
+      ],
+      "name" : "Close-Grip Bench Press",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "shoulders"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "dip-machine",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "triceps"
+      ],
+      "name" : "Dip Machine",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "chest",
+        "shoulders"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "dumbbell-overhead-triceps-extension",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "triceps"
+      ],
+      "name" : "Dumbbell Overhead Triceps Extension",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "cable-overhead-triceps-extension",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "triceps"
+      ],
+      "name" : "Cable Overhead Triceps Extension",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "machine-overhead-triceps-extension",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "triceps"
+      ],
+      "name" : "Machine Overhead Triceps Extension",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "katana-triceps-extension",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "triceps"
+      ],
+      "name" : "Katana Triceps Extension",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "wrist-curl",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "forearms"
+      ],
+      "name" : "Wrist Curl",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "reverse-curl",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "forearms"
+      ],
+      "name" : "Reverse Curl",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "biceps"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "cable-crunch",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "core"
+      ],
+      "name" : "Cable Crunch",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "crunch-machine",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "core"
+      ],
+      "name" : "Crunch Machine",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "hanging-leg-raise",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "core"
+      ],
+      "name" : "Hanging Leg Raise",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "forearms"
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "crunch",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "core"
+      ],
+      "name" : "Crunch",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "sit-up",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "core"
+      ],
+      "name" : "Sit-Up",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "standing-calf-raise",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "calves"
+      ],
+      "name" : "Standing Calf Raise",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "standing-calf-raise-unilateral",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "calves"
+      ],
+      "name" : "Standing Calf Raise (Unilateral)",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "one",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "seated-calf-raise",
+      "category" : "Strength",
+      "fields" : [
+        {
+          "key" : "weight",
+          "label" : "Weight",
+          "type" : "weight"
+        },
+        {
+          "key" : "reps",
+          "label" : "Reps",
+          "type" : "reps"
+        }
+      ],
+      "muscleGroupNames" : [
+        "calves"
+      ],
+      "name" : "Seated Calf Raise",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+
+      ],
+      "sides" : "both",
+      "tracksSets" : true
+    },
+    {
+      "catalogKey" : "treadmill",
+      "category" : "Cardio",
+      "fields" : [
+        {
+          "key" : "f1",
+          "label" : "Duration",
+          "type" : "time"
+        },
+        {
+          "key" : "f2",
+          "label" : "Distance (km)",
+          "type" : "number"
+        },
+        {
+          "key" : "f3",
+          "label" : "Incline (%)",
+          "type" : "number"
+        },
+        {
+          "key" : "f4",
+          "label" : "Heart Rate",
+          "type" : "number"
+        }
+      ],
+      "muscleGroupNames" : [
+        "quads",
+        "hamstrings",
+        "calves"
+      ],
+      "name" : "Treadmill",
+      "offersAssistance" : false,
+      "secondaryMuscleGroupNames" : [
+        "glutes"
+      ],
+      "sides" : "both",
+      "tracksSets" : false
+    }
+  ],
+  "exportedAt" : "2026-10-03T12:00:00Z",
+  "formatVersion" : 26,
+  "gyms" : [
+    {
+      "machines" : [
+        "Leg Extension Black",
+        "Smith Machine"
+      ],
+      "name" : "Downtown Gym"
+    },
+    {
+      "machines" : [
+        "Lat Pulldown Blue",
+        "Smith Machine"
+      ],
+      "name" : "Forge Fitness"
+    },
+    {
+      "machines" : [
+
+      ],
+      "name" : "Home"
+    }
+  ],
+  "machines" : [
+    {
+      "name" : "Lat Pulldown Blue"
+    },
+    {
+      "name" : "Leg Extension Black",
+      "photo" : "photos\/2.jpg",
+      "photoFraming" : {
+        "x" : 0.5,
+        "y" : 0.25,
+        "zoom" : 1.5
+      }
+    },
+    {
+      "name" : "Old Hack Squat"
+    },
+    {
+      "name" : "Smith Machine"
+    }
+  ],
+  "templates" : [
+    {
+      "archived" : false,
+      "exercises" : [
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "off",
+          "exercise" : "Dead Hang",
+          "instructions" : "Heute nur kurz.",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+
+          ]
+        }
+      ],
+      "id" : "5E1A0001-0000-4000-8000-000000000005",
+      "name" : "Legs",
+      "notes" : "Knee sore, no squats today.",
+      "plannedFor" : "2026-10-02T22:00:00Z"
+    },
+    {
+      "archived" : false,
+      "exercises" : [
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "barbell-bench-press",
+          "effortScale" : "levels",
+          "exercise" : "Barbell Bench Press",
+          "instructions" : "Pause auf der Brust, jede Wiederholung.",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : false,
+              "effort" : 0,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 80,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 8,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "effort" : 1,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 82.5,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 6,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "effort" : 2,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 82.5,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 6,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 85,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 4,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "pull-up",
+          "effortScale" : "rir",
+          "exercise" : "Pull-Up",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : false,
+              "effort" : 2,
+              "side" : "both",
+              "supersetPosition" : 1,
+              "values" : [
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                },
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 0,
+                  "type" : "weight"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "effort" : 1,
+              "side" : "both",
+              "supersetPosition" : 3,
+              "values" : [
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 8,
+                  "type" : "reps"
+                },
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 5,
+                  "type" : "weight"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "effort" : 0,
+              "side" : "both",
+              "supersetPosition" : 4,
+              "values" : [
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 6,
+                  "type" : "reps"
+                },
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 10,
+                  "type" : "weight"
+                }
+              ]
+            }
+          ],
+          "supersetGroup" : 1
+        },
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "cable-fly",
+          "effortScale" : "levels",
+          "exercise" : "Cable Fly",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : false,
+              "effort" : 0,
+              "side" : "both",
+              "supersetPosition" : 2,
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 11.25,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 12,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "effort" : 1,
+              "side" : "both",
+              "supersetPosition" : 5,
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 11.25,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 12,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ],
+          "supersetGroup" : 1
+        },
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "dumbbell-row-unilateral",
+          "effortScale" : "levels",
+          "exercise" : "Dumbbell Row (Unilateral)",
+          "instructions" : "",
+          "mode" : "oneSided",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : false,
+              "effort" : 1,
+              "side" : "both",
+              "supersetPosition" : 1,
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 32.5,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "effort" : 1,
+              "side" : "both",
+              "supersetPosition" : 3,
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 32.5,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "effort" : 2,
+              "side" : "both",
+              "supersetPosition" : 5,
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 32.5,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 8,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ],
+          "supersetGroup" : 2
+        },
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "off",
+          "exercise" : "Push-Up",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : false,
+              "side" : "both",
+              "supersetPosition" : 2,
+              "values" : [
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 20,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "side" : "both",
+              "supersetPosition" : 4,
+              "values" : [
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 18,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "side" : "both",
+              "supersetPosition" : 6,
+              "values" : [
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 15,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ],
+          "supersetGroup" : 2
+        },
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "off",
+          "exercise" : "Farmer's Carry",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : false,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 32,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "f1",
+                  "label" : "Distance (m)",
+                  "number" : 40,
+                  "type" : "number"
+                },
+                {
+                  "key" : "f2",
+                  "label" : "Duration",
+                  "number" : 45,
+                  "type" : "time"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 32,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "f1",
+                  "label" : "Distance (m)",
+                  "number" : 40,
+                  "type" : "number"
+                },
+                {
+                  "key" : "f2",
+                  "label" : "Duration",
+                  "type" : "time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "levels",
+          "exercise" : "Rowing Erg",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : false,
+              "effort" : 2,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "f1",
+                  "label" : "Duration",
+                  "number" : 600,
+                  "type" : "time"
+                },
+                {
+                  "key" : "f2",
+                  "label" : "Distance (m)",
+                  "number" : 2500,
+                  "type" : "number"
+                },
+                {
+                  "key" : "f3",
+                  "label" : "Avg. Watts",
+                  "number" : 187,
+                  "type" : "number"
+                },
+                {
+                  "key" : "f4",
+                  "label" : "Stroke Rate",
+                  "number" : 24,
+                  "type" : "number"
+                },
+                {
+                  "key" : "f5",
+                  "label" : "Damper",
+                  "number" : 5.5,
+                  "type" : "number"
+                },
+                {
+                  "key" : "f6",
+                  "label" : "Feel",
+                  "text" : "zäh, aber ok 👍",
+                  "type" : "text"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id" : "5E1A0001-0000-4000-8000-000000000001",
+      "name" : "Push Day",
+      "notes" : "Schulter vorher 10 Minuten aufgewärmt.\nBank fühlte sich schwer an, Klimmzüge dafür gut.\n\nNächstes Mal: Fly vor dem Rudern."
+    },
+    {
+      "archived" : false,
+      "exercises" : [
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "back-squat",
+          "effortScale" : "rir",
+          "exercise" : "Back Squat",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : false,
+              "effort" : 4,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 102.05828325,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 5,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "effort" : 2.5,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 102.05828325,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 5,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "effort" : 0.5,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 102.05828325,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 5,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "effort" : 0,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 102.05828325,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 4,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 102.05828325,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 5,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "bulgarian-split-squat",
+          "effortScale" : "levels",
+          "exercise" : "Bulgarian Split Squat",
+          "instructions" : "",
+          "mode" : "perSide",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : false,
+              "effort" : 1,
+              "side" : "left",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 20,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "effort" : 1,
+              "side" : "right",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 20,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "effort" : 2,
+              "side" : "left",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 20,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 8,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "effort" : 2,
+              "side" : "right",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 20,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 9,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "levels",
+          "exercise" : "Leg Extension",
+          "instructions" : "",
+          "machine" : "Leg Extension Black",
+          "mode" : "oneSided",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : false,
+              "effort" : 0,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 25,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 12,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "effort" : 1,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 25,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 12,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "effort" : 2,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 25,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "off",
+          "exercise" : "Rückenstrecker",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : false,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 20,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 12,
+                  "type" : "reps"
+                },
+                {
+                  "key" : "f1",
+                  "label" : "Tempo",
+                  "text" : "3-1-1",
+                  "type" : "text"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 15,
+                  "type" : "reps"
+                },
+                {
+                  "key" : "f1",
+                  "label" : "Tempo",
+                  "type" : "text"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 0,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 20,
+                  "type" : "reps"
+                },
+                {
+                  "key" : "f1",
+                  "label" : "Tempo",
+                  "text" : "langsam",
+                  "type" : "text"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "gym" : "Downtown Gym",
+      "id" : "5E1A0001-0000-4000-8000-000000000002",
+      "name" : "Legs",
+      "notes" : "Squat heavy,\nthe rest for volume."
+    },
+    {
+      "archived" : false,
+      "exercises" : [
+
+      ],
+      "id" : "5E1A0001-0000-4000-8000-000000000003",
+      "name" : "Blank",
+      "notes" : ""
+    },
+    {
+      "archived" : true,
+      "exercises" : [
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "levels",
+          "exercise" : "Bouldering",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : false,
+              "effort" : 2,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "f1",
+                  "label" : "Hardest Grade",
+                  "text" : "6B+",
+                  "type" : "text"
+                },
+                {
+                  "key" : "f2",
+                  "label" : "Tops",
+                  "number" : 7,
+                  "type" : "number"
+                },
+                {
+                  "key" : "f3",
+                  "label" : "Session",
+                  "number" : 5400,
+                  "type" : "time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "off",
+          "exercise" : "Dead Hang",
+          "instructions" : "Finger zu müde, ausgelassen.",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+
+          ]
+        }
+      ],
+      "id" : "5E1A0001-0000-4000-8000-000000000004",
+      "name" : "Old Climbing",
+      "notes" : ""
+    },
+    {
+      "archived" : true,
+      "exercises" : [
+
+      ],
+      "id" : "5E1A0001-0000-4000-8000-000000000006",
+      "name" : "Push Day",
+      "notes" : "",
+      "plannedFor" : "2026-09-20T22:00:00Z"
+    }
+  ],
+  "workouts" : [
+    {
+      "date" : "2026-09-28T16:00:00Z",
+      "durationSeconds" : 4140,
+      "exercises" : [
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "barbell-bench-press",
+          "effortScale" : "levels",
+          "exercise" : "Barbell Bench Press",
+          "instructions" : "3 s down, 1 s pause on the chest.",
+          "mode" : "bilateral",
+          "notes" : "Pause auf der Brust, jede Wiederholung.",
+          "sets" : [
+            {
+              "done" : true,
+              "effort" : 0,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 80,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 8,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 1,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 82.5,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 6,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 2,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 82.5,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 6,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 85,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 4,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "pull-up",
+          "effortScale" : "rir",
+          "exercise" : "Pull-Up",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "effort" : 2,
+              "side" : "both",
+              "supersetPosition" : 1,
+              "values" : [
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                },
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 0,
+                  "type" : "weight"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 1,
+              "side" : "both",
+              "supersetPosition" : 3,
+              "values" : [
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 8,
+                  "type" : "reps"
+                },
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 5,
+                  "type" : "weight"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 0,
+              "side" : "both",
+              "supersetPosition" : 4,
+              "values" : [
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 6,
+                  "type" : "reps"
+                },
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 10,
+                  "type" : "weight"
+                }
+              ]
+            }
+          ],
+          "supersetGroup" : 1
+        },
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "cable-fly",
+          "effortScale" : "levels",
+          "exercise" : "Cable Fly",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "effort" : 0,
+              "side" : "both",
+              "supersetPosition" : 2,
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 11.25,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 12,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 1,
+              "side" : "both",
+              "supersetPosition" : 5,
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 11.25,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 12,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ],
+          "supersetGroup" : 1
+        },
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "dumbbell-row-unilateral",
+          "effortScale" : "levels",
+          "exercise" : "Dumbbell Row (Unilateral)",
+          "instructions" : "",
+          "mode" : "oneSided",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "effort" : 1,
+              "side" : "both",
+              "supersetPosition" : 1,
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 32.5,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 1,
+              "side" : "both",
+              "supersetPosition" : 3,
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 32.5,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 2,
+              "side" : "both",
+              "supersetPosition" : 5,
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 32.5,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 8,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ],
+          "startSide" : "left",
+          "supersetGroup" : 2
+        },
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "off",
+          "exercise" : "Push-Up",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "side" : "both",
+              "supersetPosition" : 2,
+              "values" : [
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 20,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "side" : "both",
+              "supersetPosition" : 4,
+              "values" : [
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 18,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "side" : "both",
+              "supersetPosition" : 6,
+              "values" : [
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 15,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ],
+          "supersetGroup" : 2
+        },
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "off",
+          "exercise" : "Farmer's Carry",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 32,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "f1",
+                  "label" : "Distance (m)",
+                  "number" : 40,
+                  "type" : "number"
+                },
+                {
+                  "key" : "f2",
+                  "label" : "Duration",
+                  "number" : 45,
+                  "type" : "time"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 32,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "f1",
+                  "label" : "Distance (m)",
+                  "number" : 40,
+                  "type" : "number"
+                },
+                {
+                  "key" : "f2",
+                  "label" : "Duration",
+                  "type" : "time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "levels",
+          "exercise" : "Rowing Erg",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "effort" : 2,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "f1",
+                  "label" : "Duration",
+                  "number" : 600,
+                  "type" : "time"
+                },
+                {
+                  "key" : "f2",
+                  "label" : "Distance (m)",
+                  "number" : 2500,
+                  "type" : "number"
+                },
+                {
+                  "key" : "f3",
+                  "label" : "Avg. Watts",
+                  "number" : 187,
+                  "type" : "number"
+                },
+                {
+                  "key" : "f4",
+                  "label" : "Stroke Rate",
+                  "number" : 24,
+                  "type" : "number"
+                },
+                {
+                  "key" : "f5",
+                  "label" : "Damper",
+                  "number" : 5.5,
+                  "type" : "number"
+                },
+                {
+                  "key" : "f6",
+                  "label" : "Feel",
+                  "text" : "zäh, aber ok 👍",
+                  "type" : "text"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id" : "0C0FFEE0-0000-4000-8000-000000000001",
+      "name" : "Push A",
+      "notes" : "Schulter vorher 10 Minuten aufgewärmt.\nBank fühlte sich schwer an, Klimmzüge dafür gut.\n\nNächstes Mal: Fly vor dem Rudern."
+    },
+    {
+      "date" : "2026-09-26T22:30:00Z",
+      "exercises" : [
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "off",
+          "exercise" : "Running",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "f1",
+                  "label" : "Distance (km)",
+                  "number" : 5.2,
+                  "type" : "number"
+                },
+                {
+                  "key" : "f3",
+                  "label" : "Duration",
+                  "number" : 1745,
+                  "type" : "time"
+                },
+                {
+                  "key" : "f4",
+                  "label" : "Route",
+                  "text" : "Riverside, Old Mill – Harbour, \"Runde 2\"",
+                  "type" : "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "off",
+          "exercise" : "Couch Stretch",
+          "instructions" : "",
+          "mode" : "perSide",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "side" : "left",
+              "values" : [
+                {
+                  "key" : "f1",
+                  "label" : "Hold",
+                  "number" : 90,
+                  "type" : "time"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "side" : "right",
+              "values" : [
+                {
+                  "key" : "f1",
+                  "label" : "Hold",
+                  "number" : 90,
+                  "type" : "time"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "side" : "left",
+              "values" : [
+                {
+                  "key" : "f1",
+                  "label" : "Hold",
+                  "number" : 60,
+                  "type" : "time"
+                }
+              ]
+            }
+          ],
+          "startSide" : "right"
+        }
+      ],
+      "id" : "0C0FFEE0-0000-4000-8000-000000000002",
+      "name" : "",
+      "notes" : ""
+    },
+    {
+      "date" : "2026-09-24T18:00:00Z",
+      "exercises" : [
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "off",
+          "exercise" : "Dead Hang",
+          "instructions" : "Hold each side 90 s, breathe out into it.",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "f1",
+                  "label" : "Hold",
+                  "number" : 60,
+                  "type" : "time"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "f1",
+                  "label" : "Hold",
+                  "number" : 45,
+                  "type" : "time"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "f1",
+                  "label" : "Hold",
+                  "number" : 30,
+                  "type" : "time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "off",
+          "exercise" : "Foam Rolling",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "f1",
+                  "label" : "Areas",
+                  "text" : "Waden, Quads, oberer Rücken",
+                  "type" : "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "off",
+          "exercise" : "Couch Stretch",
+          "instructions" : "",
+          "mode" : "perSide",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "side" : "left",
+              "values" : [
+                {
+                  "key" : "f1",
+                  "label" : "Hold",
+                  "number" : 120,
+                  "type" : "time"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "side" : "right",
+              "values" : [
+                {
+                  "key" : "f1",
+                  "label" : "Hold",
+                  "number" : 120,
+                  "type" : "time"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "gym" : "Home",
+      "id" : "0C0FFEE0-0000-4000-8000-000000000003",
+      "name" : "Evening Mobility",
+      "notes" : ""
+    },
+    {
+      "date" : "2026-09-24T05:15:00Z",
+      "durationSeconds" : 2715,
+      "exercises" : [
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "back-squat",
+          "effortScale" : "rir",
+          "exercise" : "Back Squat",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "effort" : 4,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 102.05828325,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 5,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 2.5,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 102.05828325,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 5,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 0.5,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 102.05828325,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 5,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 0,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 102.05828325,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 4,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 102.05828325,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 5,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "bulgarian-split-squat",
+          "effortScale" : "levels",
+          "exercise" : "Bulgarian Split Squat",
+          "instructions" : "",
+          "mode" : "perSide",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "effort" : 1,
+              "side" : "left",
+              "sideOrder" : 1,
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 20,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 1,
+              "side" : "right",
+              "sideOrder" : 3,
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 20,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 2,
+              "side" : "left",
+              "sideOrder" : 2,
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 20,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 8,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 2,
+              "side" : "right",
+              "sideOrder" : 4,
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 20,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 9,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ],
+          "startSide" : "left"
+        },
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "levels",
+          "exercise" : "Leg Extension",
+          "instructions" : "",
+          "machine" : "Leg Extension Black",
+          "mode" : "oneSided",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "effort" : 0,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 25,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 12,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 1,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 25,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 12,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 2,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 25,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ],
+          "startSide" : "right"
+        },
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "off",
+          "exercise" : "Rückenstrecker",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 20,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 12,
+                  "type" : "reps"
+                },
+                {
+                  "key" : "f1",
+                  "label" : "Tempo",
+                  "text" : "3-1-1",
+                  "type" : "text"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 15,
+                  "type" : "reps"
+                },
+                {
+                  "key" : "f1",
+                  "label" : "Tempo",
+                  "type" : "text"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 0,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 20,
+                  "type" : "reps"
+                },
+                {
+                  "key" : "f1",
+                  "label" : "Tempo",
+                  "text" : "langsam",
+                  "type" : "text"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "gym" : "Downtown Gym",
+      "id" : "0C0FFEE0-0000-4000-8000-000000000004",
+      "name" : "Legs",
+      "notes" : ""
+    },
+    {
+      "date" : "2026-09-20T13:00:00Z",
+      "exercises" : [
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "levels",
+          "exercise" : "Bouldering",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "effort" : 2,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "f1",
+                  "label" : "Hardest Grade",
+                  "text" : "6B+",
+                  "type" : "text"
+                },
+                {
+                  "key" : "f2",
+                  "label" : "Tops",
+                  "number" : 7,
+                  "type" : "number"
+                },
+                {
+                  "key" : "f3",
+                  "label" : "Session",
+                  "number" : 5400,
+                  "type" : "time"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance" : "unassisted",
+          "effortScale" : "off",
+          "exercise" : "Dead Hang",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "Finger zu müde, ausgelassen.",
+          "sets" : [
+
+          ]
+        }
+      ],
+      "id" : "0C0FFEE0-0000-4000-8000-000000000005",
+      "name" : "Climbing",
+      "notes" : ""
+    },
+    {
+      "date" : "2026-09-17T16:30:00Z",
+      "exercises" : [
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "barbell-bench-press",
+          "effortScale" : "off",
+          "exercise" : "Barbell Bench Press",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 80,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 8,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 80,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 8,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 80,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 7,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : false,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "type" : "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "lat-pulldown-neutral-grip",
+          "effortScale" : "off",
+          "exercise" : "Lat Pulldown (Neutral Grip)",
+          "instructions" : "",
+          "machine" : "Lat Pulldown Blue",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+
+          ]
+        },
+        {
+          "assistance" : "machine",
+          "catalogKey" : "pull-up",
+          "effortScale" : "levels",
+          "exercise" : "Pull-Up",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "effort" : 0,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 12,
+                  "type" : "reps"
+                },
+                {
+                  "key" : "weight",
+                  "label" : "Assist",
+                  "number" : 25,
+                  "type" : "assistance"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 1,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                },
+                {
+                  "key" : "weight",
+                  "label" : "Assist",
+                  "number" : 20,
+                  "type" : "assistance"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "gym" : "Forge Fitness",
+      "id" : "0C0FFEE0-0000-4000-8000-000000000006",
+      "name" : "Push B",
+      "notes" : ""
+    },
+    {
+      "date" : "2026-09-10T16:00:00Z",
+      "exercises" : [
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "lat-pulldown-neutral-grip",
+          "effortScale" : "rir",
+          "exercise" : "Lat Pulldown (Neutral Grip)",
+          "instructions" : "",
+          "machine" : "Lat Pulldown Blue",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "effort" : 10,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 40,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 12,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 2,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 59,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 1,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 59,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 9,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "dumbbell-row-unilateral",
+          "effortScale" : "levels",
+          "exercise" : "Dumbbell Row (Unilateral)",
+          "instructions" : "",
+          "mode" : "perSide",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "effort" : 1,
+              "side" : "left",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 30,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 1,
+              "side" : "right",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 30,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 2,
+              "side" : "left",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 30,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 9,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 1,
+              "side" : "right",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 30,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 10,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id" : "0C0FFEE0-0000-4000-8000-000000000007",
+      "name" : "Pull A",
+      "notes" : ""
+    },
+    {
+      "date" : "2026-09-03T16:00:00Z",
+      "exercises" : [
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "barbell-bench-press",
+          "effortScale" : "rir",
+          "exercise" : "Barbell Bench Press",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "effort" : 3,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 77.5,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 8,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 2,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 77.5,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 8,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 1.5,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 80,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 6,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id" : "0C0FFEE0-0000-4000-8000-000000000008",
+      "name" : "Push A",
+      "notes" : ""
+    },
+    {
+      "date" : "2026-09-01T17:00:00Z",
+      "exercises" : [
+
+      ],
+      "id" : "0C0FFEE0-0000-4000-8000-000000000009",
+      "name" : "Rest",
+      "notes" : "Nur aufgewärmt, Schulter zwickt."
+    },
+    {
+      "date" : "2025-07-15T16:00:00Z",
+      "exercises" : [
+        {
+          "assistance" : "unassisted",
+          "catalogKey" : "barbell-bench-press",
+          "effortScale" : "levels",
+          "exercise" : "Barbell Bench Press",
+          "instructions" : "",
+          "mode" : "bilateral",
+          "notes" : "",
+          "sets" : [
+            {
+              "done" : true,
+              "effort" : 1,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 70,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 8,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 1,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 70,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 8,
+                  "type" : "reps"
+                }
+              ]
+            },
+            {
+              "done" : true,
+              "effort" : 2,
+              "side" : "both",
+              "values" : [
+                {
+                  "key" : "weight",
+                  "label" : "Weight",
+                  "number" : 72.5,
+                  "type" : "weight"
+                },
+                {
+                  "key" : "reps",
+                  "label" : "Reps",
+                  "number" : 6,
+                  "type" : "reps"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "id" : "0C0FFEE0-0000-4000-8000-00000000000A",
+      "name" : "Push A",
+      "notes" : ""
+    }
+  ]
+}

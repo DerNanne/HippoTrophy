@@ -1738,7 +1738,7 @@
       ]
     }
   ],
-  "source" : "HippoTrophyTests/Backup/CoverageBackup.json",
+  "source" : "coverage-backup.json",
   "timeZone" : "UTC",
   "workouts" : [
     {
