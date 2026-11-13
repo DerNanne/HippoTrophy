@@ -102,8 +102,12 @@ final class ExerciseEntry {
         session?.isTemplate == true
     }
 
+    /// By number, and where left and right each have a set 1, the side
+    /// after it — left before right. Without that tie broken, the same entry
+    /// could read in another order next time, and so could its backup, whose
+    /// fingerprint the sync compares.
     var sortedSets: [SetEntry] {
-        sets.sorted { $0.setNumber < $1.setNumber }
+        sets.sorted { ($0.setNumber, $0.sideRawValue) < ($1.setNumber, $1.sideRawValue) }
     }
 
     /// The sets done, in order — what progress and "last time" read. A
