@@ -1,0 +1,1805 @@
+{
+  "activity" : [
+    {
+      "day" : "2025-07-15",
+      "sets" : 3
+    },
+    {
+      "day" : "2026-09-01",
+      "sets" : 0
+    },
+    {
+      "day" : "2026-09-03",
+      "sets" : 3
+    },
+    {
+      "day" : "2026-09-10",
+      "sets" : 7
+    },
+    {
+      "day" : "2026-09-17",
+      "sets" : 5
+    },
+    {
+      "day" : "2026-09-20",
+      "sets" : 1
+    },
+    {
+      "day" : "2026-09-24",
+      "sets" : 21
+    },
+    {
+      "day" : "2026-09-26",
+      "sets" : 4
+    },
+    {
+      "day" : "2026-09-28",
+      "sets" : 17
+    }
+  ],
+  "firstWeekday" : "monday",
+  "heat" : [
+    {
+      "categories" : "all",
+      "muscles" : [
+        {
+          "group" : "chest",
+          "main" : 17,
+          "secondary" : 0,
+          "share" : 0.6666666666666666
+        },
+        {
+          "group" : "back",
+          "main" : 23,
+          "secondary" : 5,
+          "share" : 1
+        },
+        {
+          "group" : "traps",
+          "main" : 0,
+          "secondary" : 7,
+          "share" : 0.13725490196078433
+        },
+        {
+          "group" : "shoulders",
+          "main" : 0,
+          "secondary" : 19,
+          "share" : 0.37254901960784315
+        },
+        {
+          "group" : "biceps",
+          "main" : 0,
+          "secondary" : 16,
+          "share" : 0.3137254901960784
+        },
+        {
+          "group" : "triceps",
+          "main" : 3,
+          "secondary" : 12,
+          "share" : 0.35294117647058826
+        },
+        {
+          "group" : "forearms",
+          "main" : 6,
+          "secondary" : 5,
+          "share" : 0.3333333333333333
+        },
+        {
+          "group" : "core",
+          "main" : 2,
+          "secondary" : 0,
+          "share" : 0.0784313725490196
+        },
+        {
+          "group" : "glutes",
+          "main" : 12,
+          "secondary" : 1,
+          "share" : 0.49019607843137253
+        },
+        {
+          "group" : "quads",
+          "main" : 18,
+          "secondary" : 0,
+          "share" : 0.7058823529411765
+        },
+        {
+          "group" : "hamstrings",
+          "main" : 3,
+          "secondary" : 4,
+          "share" : 0.19607843137254902
+        },
+        {
+          "group" : "adductors",
+          "main" : 0,
+          "secondary" : 9,
+          "share" : 0.17647058823529413
+        },
+        {
+          "group" : "abductors",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        },
+        {
+          "group" : "calves",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        }
+      ],
+      "period" : "all",
+      "start" : "2025-07-15T00:00:00Z"
+    },
+    {
+      "categories" : "all",
+      "muscles" : [
+        {
+          "group" : "chest",
+          "main" : 14,
+          "secondary" : 0,
+          "share" : 0.5490196078431373
+        },
+        {
+          "group" : "back",
+          "main" : 23,
+          "secondary" : 5,
+          "share" : 1
+        },
+        {
+          "group" : "traps",
+          "main" : 0,
+          "secondary" : 7,
+          "share" : 0.13725490196078433
+        },
+        {
+          "group" : "shoulders",
+          "main" : 0,
+          "secondary" : 16,
+          "share" : 0.3137254901960784
+        },
+        {
+          "group" : "biceps",
+          "main" : 0,
+          "secondary" : 16,
+          "share" : 0.3137254901960784
+        },
+        {
+          "group" : "triceps",
+          "main" : 3,
+          "secondary" : 9,
+          "share" : 0.29411764705882354
+        },
+        {
+          "group" : "forearms",
+          "main" : 6,
+          "secondary" : 5,
+          "share" : 0.3333333333333333
+        },
+        {
+          "group" : "core",
+          "main" : 2,
+          "secondary" : 0,
+          "share" : 0.0784313725490196
+        },
+        {
+          "group" : "glutes",
+          "main" : 12,
+          "secondary" : 1,
+          "share" : 0.49019607843137253
+        },
+        {
+          "group" : "quads",
+          "main" : 18,
+          "secondary" : 0,
+          "share" : 0.7058823529411765
+        },
+        {
+          "group" : "hamstrings",
+          "main" : 3,
+          "secondary" : 4,
+          "share" : 0.19607843137254902
+        },
+        {
+          "group" : "adductors",
+          "main" : 0,
+          "secondary" : 9,
+          "share" : 0.17647058823529413
+        },
+        {
+          "group" : "abductors",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        },
+        {
+          "group" : "calves",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        }
+      ],
+      "period" : "year",
+      "start" : "2025-10-03T00:00:00Z"
+    },
+    {
+      "categories" : "all",
+      "muscles" : [
+        {
+          "group" : "chest",
+          "main" : 14,
+          "secondary" : 0,
+          "share" : 0.5490196078431373
+        },
+        {
+          "group" : "back",
+          "main" : 23,
+          "secondary" : 5,
+          "share" : 1
+        },
+        {
+          "group" : "traps",
+          "main" : 0,
+          "secondary" : 7,
+          "share" : 0.13725490196078433
+        },
+        {
+          "group" : "shoulders",
+          "main" : 0,
+          "secondary" : 16,
+          "share" : 0.3137254901960784
+        },
+        {
+          "group" : "biceps",
+          "main" : 0,
+          "secondary" : 16,
+          "share" : 0.3137254901960784
+        },
+        {
+          "group" : "triceps",
+          "main" : 3,
+          "secondary" : 9,
+          "share" : 0.29411764705882354
+        },
+        {
+          "group" : "forearms",
+          "main" : 6,
+          "secondary" : 5,
+          "share" : 0.3333333333333333
+        },
+        {
+          "group" : "core",
+          "main" : 2,
+          "secondary" : 0,
+          "share" : 0.0784313725490196
+        },
+        {
+          "group" : "glutes",
+          "main" : 12,
+          "secondary" : 1,
+          "share" : 0.49019607843137253
+        },
+        {
+          "group" : "quads",
+          "main" : 18,
+          "secondary" : 0,
+          "share" : 0.7058823529411765
+        },
+        {
+          "group" : "hamstrings",
+          "main" : 3,
+          "secondary" : 4,
+          "share" : 0.19607843137254902
+        },
+        {
+          "group" : "adductors",
+          "main" : 0,
+          "secondary" : 9,
+          "share" : 0.17647058823529413
+        },
+        {
+          "group" : "abductors",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        },
+        {
+          "group" : "calves",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        }
+      ],
+      "period" : "sixMonths",
+      "start" : "2026-04-03T00:00:00Z"
+    },
+    {
+      "categories" : "all",
+      "muscles" : [
+        {
+          "group" : "chest",
+          "main" : 14,
+          "secondary" : 0,
+          "share" : 0.5490196078431373
+        },
+        {
+          "group" : "back",
+          "main" : 23,
+          "secondary" : 5,
+          "share" : 1
+        },
+        {
+          "group" : "traps",
+          "main" : 0,
+          "secondary" : 7,
+          "share" : 0.13725490196078433
+        },
+        {
+          "group" : "shoulders",
+          "main" : 0,
+          "secondary" : 16,
+          "share" : 0.3137254901960784
+        },
+        {
+          "group" : "biceps",
+          "main" : 0,
+          "secondary" : 16,
+          "share" : 0.3137254901960784
+        },
+        {
+          "group" : "triceps",
+          "main" : 3,
+          "secondary" : 9,
+          "share" : 0.29411764705882354
+        },
+        {
+          "group" : "forearms",
+          "main" : 6,
+          "secondary" : 5,
+          "share" : 0.3333333333333333
+        },
+        {
+          "group" : "core",
+          "main" : 2,
+          "secondary" : 0,
+          "share" : 0.0784313725490196
+        },
+        {
+          "group" : "glutes",
+          "main" : 12,
+          "secondary" : 1,
+          "share" : 0.49019607843137253
+        },
+        {
+          "group" : "quads",
+          "main" : 18,
+          "secondary" : 0,
+          "share" : 0.7058823529411765
+        },
+        {
+          "group" : "hamstrings",
+          "main" : 3,
+          "secondary" : 4,
+          "share" : 0.19607843137254902
+        },
+        {
+          "group" : "adductors",
+          "main" : 0,
+          "secondary" : 9,
+          "share" : 0.17647058823529413
+        },
+        {
+          "group" : "abductors",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        },
+        {
+          "group" : "calves",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        }
+      ],
+      "period" : "threeMonths",
+      "start" : "2026-07-03T00:00:00Z"
+    },
+    {
+      "categories" : "all",
+      "muscles" : [
+        {
+          "group" : "chest",
+          "main" : 14,
+          "secondary" : 0,
+          "share" : 0.5490196078431373
+        },
+        {
+          "group" : "back",
+          "main" : 23,
+          "secondary" : 5,
+          "share" : 1
+        },
+        {
+          "group" : "traps",
+          "main" : 0,
+          "secondary" : 7,
+          "share" : 0.13725490196078433
+        },
+        {
+          "group" : "shoulders",
+          "main" : 0,
+          "secondary" : 16,
+          "share" : 0.3137254901960784
+        },
+        {
+          "group" : "biceps",
+          "main" : 0,
+          "secondary" : 16,
+          "share" : 0.3137254901960784
+        },
+        {
+          "group" : "triceps",
+          "main" : 3,
+          "secondary" : 9,
+          "share" : 0.29411764705882354
+        },
+        {
+          "group" : "forearms",
+          "main" : 6,
+          "secondary" : 5,
+          "share" : 0.3333333333333333
+        },
+        {
+          "group" : "core",
+          "main" : 2,
+          "secondary" : 0,
+          "share" : 0.0784313725490196
+        },
+        {
+          "group" : "glutes",
+          "main" : 12,
+          "secondary" : 1,
+          "share" : 0.49019607843137253
+        },
+        {
+          "group" : "quads",
+          "main" : 18,
+          "secondary" : 0,
+          "share" : 0.7058823529411765
+        },
+        {
+          "group" : "hamstrings",
+          "main" : 3,
+          "secondary" : 4,
+          "share" : 0.19607843137254902
+        },
+        {
+          "group" : "adductors",
+          "main" : 0,
+          "secondary" : 9,
+          "share" : 0.17647058823529413
+        },
+        {
+          "group" : "abductors",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        },
+        {
+          "group" : "calves",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        }
+      ],
+      "period" : "month",
+      "start" : "2026-09-03T00:00:00Z"
+    },
+    {
+      "categories" : "standard",
+      "muscles" : [
+        {
+          "group" : "chest",
+          "main" : 17,
+          "secondary" : 0,
+          "share" : 0.8292682926829268
+        },
+        {
+          "group" : "back",
+          "main" : 18,
+          "secondary" : 5,
+          "share" : 1
+        },
+        {
+          "group" : "traps",
+          "main" : 0,
+          "secondary" : 7,
+          "share" : 0.17073170731707318
+        },
+        {
+          "group" : "shoulders",
+          "main" : 0,
+          "secondary" : 19,
+          "share" : 0.4634146341463415
+        },
+        {
+          "group" : "biceps",
+          "main" : 0,
+          "secondary" : 15,
+          "share" : 0.36585365853658536
+        },
+        {
+          "group" : "triceps",
+          "main" : 3,
+          "secondary" : 12,
+          "share" : 0.43902439024390244
+        },
+        {
+          "group" : "forearms",
+          "main" : 2,
+          "secondary" : 5,
+          "share" : 0.21951219512195122
+        },
+        {
+          "group" : "core",
+          "main" : 2,
+          "secondary" : 0,
+          "share" : 0.0975609756097561
+        },
+        {
+          "group" : "glutes",
+          "main" : 12,
+          "secondary" : 0,
+          "share" : 0.5853658536585366
+        },
+        {
+          "group" : "quads",
+          "main" : 12,
+          "secondary" : 0,
+          "share" : 0.5853658536585366
+        },
+        {
+          "group" : "hamstrings",
+          "main" : 3,
+          "secondary" : 4,
+          "share" : 0.24390243902439024
+        },
+        {
+          "group" : "adductors",
+          "main" : 0,
+          "secondary" : 9,
+          "share" : 0.21951219512195122
+        },
+        {
+          "group" : "abductors",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        },
+        {
+          "group" : "calves",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        }
+      ],
+      "period" : "all",
+      "start" : "2025-07-15T00:00:00Z"
+    },
+    {
+      "categories" : "standard",
+      "muscles" : [
+        {
+          "group" : "chest",
+          "main" : 14,
+          "secondary" : 0,
+          "share" : 0.6829268292682927
+        },
+        {
+          "group" : "back",
+          "main" : 18,
+          "secondary" : 5,
+          "share" : 1
+        },
+        {
+          "group" : "traps",
+          "main" : 0,
+          "secondary" : 7,
+          "share" : 0.17073170731707318
+        },
+        {
+          "group" : "shoulders",
+          "main" : 0,
+          "secondary" : 16,
+          "share" : 0.3902439024390244
+        },
+        {
+          "group" : "biceps",
+          "main" : 0,
+          "secondary" : 15,
+          "share" : 0.36585365853658536
+        },
+        {
+          "group" : "triceps",
+          "main" : 3,
+          "secondary" : 9,
+          "share" : 0.36585365853658536
+        },
+        {
+          "group" : "forearms",
+          "main" : 2,
+          "secondary" : 5,
+          "share" : 0.21951219512195122
+        },
+        {
+          "group" : "core",
+          "main" : 2,
+          "secondary" : 0,
+          "share" : 0.0975609756097561
+        },
+        {
+          "group" : "glutes",
+          "main" : 12,
+          "secondary" : 0,
+          "share" : 0.5853658536585366
+        },
+        {
+          "group" : "quads",
+          "main" : 12,
+          "secondary" : 0,
+          "share" : 0.5853658536585366
+        },
+        {
+          "group" : "hamstrings",
+          "main" : 3,
+          "secondary" : 4,
+          "share" : 0.24390243902439024
+        },
+        {
+          "group" : "adductors",
+          "main" : 0,
+          "secondary" : 9,
+          "share" : 0.21951219512195122
+        },
+        {
+          "group" : "abductors",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        },
+        {
+          "group" : "calves",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        }
+      ],
+      "period" : "year",
+      "start" : "2025-10-03T00:00:00Z"
+    },
+    {
+      "categories" : "standard",
+      "muscles" : [
+        {
+          "group" : "chest",
+          "main" : 14,
+          "secondary" : 0,
+          "share" : 0.6829268292682927
+        },
+        {
+          "group" : "back",
+          "main" : 18,
+          "secondary" : 5,
+          "share" : 1
+        },
+        {
+          "group" : "traps",
+          "main" : 0,
+          "secondary" : 7,
+          "share" : 0.17073170731707318
+        },
+        {
+          "group" : "shoulders",
+          "main" : 0,
+          "secondary" : 16,
+          "share" : 0.3902439024390244
+        },
+        {
+          "group" : "biceps",
+          "main" : 0,
+          "secondary" : 15,
+          "share" : 0.36585365853658536
+        },
+        {
+          "group" : "triceps",
+          "main" : 3,
+          "secondary" : 9,
+          "share" : 0.36585365853658536
+        },
+        {
+          "group" : "forearms",
+          "main" : 2,
+          "secondary" : 5,
+          "share" : 0.21951219512195122
+        },
+        {
+          "group" : "core",
+          "main" : 2,
+          "secondary" : 0,
+          "share" : 0.0975609756097561
+        },
+        {
+          "group" : "glutes",
+          "main" : 12,
+          "secondary" : 0,
+          "share" : 0.5853658536585366
+        },
+        {
+          "group" : "quads",
+          "main" : 12,
+          "secondary" : 0,
+          "share" : 0.5853658536585366
+        },
+        {
+          "group" : "hamstrings",
+          "main" : 3,
+          "secondary" : 4,
+          "share" : 0.24390243902439024
+        },
+        {
+          "group" : "adductors",
+          "main" : 0,
+          "secondary" : 9,
+          "share" : 0.21951219512195122
+        },
+        {
+          "group" : "abductors",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        },
+        {
+          "group" : "calves",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        }
+      ],
+      "period" : "sixMonths",
+      "start" : "2026-04-03T00:00:00Z"
+    },
+    {
+      "categories" : "standard",
+      "muscles" : [
+        {
+          "group" : "chest",
+          "main" : 14,
+          "secondary" : 0,
+          "share" : 0.6829268292682927
+        },
+        {
+          "group" : "back",
+          "main" : 18,
+          "secondary" : 5,
+          "share" : 1
+        },
+        {
+          "group" : "traps",
+          "main" : 0,
+          "secondary" : 7,
+          "share" : 0.17073170731707318
+        },
+        {
+          "group" : "shoulders",
+          "main" : 0,
+          "secondary" : 16,
+          "share" : 0.3902439024390244
+        },
+        {
+          "group" : "biceps",
+          "main" : 0,
+          "secondary" : 15,
+          "share" : 0.36585365853658536
+        },
+        {
+          "group" : "triceps",
+          "main" : 3,
+          "secondary" : 9,
+          "share" : 0.36585365853658536
+        },
+        {
+          "group" : "forearms",
+          "main" : 2,
+          "secondary" : 5,
+          "share" : 0.21951219512195122
+        },
+        {
+          "group" : "core",
+          "main" : 2,
+          "secondary" : 0,
+          "share" : 0.0975609756097561
+        },
+        {
+          "group" : "glutes",
+          "main" : 12,
+          "secondary" : 0,
+          "share" : 0.5853658536585366
+        },
+        {
+          "group" : "quads",
+          "main" : 12,
+          "secondary" : 0,
+          "share" : 0.5853658536585366
+        },
+        {
+          "group" : "hamstrings",
+          "main" : 3,
+          "secondary" : 4,
+          "share" : 0.24390243902439024
+        },
+        {
+          "group" : "adductors",
+          "main" : 0,
+          "secondary" : 9,
+          "share" : 0.21951219512195122
+        },
+        {
+          "group" : "abductors",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        },
+        {
+          "group" : "calves",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        }
+      ],
+      "period" : "threeMonths",
+      "start" : "2026-07-03T00:00:00Z"
+    },
+    {
+      "categories" : "standard",
+      "muscles" : [
+        {
+          "group" : "chest",
+          "main" : 14,
+          "secondary" : 0,
+          "share" : 0.6829268292682927
+        },
+        {
+          "group" : "back",
+          "main" : 18,
+          "secondary" : 5,
+          "share" : 1
+        },
+        {
+          "group" : "traps",
+          "main" : 0,
+          "secondary" : 7,
+          "share" : 0.17073170731707318
+        },
+        {
+          "group" : "shoulders",
+          "main" : 0,
+          "secondary" : 16,
+          "share" : 0.3902439024390244
+        },
+        {
+          "group" : "biceps",
+          "main" : 0,
+          "secondary" : 15,
+          "share" : 0.36585365853658536
+        },
+        {
+          "group" : "triceps",
+          "main" : 3,
+          "secondary" : 9,
+          "share" : 0.36585365853658536
+        },
+        {
+          "group" : "forearms",
+          "main" : 2,
+          "secondary" : 5,
+          "share" : 0.21951219512195122
+        },
+        {
+          "group" : "core",
+          "main" : 2,
+          "secondary" : 0,
+          "share" : 0.0975609756097561
+        },
+        {
+          "group" : "glutes",
+          "main" : 12,
+          "secondary" : 0,
+          "share" : 0.5853658536585366
+        },
+        {
+          "group" : "quads",
+          "main" : 12,
+          "secondary" : 0,
+          "share" : 0.5853658536585366
+        },
+        {
+          "group" : "hamstrings",
+          "main" : 3,
+          "secondary" : 4,
+          "share" : 0.24390243902439024
+        },
+        {
+          "group" : "adductors",
+          "main" : 0,
+          "secondary" : 9,
+          "share" : 0.21951219512195122
+        },
+        {
+          "group" : "abductors",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        },
+        {
+          "group" : "calves",
+          "main" : 0,
+          "secondary" : 0,
+          "share" : 0
+        }
+      ],
+      "period" : "month",
+      "start" : "2026-09-03T00:00:00Z"
+    }
+  ],
+  "now" : "2026-10-03T12:00:00Z",
+  "progress" : [
+    {
+      "identity" : "catalog:back-squat",
+      "metrics" : [
+        "estimatedMax",
+        "maxWeight",
+        "volume",
+        "mostReps"
+      ],
+      "points" : [
+        {
+          "metric" : "estimatedMax",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 5,
+              "value" : 119.067997125
+            }
+          ]
+        },
+        {
+          "metric" : "maxWeight",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 5,
+              "value" : 102.05828325
+            }
+          ]
+        },
+        {
+          "metric" : "volume",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 5,
+              "value" : 2449.3987979999997
+            }
+          ]
+        },
+        {
+          "metric" : "mostReps",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 5,
+              "value" : 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identity" : "catalog:barbell-bench-press",
+      "metrics" : [
+        "estimatedMax",
+        "maxWeight",
+        "volume",
+        "mostReps"
+      ],
+      "points" : [
+        {
+          "metric" : "estimatedMax",
+          "points" : [
+            {
+              "date" : "2025-07-15T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 88.66666666666666
+            },
+            {
+              "date" : "2026-09-03T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 98.16666666666666
+            },
+            {
+              "date" : "2026-09-17T16:30:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 101.33333333333333
+            },
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 101.33333333333333
+            }
+          ]
+        },
+        {
+          "metric" : "maxWeight",
+          "points" : [
+            {
+              "date" : "2025-07-15T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 72.5
+            },
+            {
+              "date" : "2026-09-03T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 80
+            },
+            {
+              "date" : "2026-09-17T16:30:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 80
+            },
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 82.5
+            }
+          ]
+        },
+        {
+          "metric" : "volume",
+          "points" : [
+            {
+              "date" : "2025-07-15T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 1555
+            },
+            {
+              "date" : "2026-09-03T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 1720
+            },
+            {
+              "date" : "2026-09-17T16:30:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 1840
+            },
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 1630
+            }
+          ]
+        },
+        {
+          "metric" : "mostReps",
+          "points" : [
+            {
+              "date" : "2025-07-15T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 8
+            },
+            {
+              "date" : "2026-09-03T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 8
+            },
+            {
+              "date" : "2026-09-17T16:30:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 8
+            },
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identity" : "catalog:bulgarian-split-squat",
+      "metrics" : [
+        "estimatedMax",
+        "maxWeight",
+        "volume",
+        "mostReps"
+      ],
+      "points" : [
+        {
+          "metric" : "estimatedMax",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "left",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 26.666666666666664
+            },
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "right",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 26.666666666666664
+            }
+          ]
+        },
+        {
+          "metric" : "maxWeight",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "left",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 20
+            },
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "right",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 20
+            }
+          ]
+        },
+        {
+          "metric" : "volume",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "left",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 360
+            },
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "right",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 380
+            }
+          ]
+        },
+        {
+          "metric" : "mostReps",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "left",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 10
+            },
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "right",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identity" : "catalog:cable-fly",
+      "metrics" : [
+        "estimatedMax",
+        "maxWeight",
+        "volume",
+        "mostReps"
+      ],
+      "points" : [
+        {
+          "metric" : "estimatedMax",
+          "points" : [
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 2,
+              "value" : 15.749999999999998
+            }
+          ]
+        },
+        {
+          "metric" : "maxWeight",
+          "points" : [
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 2,
+              "value" : 11.25
+            }
+          ]
+        },
+        {
+          "metric" : "volume",
+          "points" : [
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 2,
+              "value" : 270
+            }
+          ]
+        },
+        {
+          "metric" : "mostReps",
+          "points" : [
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 2,
+              "value" : 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identity" : "catalog:dumbbell-row-unilateral",
+      "metrics" : [
+        "estimatedMax",
+        "maxWeight",
+        "volume",
+        "mostReps"
+      ],
+      "points" : [
+        {
+          "metric" : "estimatedMax",
+          "points" : [
+            {
+              "date" : "2026-09-10T16:00:00Z",
+              "line" : "left",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 40
+            },
+            {
+              "date" : "2026-09-10T16:00:00Z",
+              "line" : "right",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 40
+            },
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "oneSided",
+              "setCount" : 3,
+              "value" : 43.33333333333333
+            }
+          ]
+        },
+        {
+          "metric" : "maxWeight",
+          "points" : [
+            {
+              "date" : "2026-09-10T16:00:00Z",
+              "line" : "left",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 30
+            },
+            {
+              "date" : "2026-09-10T16:00:00Z",
+              "line" : "right",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 30
+            },
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "oneSided",
+              "setCount" : 3,
+              "value" : 32.5
+            }
+          ]
+        },
+        {
+          "metric" : "volume",
+          "points" : [
+            {
+              "date" : "2026-09-10T16:00:00Z",
+              "line" : "left",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 570
+            },
+            {
+              "date" : "2026-09-10T16:00:00Z",
+              "line" : "right",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 600
+            },
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "oneSided",
+              "setCount" : 3,
+              "value" : 910
+            }
+          ]
+        },
+        {
+          "metric" : "mostReps",
+          "points" : [
+            {
+              "date" : "2026-09-10T16:00:00Z",
+              "line" : "left",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 10
+            },
+            {
+              "date" : "2026-09-10T16:00:00Z",
+              "line" : "right",
+              "mode" : "perSide",
+              "setCount" : 2,
+              "value" : 10
+            },
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "oneSided",
+              "setCount" : 3,
+              "value" : 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identity" : "catalog:lat-pulldown-neutral-grip",
+      "metrics" : [
+        "estimatedMax",
+        "maxWeight",
+        "volume",
+        "mostReps"
+      ],
+      "points" : [
+        {
+          "metric" : "estimatedMax",
+          "points" : [
+            {
+              "date" : "2026-09-10T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 78.66666666666666
+            }
+          ]
+        },
+        {
+          "metric" : "maxWeight",
+          "points" : [
+            {
+              "date" : "2026-09-10T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 59
+            }
+          ]
+        },
+        {
+          "metric" : "volume",
+          "points" : [
+            {
+              "date" : "2026-09-10T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 1601
+            }
+          ]
+        },
+        {
+          "metric" : "mostReps",
+          "points" : [
+            {
+              "date" : "2026-09-10T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identity" : "catalog:pull-up",
+      "metrics" : [
+        "estimatedMax",
+        "maxWeight",
+        "volume",
+        "mostReps"
+      ],
+      "points" : [
+        {
+          "metric" : "estimatedMax",
+          "points" : [
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 12
+            }
+          ]
+        },
+        {
+          "metric" : "maxWeight",
+          "points" : [
+            {
+              "date" : "2026-09-17T16:30:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 2,
+              "value" : -20
+            },
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 10
+            }
+          ]
+        },
+        {
+          "metric" : "volume",
+          "points" : [
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 100
+            }
+          ]
+        },
+        {
+          "metric" : "mostReps",
+          "points" : [
+            {
+              "date" : "2026-09-17T16:30:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 2,
+              "value" : 12
+            },
+            {
+              "date" : "2026-09-28T16:00:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identity" : "own:bouldering",
+      "metrics" : [
+
+      ],
+      "points" : [
+
+      ]
+    },
+    {
+      "identity" : "own:couch stretch",
+      "metrics" : [
+
+      ],
+      "points" : [
+
+      ]
+    },
+    {
+      "identity" : "own:dead hang",
+      "metrics" : [
+
+      ],
+      "points" : [
+
+      ]
+    },
+    {
+      "identity" : "own:farmer's carry",
+      "metrics" : [
+
+      ],
+      "points" : [
+
+      ]
+    },
+    {
+      "identity" : "own:foam rolling",
+      "metrics" : [
+
+      ],
+      "points" : [
+
+      ]
+    },
+    {
+      "identity" : "own:leg extension",
+      "metrics" : [
+        "estimatedMax",
+        "maxWeight",
+        "volume",
+        "mostReps"
+      ],
+      "points" : [
+        {
+          "metric" : "estimatedMax",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "both",
+              "mode" : "oneSided",
+              "setCount" : 3,
+              "value" : 35
+            }
+          ]
+        },
+        {
+          "metric" : "maxWeight",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "both",
+              "mode" : "oneSided",
+              "setCount" : 3,
+              "value" : 25
+            }
+          ]
+        },
+        {
+          "metric" : "volume",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "both",
+              "mode" : "oneSided",
+              "setCount" : 3,
+              "value" : 850
+            }
+          ]
+        },
+        {
+          "metric" : "mostReps",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "both",
+              "mode" : "oneSided",
+              "setCount" : 3,
+              "value" : 12
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "identity" : "own:push-up",
+      "metrics" : [
+
+      ],
+      "points" : [
+
+      ]
+    },
+    {
+      "identity" : "own:rowing erg",
+      "metrics" : [
+
+      ],
+      "points" : [
+
+      ]
+    },
+    {
+      "identity" : "own:running",
+      "metrics" : [
+
+      ],
+      "points" : [
+
+      ]
+    },
+    {
+      "identity" : "own:rückenstrecker",
+      "metrics" : [
+        "estimatedMax",
+        "maxWeight",
+        "volume",
+        "mostReps"
+      ],
+      "points" : [
+        {
+          "metric" : "estimatedMax",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 28
+            }
+          ]
+        },
+        {
+          "metric" : "maxWeight",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 20
+            }
+          ]
+        },
+        {
+          "metric" : "volume",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 240
+            }
+          ]
+        },
+        {
+          "metric" : "mostReps",
+          "points" : [
+            {
+              "date" : "2026-09-24T05:15:00Z",
+              "line" : "both",
+              "mode" : "bilateral",
+              "setCount" : 3,
+              "value" : 20
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "source" : "HippoTrophyTests/Backup/CoverageBackup.json",
+  "timeZone" : "UTC",
+  "workouts" : [
+    {
+      "day" : "2025-07-15",
+      "id" : "0C0FFEE0-0000-4000-8000-00000000000A",
+      "name" : "Push A",
+      "setCount" : 3
+    },
+    {
+      "day" : "2026-09-01",
+      "id" : "0C0FFEE0-0000-4000-8000-000000000009",
+      "name" : "Rest",
+      "setCount" : 0
+    },
+    {
+      "day" : "2026-09-03",
+      "id" : "0C0FFEE0-0000-4000-8000-000000000008",
+      "name" : "Push A",
+      "setCount" : 3
+    },
+    {
+      "day" : "2026-09-10",
+      "id" : "0C0FFEE0-0000-4000-8000-000000000007",
+      "name" : "Pull A",
+      "setCount" : 7
+    },
+    {
+      "day" : "2026-09-17",
+      "id" : "0C0FFEE0-0000-4000-8000-000000000006",
+      "name" : "Push B",
+      "setCount" : 5
+    },
+    {
+      "day" : "2026-09-20",
+      "id" : "0C0FFEE0-0000-4000-8000-000000000005",
+      "name" : "Climbing",
+      "setCount" : 1
+    },
+    {
+      "day" : "2026-09-24",
+      "id" : "0C0FFEE0-0000-4000-8000-000000000004",
+      "name" : "Legs",
+      "setCount" : 15
+    },
+    {
+      "day" : "2026-09-24",
+      "id" : "0C0FFEE0-0000-4000-8000-000000000003",
+      "name" : "Evening Mobility",
+      "setCount" : 6
+    },
+    {
+      "day" : "2026-09-26",
+      "id" : "0C0FFEE0-0000-4000-8000-000000000002",
+      "name" : "",
+      "setCount" : 4
+    },
+    {
+      "day" : "2026-09-28",
+      "id" : "0C0FFEE0-0000-4000-8000-000000000001",
+      "name" : "Push A",
+      "setCount" : 17
+    }
+  ]
+}
