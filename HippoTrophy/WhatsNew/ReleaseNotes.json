@@ -1,6 +1,22 @@
 {
   "builds": [
     {
+      "build": 32,
+      "highlights": [
+        {
+          "symbol": "arrow.triangle.2.circlepath",
+          "title": "Sync to Your Own Server",
+          "text": "Keep a backup of everything on a WebDAV server of your own, a Nextcloud or a small server in Docker.",
+          "points": [
+            "Connect it under Settings → Sync. It stays off until you do.",
+            "The backup goes up when you finish a workout and when you leave the app after a change.",
+            "Your server keeps the newest and a copy for each of the last 14 days. Nothing goes anywhere else."
+          ]
+        }
+      ],
+      "changes": []
+    },
+    {
       "build": 31,
       "highlights": [],
       "changes": [

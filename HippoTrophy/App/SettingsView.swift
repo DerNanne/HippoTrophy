@@ -87,6 +87,10 @@ nonisolated enum SettingsKey {
     static let sidesSettled = "sidesSettled"
     /// Set once `SidesSettlement.dropUnusedOnce` has run, with build 22.
     static let unusedDropped = "unusedDropped"
+    /// The WebDAV address the sync writes to, as `SyncLayout` cleaned it up.
+    /// Unset means sync is off. The password is in the keychain.
+    static let syncServer = "syncServer"
+    static let syncUser = "syncUser"
 }
 
 struct SettingsView: View {
@@ -207,6 +211,22 @@ struct SettingsView: View {
                     Text("Templates")
                 } footer: {
                     Text("Adjust for Today in a template's menu makes a variant of it for one day, first in the row, while the template stays as it is. Once you finish a workout started from the variant, the variant is gone. One you do not use stays for a week and then goes to the archive — or, with this on, is deleted.")
+                }
+
+                Section {
+                    NavigationLink {
+                        SyncSettingsView()
+                    } label: {
+                        LabeledContent {
+                            Text(SyncCenter.shared.isOn ? "On" : "Off")
+                        } label: {
+                            Label("Sync", systemImage: "arrow.triangle.2.circlepath")
+                        }
+                    }
+                } header: {
+                    Text("Your Server")
+                } footer: {
+                    Text("Off unless you connect a WebDAV server of your own. The app then keeps a backup there; it never sends anything anywhere else.")
                 }
 
                 Section {

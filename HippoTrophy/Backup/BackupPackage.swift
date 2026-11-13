@@ -20,9 +20,12 @@ nonisolated struct BackupPackage {
         file.photoNames.filter { photos[$0] == nil }.count
     }
 
-    func encoded() throws -> Data {
+    /// The file as it is written: the JSON alone without photos, unless
+    /// `alwaysZip` asks for the ZIP anyway — the sync keeps one name on the
+    /// server whatever the backup holds.
+    func encoded(alwaysZip: Bool = false) throws -> Data {
         let json = try BackupCoding.encoder.encode(file)
-        guard isZip else { return json }
+        guard isZip || alwaysZip else { return json }
         let pictures = photos.sorted { $0.key.localizedStandardCompare($1.key) == .orderedAscending }
         return try BackupZip.write(
             [BackupZip.Entry(name: Self.fileName, data: json)] + pictures.map { BackupZip.Entry(name: $0.key, data: $0.value) },

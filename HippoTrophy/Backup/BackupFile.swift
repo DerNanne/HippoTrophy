@@ -363,7 +363,7 @@ enum BackupReadError: LocalizedError, Equatable {
 
 /// One encoder and one decoder for the whole backup path, so the file the app
 /// writes and the file it reads can never drift apart on a setting.
-enum BackupCoding {
+nonisolated enum BackupCoding {
     static var encoder: JSONEncoder {
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys]

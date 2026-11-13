@@ -193,6 +193,27 @@ struct FAQView: View {
                     answer: "Backup on the main screen, then Import Backup, and pick the exported file, the JSON or the ZIP. You choose what to bring in and whether the workouts are added to what is already there or replace all of it. Where the file and your list disagree about an exercise, you are asked before anything is written."
                 )
             ]
+        ),
+        FAQTopic(
+            title: "Sync",
+            entries: [
+                FAQEntry(
+                    question: "What does Sync do?",
+                    answer: "It keeps a backup of everything on a WebDAV server of your own: when you finish a workout, and when you leave the app after changing something. The server holds backup.zip, the newest, and a copy for each of the last 14 days in history/. Nothing goes anywhere else, and with Sync off the app never uses the network."
+                ),
+                FAQEntry(
+                    question: "Which server can I use?",
+                    answer: "Any WebDAV server reached over HTTPS. With Nextcloud, the address is https://your-cloud/remote.php/dav/files/your-user-name/, and instead of your password you make an app password under Personal Settings → Security. A small WebDAV server in Docker works too. The app makes a folder called HippoTrophy at the address and writes only there."
+                ),
+                FAQEntry(
+                    question: "My server has a certificate I made myself. How does the iPhone trust it?",
+                    answer: "Send the certificate of your own certificate authority to the iPhone — the .pem or .crt file, by AirDrop or mail — and install it under Settings → General → VPN & Device Management. Then turn it on under Settings → General → About → Certificate Trust Settings. The app has no way around this on purpose: a certificate the iPhone does not trust is exactly what someone in the middle would show."
+                ),
+                FAQEntry(
+                    question: "Can I sync two iPhones?",
+                    answer: "Only one device should write to the server. On another one, download backup.zip and import it under Backup → Import Backup. If a device finds a backup on the server that it did not write, it stops and asks you which one counts."
+                )
+            ]
         )
     ]
 }
