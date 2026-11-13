@@ -8,8 +8,11 @@ tests its own code against it.
 - `outlines.json` — the body outlines of the muscle heat map, as SVG path
   data in a 200 × 440 box: each figure (male, female) from the front and the
   back. Draw `hairBehind`, then `body`, then `muscles`, then `hair`.
-- `coverage-expected.json` — what the app makes of
-  `HippoTrophyTests/Backup/CoverageBackup.json`, counted at `now` in UTC with
+- `coverage-backup.json` — `HippoTrophyTests/Backup/CoverageBackup.json`
+  imported and exported again: the backup an iPhone holding it would upload,
+  catalog exercises settled. The web app reads this one.
+- `coverage-expected.json` — what the app makes of `coverage-backup.json`,
+  counted at `now` in UTC with
   weeks from Monday: each workout's sets, the sets a day, the sets per muscle
   group for every heat-map period (all categories, and Strength alone), and
   the progress points of every exercise for every metric it offers. Weights

@@ -41,4 +41,18 @@ struct ExerciseEntryHistoryTests {
     @Test func aBlankNoteIsNoNote() throws {
         #expect(!entry(notes: "  \n ", in: try context()).belongsInHistory)
     }
+
+    /// Left and right each have a set 1 and a set 2: the side breaks the tie,
+    /// whatever order the store hands them in, so a backup of the same entry
+    /// reads the same every time.
+    @Test func setsOfBothSidesSortTheSameEveryTime() throws {
+        let context = try context()
+        let entry = ExerciseEntry(name: "Lunge", orderIndex: 0, definitionID: UUID(), effortScale: .off)
+        context.insert(entry)
+        for (number, side) in [(2, "right"), (1, "right"), (2, "left"), (1, "left")] {
+            context.insert(SetEntry(setNumber: number, sideRawValue: side, exercise: entry))
+        }
+        let order = entry.sortedSets.map { "\($0.setNumber)\($0.sideRawValue)" }
+        #expect(order == ["1left", "1right", "2left", "2right"])
+    }
 }

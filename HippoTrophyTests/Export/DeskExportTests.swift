@@ -6,7 +6,8 @@ import Testing
 
 /// What HippoTrophy Desk, the web app, takes from this app instead of
 /// drawing or counting it a second time: the body outlines of the heat map,
-/// and what the app makes of `CoverageBackup.json` — each workout's sets,
+/// the backup an iPhone holding `CoverageBackup.json` would upload, and what
+/// the app makes of it — each workout's sets,
 /// the sets a day, the sets per muscle for every period, the progress of
 /// every exercise. The web app keeps a copy of `export/` and tests its own
 /// counting against it, so the two cannot drift apart unnoticed.
@@ -61,7 +62,7 @@ struct DeskExportTests {
     /// The counting starts from what the app shows: the busiest day is the
     /// sum of its workouts, and every period's start is before `now`.
     @Test func expectationsAddUp() throws {
-        let expected = try DeskExport.expected()
+        let expected = try DeskExport.expected(in: DeskExport.store())
         let byDay = Dictionary(grouping: expected.workouts, by: \.day).mapValues { $0.reduce(0) { $0 + $1.setCount } }
         #expect(expected.activity.map(\.sets) == expected.activity.map { byDay[$0.day] ?? -1 })
         #expect(expected.heat.count == HeatMapPeriod.allCases.count * 2)
@@ -92,10 +93,25 @@ enum DeskExport {
         let encoder = JSONEncoder()
         encoder.outputFormatting = [.prettyPrinted, .sortedKeys, .withoutEscapingSlashes]
         encoder.dateEncodingStrategy = .iso8601
+        let context = try store()
         return [
             ("outlines.json", try encoder.encode(outlines()) + Data("\n".utf8)),
-            ("coverage-expected.json", try encoder.encode(expected()) + Data("\n".utf8)),
+            ("coverage-backup.json", try BackupCoding.encoder.encode(BackupExporter.everything(in: context, at: now).file) + Data("\n".utf8)),
+            ("coverage-expected.json", try encoder.encode(expected(in: context)) + Data("\n".utf8)),
         ]
+    }
+
+    /// `CoverageBackup.json` brought in as the app brings in any backup. Its
+    /// export, `coverage-backup.json`, is what an iPhone holding it would
+    /// upload: the file the web app reads, catalog exercises settled.
+    static func store() throws -> ModelContext {
+        let context = ModelContext(try ModelContainer(
+            for: Schema(AppSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true)
+        ))
+        try CoverageBackup.importFile(CoverageBackup.read(), into: context)
+        try CatalogSync.run(in: context)
+        try context.save()
+        return context
     }
 
     // MARK: Outlines
@@ -165,7 +181,8 @@ enum DeskExport {
     // MARK: Expectations
 
     struct Expected: Encodable {
-        let source = "HippoTrophyTests/Backup/CoverageBackup.json"
+        /// The file the numbers are counted from, beside this one.
+        let source = "coverage-backup.json"
         let now: Date
         let timeZone = "UTC"
         let firstWeekday = "monday"
@@ -229,15 +246,7 @@ enum DeskExport {
         let setCount: Int
     }
 
-    static func expected() throws -> Expected {
-        let context = ModelContext(try ModelContainer(
-            for: Schema(AppSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true)
-        ))
-        try CoverageBackup.importFile(CoverageBackup.read(), into: context)
-        // As after any import in the app.
-        try CatalogSync.run(in: context)
-        try context.save()
-
+    static func expected(in context: ModelContext) throws -> Expected {
         let calendar = Self.calendar
         func day(_ date: Date) -> String {
             let parts = calendar.dateComponents([.year, .month, .day], from: date)
