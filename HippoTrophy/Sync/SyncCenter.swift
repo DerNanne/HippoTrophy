@@ -201,6 +201,43 @@ final class SyncCenter {
         return .uploaded
     }
 
+    // MARK: - Bringing the server's backup in
+
+    /// The backup on the server as it is now, and the etag it had when it
+    /// was read.
+    struct ServerBackup: Equatable {
+        let data: Data
+        let etag: String?
+    }
+
+    /// Fetches `backup.zip` for the import. Changes nothing, here or there:
+    /// the import is the user's to go through or to cancel.
+    func downloadBackup() async -> Result<ServerBackup, SyncProblem> {
+        guard let connection, let password = secrets.read() else { return .failure(.credentials) }
+        let client = WebDAVClient(user: connection.user, password: password, session: session)
+        do {
+            // The etag first: a backup written between the two reads is
+            // then taken for another one at the next upload, never the other
+            // way round.
+            let etag = try await client.etag(of: connection.layout.backup)
+            guard let data = try await client.get(connection.layout.backup) else { return .failure(.noBackupOnServer) }
+            return .success(ServerBackup(data: data, etag: etag))
+        } catch {
+            return .failure(SyncProblem.from(error))
+        }
+    }
+
+    /// The server's backup has been brought in: this device now holds what
+    /// it held, and from here on writes over it. A wait for the user's
+    /// decision is over; the next run uploads, changed or not.
+    func adoptServerBackup(etag: String?) {
+        state.lastETag = etag
+        state.lastFingerprint = nil
+        state.foreignBackupOnServer = false
+        state.lastError = nil
+        state.lastErrorAt = nil
+    }
+
     private func fail(_ problem: SyncProblem) -> Outcome {
         state.lastError = problem.localizedDescription
         state.lastErrorAt = now()

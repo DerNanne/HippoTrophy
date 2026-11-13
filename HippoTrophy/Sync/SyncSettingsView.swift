@@ -16,6 +16,9 @@ struct SyncSettingsView: View {
     @State private var syncNote: String?
     @State private var confirmReplace = false
     @State private var confirmTurnOff = false
+    @State private var incoming: IncomingBackup?
+    @State private var isDownloading = false
+    @State private var downloadProblem: SyncProblem?
 
     var body: some View {
         List {
@@ -29,6 +32,7 @@ struct SyncSettingsView: View {
         .navigationBarTitleDisplayMode(.inline)
         // A warning about what was typed goes once it is typed anew.
         .onChange(of: [address, user, password]) { connectProblem = nil }
+        .backupImport($incoming)
     }
 
     // MARK: - Not connected
@@ -104,6 +108,21 @@ struct SyncSettingsView: View {
         if center.state.foreignBackupOnServer {
             Section {
                 warning(SyncProblem.foreignBackup.localizedDescription)
+                Button {
+                    Task { await importFromServer() }
+                } label: {
+                    HStack {
+                        Text("Import It onto This iPhone")
+                        if isDownloading {
+                            Spacer()
+                            ProgressView()
+                        }
+                    }
+                }
+                .disabled(isDownloading)
+                if let downloadProblem {
+                    warning(downloadProblem.localizedDescription)
+                }
                 Button("Replace It with This iPhone's Data", role: .destructive) {
                     confirmReplace = true
                 }
@@ -117,7 +136,7 @@ struct SyncSettingsView: View {
             } header: {
                 Text("Another Backup on the Server")
             } footer: {
-                Text("To bring that backup onto this iPhone instead, download backup.zip from your server and pick it under Backup → Import Backup.")
+                Text("Import goes as any import does: you pick what to bring in, and your workouts are added to it or replaced. After that, this iPhone writes to the server — with what it has now, both.")
             }
         }
 
@@ -166,6 +185,18 @@ struct SyncSettingsView: View {
             } message: {
                 Text("The address and password are removed from this iPhone. What is on the server stays there.")
             }
+        }
+    }
+
+    private func importFromServer() async {
+        isDownloading = true
+        downloadProblem = nil
+        defer { isDownloading = false }
+        switch await center.downloadBackup() {
+        case .success(let backup):
+            incoming = IncomingBackup(data: backup.data, source: .server(etag: backup.etag))
+        case .failure(let problem):
+            downloadProblem = problem
         }
     }
 

@@ -205,6 +205,49 @@ struct SyncCenterTests {
         #expect(await center.sync(.automatic, in: context) == .unchanged)
     }
 
+    // MARK: - Bringing it in
+
+    @Test func downloadsTheBackupOnTheServerAndChangesNothing() async throws {
+        server.place(Data("theirs".utf8), at: "/dav/HippoTrophy/backup.zip")
+        let center = center()
+        try await connected(center)
+        let before = center.state
+        server.clearLog()
+        let backup = try await center.downloadBackup().get()
+        #expect(backup.data == Data("theirs".utf8))
+        #expect(backup.etag == server.files["/dav/HippoTrophy/backup.zip"]?.etag)
+        #expect(server.log.allSatisfy { $0.hasPrefix("PROPFIND") || $0.hasPrefix("GET") })
+        #expect(center.state == before)
+    }
+
+    @Test func saysSoWhenTheServerHasNoBackup() async throws {
+        let center = center()
+        try await connected(center)
+        #expect(await center.downloadBackup() == .failure(.noBackupOnServer))
+    }
+
+    @Test func writesOverTheBackupItBroughtIn() async throws {
+        server.place(Data("theirs".utf8), at: "/dav/HippoTrophy/backup.zip")
+        let center = center()
+        try await connected(center)
+        let backup = try await center.downloadBackup().get()
+        center.adoptServerBackup(etag: backup.etag)
+        #expect(!center.state.foreignBackupOnServer)
+        #expect(await center.sync(.automatic, in: context) == .uploaded)
+        #expect(server.files["/dav/HippoTrophy/backup.zip"]?.data != Data("theirs".utf8))
+    }
+
+    @Test func stillStopsWhenAnotherDeviceWroteAfterTheDownload() async throws {
+        server.place(Data("theirs".utf8), at: "/dav/HippoTrophy/backup.zip")
+        let center = center()
+        try await connected(center)
+        let backup = try await center.downloadBackup().get()
+        server.place(Data("newer".utf8), at: "/dav/HippoTrophy/backup.zip")
+        center.adoptServerBackup(etag: backup.etag)
+        #expect(await center.sync(.automatic, in: context) == .failed(.foreignBackup))
+        #expect(server.files["/dav/HippoTrophy/backup.zip"]?.data == Data("newer".utf8))
+    }
+
     // MARK: - Failing
 
     @Test func remembersAFailureAndOwesTheUpload() async throws {

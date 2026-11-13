@@ -98,6 +98,9 @@ final class FakeWebDAV: @unchecked Sendable {
                     entries += _files.filter { parent(of: $0.key) == path }.sorted { $0.key < $1.key }.map { ($0.key, $0.value.etag, false) }
                 }
                 return (207, multistatus(entries))
+            case "GET":
+                guard let file = _files[path] else { return (404, Data()) }
+                return (200, file.data)
             case "MKCOL":
                 if folders.contains(path) || _files[path] != nil { return (405, Data()) }
                 guard folders.contains(parent(of: path)) else { return (409, Data()) }

@@ -35,6 +35,14 @@ nonisolated struct WebDAVClient: Sendable {
         }
     }
 
+    /// A file's content, nil when there is none there.
+    func get(_ url: URL) async throws -> Data? {
+        let (data, status) = try await send("GET", to: url)
+        if status == 404 { return nil }
+        try expect(status, in: [200])
+        return data
+    }
+
     /// Makes a folder; one already there is fine. 405 is what RFC 4918 has a
     /// server say when the folder exists.
     func makeFolder(_ url: URL) async throws {

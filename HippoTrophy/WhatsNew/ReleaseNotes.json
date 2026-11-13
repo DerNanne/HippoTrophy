@@ -10,7 +10,8 @@
           "points": [
             "Connect it under Settings → Sync. It stays off until you do.",
             "The backup goes up when you finish a workout and when you leave the app after a change.",
-            "Your server keeps the newest and a copy for each of the last 14 days. Nothing goes anywhere else."
+            "Your server keeps the newest and a copy for each of the last 14 days. Nothing goes anywhere else.",
+            "On a new iPhone, Backup → Import from Server brings it all back."
           ]
         }
       ],

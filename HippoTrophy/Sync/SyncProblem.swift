@@ -14,6 +14,8 @@ nonisolated enum SyncProblem: Error, Equatable {
     case notAFolder
     /// Another device wrote the backup on the server since this one did.
     case foreignBackup
+    /// Asked to bring the backup in from a server that has none.
+    case noBackupOnServer
     case address(SyncLayout.AddressProblem)
     case server(Int)
     case other(String)
@@ -68,6 +70,8 @@ extension SyncProblem: LocalizedError {
             "The address does not lead to a WebDAV folder you can write to. Check it in your server's web interface; with Nextcloud it ends in /remote.php/dav/files/ and your user name."
         case .foreignBackup:
             "The backup on the server was written by another device, or before this iPhone was connected. Sync waits until you decide which one counts."
+        case .noBackupOnServer:
+            "There is no backup on the server yet. It gets one the first time a device connected to it uploads."
         case .address(let problem):
             problem.localizedDescription
         case .server(let code):

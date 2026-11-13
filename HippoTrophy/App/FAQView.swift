@@ -211,7 +211,7 @@ struct FAQView: View {
                 ),
                 FAQEntry(
                     question: "Can I sync two iPhones?",
-                    answer: "Only one device should write to the server. On another one, download backup.zip and import it under Backup → Import Backup. If a device finds a backup on the server that it did not write, it stops and asks you which one counts."
+                    answer: "Only one device writes to the server. Connect another one, and it finds a backup it did not write: it stops and asks whether to import that backup or to replace it. Import it, and from then on that device is the one that writes. Backup → Import from Server on the main screen brings the server's backup in at any time — onto a new iPhone, for example."
                 )
             ]
         )
