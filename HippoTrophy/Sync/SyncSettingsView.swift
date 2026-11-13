@@ -35,7 +35,11 @@ struct SyncSettingsView: View {
 
     @ViewBuilder private var setup: some View {
         Section {
-            TextField("https://cloud.example.com/remote.php/dav/files/alex/", text: $address)
+            // Verbatim: as a localized key, the URL would be read as a
+            // Markdown link and drawn blue, like a value already entered.
+            TextField(text: $address, prompt: Text(verbatim: "https://cloud.example.com/remote.php/dav/files/alex/")) {
+                Text("Address")
+            }
                 .keyboardType(.URL)
                 .textContentType(.URL)
                 .textInputAutocapitalization(.never)
