@@ -47,6 +47,7 @@ struct SyncDecisionTests {
         #expect(SyncProblem.from(URLError(.serverCertificateHasUnknownRoot)) == .certificate)
         #expect(SyncProblem.from(URLError(.notConnectedToInternet)) == .unreachable)
         #expect(SyncProblem.from(WebDAVError.status(401)) == .credentials)
+        #expect(SyncProblem.from(WebDAVError.status(403)) == .forbidden)
         #expect(SyncProblem.from(WebDAVError.status(409)) == .notAFolder)
         #expect(SyncProblem.from(WebDAVError.status(507)) == .server(507))
         #expect(SyncProblem.unreachable.isTemporary)

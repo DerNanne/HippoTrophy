@@ -10,6 +10,8 @@ nonisolated enum SyncProblem: Error, Equatable {
     case certificate
     /// User or password refused.
     case credentials
+    /// Signed in, but not let into this folder.
+    case forbidden
     /// The address leads somewhere, but not into a WebDAV folder.
     case notAFolder
     /// Another device wrote the backup on the server since this one did.
@@ -25,7 +27,8 @@ nonisolated enum SyncProblem: Error, Equatable {
         if let problem = error as? SyncLayout.AddressProblem { return .address(problem) }
         if let webDAV = error as? WebDAVError {
             switch webDAV {
-            case .status(401), .status(403): return .credentials
+            case .status(401): return .credentials
+            case .status(403): return .forbidden
             case .status(404), .status(405), .status(409), .unreadableAnswer: return .notAFolder
             case .status(let code): return .server(code)
             }
@@ -66,6 +69,8 @@ extension SyncProblem: LocalizedError {
             "The server's certificate is not trusted by this iPhone. If you made it yourself, install your certificate authority as a profile and turn it on under Settings → General → About → Certificate Trust Settings. The FAQ explains how."
         case .credentials:
             "The server did not accept the user name or password. With Nextcloud, use an app password."
+        case .forbidden:
+            "The server knows you but does not let you into this folder. With HippoTrophy Desk, the address ends in your own user name: https://your-server/dav/your-user-name/."
         case .notAFolder:
             "The address does not lead to a WebDAV folder you can write to. Check it in your server's web interface; with Nextcloud it ends in /remote.php/dav/files/ and your user name."
         case .foreignBackup:
