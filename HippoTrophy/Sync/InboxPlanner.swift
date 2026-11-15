@@ -10,12 +10,72 @@ nonisolated struct InboxState: Equatable {
     var order: [UUID]
     var workouts: [UUID: SyncWorkout]
     var exercises: [UUID: SyncExercise]
+    /// Gyms and machines by their id here; Desk knows them by name.
+    var gyms: [UUID: SyncGym]
+    var machines: [UUID: SyncMachine]
 
-    init(templates: [SyncTemplate] = [], workouts: [SyncWorkout] = [], exercises: [UUID: SyncExercise] = [:]) {
+    init(
+        templates: [SyncTemplate] = [], workouts: [SyncWorkout] = [], exercises: [UUID: SyncExercise] = [:],
+        gyms: [UUID: SyncGym] = [:], machines: [UUID: SyncMachine] = [:]
+    ) {
         self.templates = Dictionary(templates.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
         self.order = templates.map(\.id)
         self.workouts = Dictionary(workouts.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
         self.exercises = exercises
+        self.gyms = gyms
+        self.machines = machines
+    }
+
+    func gym(named name: String) -> UUID? {
+        gyms.first { $0.value.name.exerciseKey == name.exerciseKey }?.key
+    }
+
+    func machine(named name: String) -> UUID? {
+        machines.first { $0.value.name.exerciseKey == name.exerciseKey }?.key
+    }
+
+    /// What renaming or deleting a gym does to the templates and workouts at
+    /// it: they name it as it is now, or none.
+    mutating func regym(from old: String, to new: String?) {
+        let key = old.exerciseKey
+        templates = templates.mapValues { template in
+            var template = template
+            if template.gym?.exerciseKey == key { template.gym = new }
+            return template
+        }
+        workouts = workouts.mapValues { workout in
+            var workout = workout
+            if workout.gym?.exerciseKey == key { workout.gym = new }
+            return workout
+        }
+    }
+
+    /// The same for a machine: the entries done at it, and the gyms it stands in.
+    mutating func remachine(from old: String, to new: String?) {
+        let key = old.exerciseKey
+        func moved(_ entries: [SyncEntry]) -> [SyncEntry] {
+            entries.map { entry in
+                guard entry.machine?.exerciseKey == key else { return entry }
+                var entry = entry
+                entry.machine = new
+                return entry
+            }
+        }
+        templates = templates.mapValues { template in
+            var template = template
+            template.exercises = moved(template.exercises)
+            return template
+        }
+        workouts = workouts.mapValues { workout in
+            var workout = workout
+            workout.exercises = moved(workout.exercises)
+            return workout
+        }
+        gyms = gyms.mapValues { gym in
+            var gym = gym
+            gym.machines = gym.machines.compactMap { $0.exerciseKey == key ? new : $0 }
+            return gym
+        }
     }
 
     /// The own exercise of a name, found as `ExerciseIdentity` finds it.
@@ -86,6 +146,12 @@ nonisolated enum InboxPlanner {
         case exerciseAdded(String)
         case exerciseChanged(String)
         case exerciseDeleted(String)
+        case gymAdded(String)
+        case gymChanged(String)
+        case gymDeleted(String)
+        case machineAdded(String)
+        case machineChanged(String)
+        case machineDeleted(String)
     }
 
     /// Why a file waits in Desk. Named by the template or workout it is about.
@@ -107,6 +173,12 @@ nonisolated enum InboxPlanner {
         /// How its sets are logged, changed while something is logged with
         /// it here: the iPhone's editor has to carry the sets along.
         case exerciseInUse(String)
+        case gymChangedHere(String)
+        case gymDeletedHere(String)
+        case gymNameTaken(String)
+        case machineChangedHere(String)
+        case machineDeletedHere(String)
+        case machineNameTaken(String)
     }
 
     enum Outcome: Equatable {
@@ -253,6 +325,65 @@ nonisolated enum InboxPlanner {
                 guard current == base else { return .failure(Refused(conflict: .exerciseChangedHere(current.name))) }
                 state.exercises[id] = nil
                 changes.append(.exerciseDeleted(base.name))
+            case .putGym(let gym, let base):
+                if let missing = gym.machines.first(where: { state.machine(named: $0) == nil }) {
+                    return .failure(Refused(conflict: .machineDeletedHere(missing)))
+                }
+                guard let base else {
+                    if let id = state.gym(named: gym.name) {
+                        if state.gyms[id] == gym { continue }
+                        return .failure(Refused(conflict: .gymNameTaken(gym.name)))
+                    }
+                    state.gyms[UUID()] = gym
+                    changes.append(.gymAdded(gym.name))
+                    continue
+                }
+                guard let id = state.gym(named: base.name), let current = state.gyms[id] else {
+                    if let id = state.gym(named: gym.name), state.gyms[id] == gym { continue }
+                    return .failure(Refused(conflict: .gymDeletedHere(base.name)))
+                }
+                if current == gym { continue }
+                guard current == base else { return .failure(Refused(conflict: .gymChangedHere(current.name))) }
+                if gym.name.exerciseKey != base.name.exerciseKey, state.gym(named: gym.name) != nil {
+                    return .failure(Refused(conflict: .gymNameTaken(gym.name)))
+                }
+                state.gyms[id] = gym
+                if gym.name != base.name { state.regym(from: base.name, to: gym.name) }
+                changes.append(.gymChanged(gym.name))
+            case .deleteGym(let base):
+                guard let id = state.gym(named: base.name), let current = state.gyms[id] else { continue }
+                guard current == base else { return .failure(Refused(conflict: .gymChangedHere(current.name))) }
+                state.gyms[id] = nil
+                state.regym(from: base.name, to: nil)
+                changes.append(.gymDeleted(base.name))
+            case .putMachine(let machine, let base):
+                guard let base else {
+                    if let id = state.machine(named: machine.name) {
+                        if state.machines[id] == machine { continue }
+                        return .failure(Refused(conflict: .machineNameTaken(machine.name)))
+                    }
+                    state.machines[UUID()] = machine
+                    changes.append(.machineAdded(machine.name))
+                    continue
+                }
+                guard let id = state.machine(named: base.name), let current = state.machines[id] else {
+                    if let id = state.machine(named: machine.name), state.machines[id] == machine { continue }
+                    return .failure(Refused(conflict: .machineDeletedHere(base.name)))
+                }
+                if current == machine { continue }
+                guard current == base else { return .failure(Refused(conflict: .machineChangedHere(current.name))) }
+                if machine.name.exerciseKey != base.name.exerciseKey, state.machine(named: machine.name) != nil {
+                    return .failure(Refused(conflict: .machineNameTaken(machine.name)))
+                }
+                state.machines[id] = machine
+                state.remachine(from: base.name, to: machine.name)
+                changes.append(.machineChanged(machine.name))
+            case .deleteMachine(let base):
+                guard let id = state.machine(named: base.name), let current = state.machines[id] else { continue }
+                guard current == base else { return .failure(Refused(conflict: .machineChangedHere(current.name))) }
+                state.machines[id] = nil
+                state.remachine(from: base.name, to: nil)
+                changes.append(.machineDeleted(base.name))
             case .orderTemplates(let ids):
                 // The order Desk gave for the templates it knew; one made here
                 // since stays in front, as a new template stands first.
@@ -294,6 +425,12 @@ extension InboxPlanner.Change {
         case .exerciseAdded(let name): "exercise \(name) added"
         case .exerciseChanged(let name): "exercise \(name) changed"
         case .exerciseDeleted(let name): "exercise \(name) deleted"
+        case .gymAdded(let name): "gym \(name) added"
+        case .gymChanged(let name): "gym \(name) changed"
+        case .gymDeleted(let name): "gym \(name) deleted"
+        case .machineAdded(let name): "machine \(name) added"
+        case .machineChanged(let name): "machine \(name) changed"
+        case .machineDeleted(let name): "machine \(name) deleted"
         }
     }
 }
@@ -311,6 +448,12 @@ extension InboxPlanner.Conflict {
         case .exerciseDeletedHere(let name): "exercise \(name) was deleted on this iPhone in the meantime"
         case .exerciseNameTaken(let name): "an exercise named \(name) is here already"
         case .exerciseInUse(let name): "\(name) has sets logged here now; how it logs them changes on the iPhone"
+        case .gymChangedHere(let name): "gym \(name) was changed on this iPhone in the meantime"
+        case .gymDeletedHere(let name): "gym \(name) was deleted on this iPhone in the meantime"
+        case .gymNameTaken(let name): "a gym named \(name) is here already"
+        case .machineChangedHere(let name): "machine \(name) was changed on this iPhone in the meantime"
+        case .machineDeletedHere(let name): "machine \(name) was deleted on this iPhone in the meantime"
+        case .machineNameTaken(let name): "a machine named \(name) is here already"
         }
     }
 }

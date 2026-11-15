@@ -14,10 +14,14 @@ enum InboxApplier {
         ))
         let workouts = try context.fetch(FetchDescriptor(predicate: WorkoutSession.trained))
         let own = try context.fetch(FetchDescriptor<ExerciseDefinition>()).filter { $0.catalogKey == nil }
+        let gyms = try context.fetch(FetchDescriptor<Gym>())
+        let machines = try context.fetch(FetchDescriptor<Machine>())
         return InboxState(
             templates: templates.map { SyncTemplate(BackupExporter.templateRecord($0)).normalized },
             workouts: workouts.map { SyncWorkout(BackupExporter.record($0)).normalized },
-            exercises: Dictionary(own.map { ($0.id, SyncExercise(BackupExporter.record($0))) }, uniquingKeysWith: { first, _ in first })
+            exercises: Dictionary(own.map { ($0.id, SyncExercise(BackupExporter.record($0))) }, uniquingKeysWith: { first, _ in first }),
+            gyms: Dictionary(gyms.map { ($0.id, SyncGym(BackupExporter.record($0))) }, uniquingKeysWith: { first, _ in first }),
+            machines: Dictionary(machines.map { ($0.id, SyncMachine(name: $0.name)) }, uniquingKeysWith: { first, _ in first })
         )
     }
 
@@ -28,10 +32,56 @@ enum InboxApplier {
         // The exercises first: a rename reaches the entries already here,
         // which then need no writing anew. What is left to do to templates
         // and workouts is measured from there.
+        try makeMachines(target, from: current, in: context)
+        try makeGyms(target, from: current, in: context)
         try makeExercises(target, from: current, in: context)
-        let now = current.exercises == target.exercises ? current : try state(in: context)
+        let untouched = current.exercises == target.exercises && current.gyms == target.gyms && current.machines == target.machines
+        let now = untouched ? current : try state(in: context)
         try makeWorkouts(target, from: now, in: context)
         try makeTemplates(target, from: now, in: context)
+    }
+
+    /// The machines as `target` has them: renamed in place, so what was done
+    /// at one stays at it; new ones under the id the state gave them; gone
+    /// ones deleted, which leaves the exercises done at them without one.
+    private static func makeMachines(_ target: InboxState, from current: InboxState, in context: ModelContext) throws {
+        guard target.machines != current.machines else { return }
+        let byID = Dictionary(try context.fetch(FetchDescriptor<Machine>()).map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        for id in current.machines.keys where target.machines[id] == nil {
+            if let machine = byID[id] { context.delete(machine) }
+        }
+        for (id, machine) in target.machines where current.machines[id] != machine {
+            if let found = byID[id] {
+                found.name = machine.name
+            } else {
+                let made = Machine(name: machine.name)
+                made.id = id
+                context.insert(made)
+            }
+        }
+    }
+
+    /// The gyms the same way, each with the machines `target` says stand in it.
+    private static func makeGyms(_ target: InboxState, from current: InboxState, in context: ModelContext) throws {
+        guard target.gyms != current.gyms else { return }
+        let byID = Dictionary(try context.fetch(FetchDescriptor<Gym>()).map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        let machines = try context.fetch(FetchDescriptor<Machine>())
+        for id in current.gyms.keys where target.gyms[id] == nil {
+            if let gym = byID[id] { context.delete(gym) }
+        }
+        for (id, gym) in target.gyms where current.gyms[id] != gym {
+            let stored: Gym
+            if let found = byID[id] {
+                stored = found
+            } else {
+                stored = Gym(name: gym.name)
+                stored.id = id
+                context.insert(stored)
+            }
+            stored.name = gym.name
+            let keys = Set(gym.machines.map(\.exerciseKey))
+            stored.machines = machines.filter { keys.contains($0.name.exerciseKey) }
+        }
     }
 
     /// The own exercises as `target` has them: changed ones in place, their

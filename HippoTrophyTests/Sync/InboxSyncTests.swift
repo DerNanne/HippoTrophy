@@ -318,4 +318,47 @@ struct InboxSyncTests {
         #expect(back.id == bench.id && back.name == "Bench")
         #expect(back.sortedFields.map(\.key) == ["weight", "reps"])
     }
+
+    // MARK: - Gyms and machines
+
+    @Test func makesAGymWithANewMachineAndRenamesWhereItWasTrained() async throws {
+        let center = try await connected()
+        try leave("1.json",
+                  .putMachine(machine: SyncMachine(name: "Rack"), base: nil))
+        try leave("2.json",
+                  .putGym(gym: SyncGym(name: "Home", machines: ["Rack"]), base: nil))
+        await center.sync(.automatic, in: context)
+        let gym = try #require(try context.fetch(FetchDescriptor<Gym>()).first)
+        #expect(gym.name == "Home" && gym.machines.map(\.name) == ["Rack"])
+
+        try workouts().first?.gym = gym
+        try context.save()
+        await center.sync(.automatic, in: context)
+        center.dismissInboxNotice()
+
+        let seen = try InboxApplier.state(in: context)
+        let home = try #require(seen.gyms[gym.id])
+        try leave("3.json", .putGym(gym: SyncGym(name: "Garage", machines: ["Rack"]), base: home))
+        await center.sync(.automatic, in: context)
+        #expect(try workouts().first?.gym?.id == gym.id)
+        #expect(gym.name == "Garage")
+
+        center.undoInbox(in: context)
+        #expect(gym.name == "Home")
+        #expect(try workouts().first?.gym?.id == gym.id)
+    }
+
+    @Test func deletingAMachineLeavesTheExerciseDoneAtIt() async throws {
+        let center = try await connected()
+        try leave("1.json", .putMachine(machine: SyncMachine(name: "Rack"), base: nil))
+        try leave("2.json", .putTemplate(template: { var t = template("Push"); t.exercises[0].machine = "Rack"; return t }(), base: nil))
+        await center.sync(.automatic, in: context)
+        #expect(try templates().first?.exercises.first?.machine?.name == "Rack")
+
+        try leave("3.json", .deleteMachine(base: SyncMachine(name: "Rack")))
+        await center.sync(.automatic, in: context)
+        #expect(try context.fetch(FetchDescriptor<Machine>()).isEmpty)
+        #expect(try templates().first?.exercises.first?.machine == nil)
+        #expect(try templates().first?.exercises.count == 1)
+    }
 }

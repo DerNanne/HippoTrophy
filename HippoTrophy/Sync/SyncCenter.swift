@@ -224,10 +224,15 @@ final class SyncCenter {
         var touchedWorkouts: Set<UUID> = []
         /// The own exercises the changes touched.
         var touchedExercises: Set<UUID> = []
+        var touchedGyms: Set<UUID> = []
+        var touchedMachines: Set<UUID> = []
         var reordered = false
 
         /// Whether Undo has anything to put back.
-        var canUndo: Bool { !touched.isEmpty || !touchedWorkouts.isEmpty || !touchedExercises.isEmpty || reordered }
+        var canUndo: Bool {
+            !touched.isEmpty || !touchedWorkouts.isEmpty || !touchedExercises.isEmpty
+                || !touchedGyms.isEmpty || !touchedMachines.isEmpty || reordered
+        }
     }
 
     private(set) var inboxNotice: InboxNotice?
@@ -310,6 +315,10 @@ final class SyncCenter {
         notice.touchedWorkouts.formUnion(workoutIDs.filter { before.workouts[$0] != plan.result.workouts[$0] })
         let exerciseIDs = Set(before.exercises.keys).union(plan.result.exercises.keys)
         notice.touchedExercises.formUnion(exerciseIDs.filter { before.exercises[$0] != plan.result.exercises[$0] })
+        let gymIDs = Set(before.gyms.keys).union(plan.result.gyms.keys)
+        notice.touchedGyms.formUnion(gymIDs.filter { before.gyms[$0] != plan.result.gyms[$0] })
+        let machineIDs = Set(before.machines.keys).union(plan.result.machines.keys)
+        notice.touchedMachines.formUnion(machineIDs.filter { before.machines[$0] != plan.result.machines[$0] })
         notice.reordered = notice.reordered || before.order != plan.result.order
         inboxNotice = notice
     }
@@ -335,6 +344,12 @@ final class SyncCenter {
             }
             for id in notice.touchedExercises {
                 target.exercises[id] = notice.before.exercises[id]
+            }
+            for id in notice.touchedGyms {
+                target.gyms[id] = notice.before.gyms[id]
+            }
+            for id in notice.touchedMachines {
+                target.machines[id] = notice.before.machines[id]
             }
             let kept = target.templates.keys
             if notice.reordered {

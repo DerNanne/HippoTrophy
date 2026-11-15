@@ -71,9 +71,17 @@ nonisolated enum SyncOperation: Codable, Equatable {
     case putExercise(exercise: SyncExercise, base: SyncExercise?)
     /// Deletes an own exercise; what was logged with it keeps its values.
     case deleteExercise(base: SyncExercise)
+    /// A gym and the machines standing in it, found by `base`'s name.
+    case putGym(gym: SyncGym, base: SyncGym?)
+    /// Deletes a gym; the workouts trained there keep the rest of what they say.
+    case deleteGym(base: SyncGym)
+    /// A machine, found by `base`'s name; which gyms it stands in, the gyms say.
+    case putMachine(machine: SyncMachine, base: SyncMachine?)
+    /// Deletes a machine; the exercises done at it lose only the machine.
+    case deleteMachine(base: SyncMachine)
 
     private enum CodingKeys: String, CodingKey {
-        case op, template, workout, exercise, base, id, ids
+        case op, template, workout, exercise, gym, machine, base, id, ids
     }
 
     init(from decoder: Decoder) throws {
@@ -102,6 +110,17 @@ nonisolated enum SyncOperation: Codable, Equatable {
             )
         case "deleteExercise":
             self = .deleteExercise(base: try container.decode(SyncExercise.self, forKey: .base))
+        case "putGym":
+            self = .putGym(gym: try container.decode(SyncGym.self, forKey: .gym), base: try container.decodeIfPresent(SyncGym.self, forKey: .base))
+        case "deleteGym":
+            self = .deleteGym(base: try container.decode(SyncGym.self, forKey: .base))
+        case "putMachine":
+            self = .putMachine(
+                machine: try container.decode(SyncMachine.self, forKey: .machine),
+                base: try container.decodeIfPresent(SyncMachine.self, forKey: .base)
+            )
+        case "deleteMachine":
+            self = .deleteMachine(base: try container.decode(SyncMachine.self, forKey: .base))
         case let other:
             throw DecodingError.dataCorruptedError(forKey: .op, in: container, debugDescription: "Unknown operation \(other)")
         }
@@ -135,6 +154,20 @@ nonisolated enum SyncOperation: Codable, Equatable {
             try container.encodeIfPresent(base, forKey: .base)
         case .deleteExercise(let base):
             try container.encode("deleteExercise", forKey: .op)
+            try container.encode(base, forKey: .base)
+        case .putGym(let gym, let base):
+            try container.encode("putGym", forKey: .op)
+            try container.encode(gym, forKey: .gym)
+            try container.encodeIfPresent(base, forKey: .base)
+        case .deleteGym(let base):
+            try container.encode("deleteGym", forKey: .op)
+            try container.encode(base, forKey: .base)
+        case .putMachine(let machine, let base):
+            try container.encode("putMachine", forKey: .op)
+            try container.encode(machine, forKey: .machine)
+            try container.encodeIfPresent(base, forKey: .base)
+        case .deleteMachine(let base):
+            try container.encode("deleteMachine", forKey: .op)
             try container.encode(base, forKey: .base)
         }
     }
@@ -194,6 +227,22 @@ nonisolated struct SyncExercise: Codable, Equatable {
         var offersAssistance: Bool
         var fields: [SyncField]
     }
+}
+
+/// A gym and the names of the machines standing in it. Two gyms are the
+/// same when their machines are, in whatever order they are listed.
+nonisolated struct SyncGym: Codable, Equatable {
+    var name: String
+    var machines: [String]
+
+    static func == (lhs: SyncGym, rhs: SyncGym) -> Bool {
+        lhs.name == rhs.name && lhs.machines.map(\.exerciseKey).sorted() == rhs.machines.map(\.exerciseKey).sorted()
+    }
+}
+
+/// A machine, without its photo, which stays the iPhone's.
+nonisolated struct SyncMachine: Codable, Equatable {
+    var name: String
 }
 
 nonisolated struct SyncField: Codable, Equatable {
@@ -296,6 +345,12 @@ extension SyncExercise {
             fields: record.fields.map { SyncField(key: $0.key, label: $0.label, type: $0.type) },
             restSeconds: record.restSeconds
         )
+    }
+}
+
+extension SyncGym {
+    init(_ record: GymRecord) {
+        self.init(name: record.name, machines: record.machines)
     }
 }
 

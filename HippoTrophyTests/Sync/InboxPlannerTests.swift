@@ -314,6 +314,69 @@ struct InboxPlannerExerciseTests {
     }
 }
 
+/// Gyms and machines: found by name, and a rename or delete reaches what
+/// was trained at them.
+struct InboxPlannerGymTests {
+    private func file(_ operations: SyncOperation...) -> InboxPlanner.File {
+        InboxPlanner.File(name: "1.json", content: .success(InboxFile(syncFormat: 1, createdAt: .now, operations: operations)))
+    }
+
+    private func workout(gym: String?, machine: String?) -> SyncWorkout {
+        SyncWorkout(id: UUID(), name: "Push", date: .now, notes: "", durationSeconds: nil, gym: gym, exercises: [
+            SyncEntry(exercise: "Bench", catalogKey: nil, notes: "", instructions: "", mode: "bilateral", assistance: "unassisted",
+                      effortScale: "off", supersetGroup: nil, machine: machine, startSide: nil, sets: []),
+        ])
+    }
+
+    private let rack = SyncMachine(name: "Rack")
+    private let press = SyncMachine(name: "Chest Press")
+
+    @Test func aGymIsAddedWithMachinesThatAreHere() {
+        let state = InboxState(machines: [UUID(): rack])
+        let home = SyncGym(name: "Home", machines: ["Rack"])
+        #expect(InboxPlanner.plan([file(.putGym(gym: home, base: nil))], on: state).changes == [.gymAdded("Home")])
+        let elsewhere = SyncGym(name: "Home", machines: ["Rower"])
+        #expect(InboxPlanner.plan([file(.putGym(gym: elsewhere, base: nil))], on: state).conflicts == [.machineDeletedHere("Rower")])
+    }
+
+    @Test func machinesInAnotherOrderAreTheSame() {
+        #expect(SyncGym(name: "Home", machines: ["Rack", "chest press"]) == SyncGym(name: "Home", machines: ["Chest Press", "Rack"]))
+    }
+
+    @Test func renamingAGymReachesWhatWasTrainedThere() {
+        let home = SyncGym(name: "Home", machines: [])
+        var garage = home
+        garage.name = "Garage"
+        let plan = InboxPlanner.plan([file(.putGym(gym: garage, base: home))], on: InboxState(workouts: [workout(gym: "home", machine: nil)], gyms: [UUID(): home]))
+        #expect(plan.changes == [.gymChanged("Garage")])
+        #expect(plan.result.workouts.values.first?.gym == "Garage")
+        let deleted = InboxPlanner.plan([file(.deleteGym(base: garage))], on: plan.result)
+        #expect(deleted.result.workouts.values.first?.gym == nil)
+        #expect(deleted.result.gyms.isEmpty)
+    }
+
+    @Test func renamingAMachineReachesItsEntriesAndGyms() {
+        let home = SyncGym(name: "Home", machines: ["Rack"])
+        let state = InboxState(workouts: [workout(gym: "Home", machine: "Rack")], gyms: [UUID(): home], machines: [UUID(): rack])
+        let plan = InboxPlanner.plan([file(.putMachine(machine: SyncMachine(name: "Squat Rack"), base: rack))], on: state)
+        #expect(plan.changes == [.machineChanged("Squat Rack")])
+        #expect(plan.result.workouts.values.first?.exercises.first?.machine == "Squat Rack")
+        #expect(plan.result.gyms.values.first?.machines == ["Squat Rack"])
+        let deleted = InboxPlanner.plan([file(.deleteMachine(base: SyncMachine(name: "Squat Rack")))], on: plan.result)
+        #expect(deleted.result.workouts.values.first?.exercises.first?.machine == nil)
+        #expect(deleted.result.gyms.values.first?.machines == [])
+    }
+
+    @Test func namesStayOneEach() {
+        let state = InboxState(gyms: [UUID(): SyncGym(name: "Home", machines: []), UUID(): SyncGym(name: "Garage", machines: [])],
+                               machines: [UUID(): rack, UUID(): press])
+        #expect(InboxPlanner.plan([file(.putGym(gym: SyncGym(name: "home", machines: []), base: SyncGym(name: "Garage", machines: [])))], on: state).conflicts
+            == [.gymNameTaken("home")])
+        #expect(InboxPlanner.plan([file(.putMachine(machine: SyncMachine(name: "Rack"), base: press))], on: state).conflicts == [.machineNameTaken("Rack")])
+        #expect(InboxPlanner.plan([file(.putMachine(machine: SyncMachine(name: "Rack"), base: nil))], on: state).changes.isEmpty)
+    }
+}
+
 struct InboxFileTests {
     @Test func readsWhatItWrites() throws {
         let template = SyncTemplate(id: UUID(), name: "Push", notes: "", archived: false, plannedFor: nil, gym: "Home", exercises: [])
@@ -325,6 +388,10 @@ struct InboxFileTests {
             .deleteWorkout(id: template.id, base: SyncWorkout(id: template.id, name: "", date: Date(timeIntervalSinceReferenceDate: 800_000_000), notes: "", durationSeconds: 60, gym: nil, exercises: [])),
             .putExercise(exercise: SyncExercise(name: "Floor Press", category: "", muscleGroupNames: [], secondaryMuscleGroupNames: [], tracksSets: true, sides: "one", offersAssistance: true, fields: [SyncField(key: "f1", label: "Band", type: "text")], restSeconds: 90), base: nil),
             .deleteExercise(base: SyncExercise(name: "Dip", category: "Strength", muscleGroupNames: ["triceps"], secondaryMuscleGroupNames: ["chest"], tracksSets: true, sides: "both", offersAssistance: false, fields: [], restSeconds: nil)),
+            .putGym(gym: SyncGym(name: "Home", machines: ["Rack"]), base: nil),
+            .deleteGym(base: SyncGym(name: "Garage", machines: [])),
+            .putMachine(machine: SyncMachine(name: "Rack"), base: SyncMachine(name: "Squat Rack")),
+            .deleteMachine(base: SyncMachine(name: "Rower")),
         ])
         #expect(InboxFile.read(from: try SyncFormat.encoder.encode(file)) == .success(file))
     }

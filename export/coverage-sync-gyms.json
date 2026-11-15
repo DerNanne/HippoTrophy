@@ -1,0 +1,22 @@
+[
+  {
+    "machines" : [
+      "Leg Extension Black",
+      "Smith Machine"
+    ],
+    "name" : "Downtown Gym"
+  },
+  {
+    "machines" : [
+      "Lat Pulldown Blue",
+      "Smith Machine"
+    ],
+    "name" : "Forge Fitness"
+  },
+  {
+    "machines" : [
+
+    ],
+    "name" : "Home"
+  }
+]
