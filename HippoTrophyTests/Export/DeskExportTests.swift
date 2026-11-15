@@ -98,6 +98,9 @@ enum DeskExport {
             ("outlines.json", try encoder.encode(outlines()) + Data("\n".utf8)),
             ("coverage-backup.json", try BackupCoding.encoder.encode(BackupExporter.everything(in: context, at: now).file) + Data("\n".utf8)),
             ("coverage-expected.json", try encoder.encode(expected(in: context)) + Data("\n".utf8)),
+            // The templates as the sync format carries them: what Desk has to
+            // make of the backup's for a change's `base` to match this app's.
+            ("coverage-sync-templates.json", try encoder.encode(InboxApplier.state(in: context).inOrder) + Data("\n".utf8)),
         ]
     }
 

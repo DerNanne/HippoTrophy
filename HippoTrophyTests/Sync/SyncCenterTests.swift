@@ -110,13 +110,14 @@ struct SyncCenterTests {
         #expect(Array(writes.prefix(2)) == ["PUT /dav/HippoTrophy/backup.zip.uploading", "MOVE /dav/HippoTrophy/backup.zip.uploading"])
     }
 
+    /// A look into the inbox, for what Desk left, and nothing else.
     @Test func sendsNothingWhenNothingChanged() async throws {
         let center = center()
         try await connected(center)
         await center.sync(.automatic, in: context)
         server.clearLog()
         #expect(await center.sync(.automatic, in: context) == .unchanged)
-        #expect(server.log.isEmpty)
+        #expect(server.log == ["PROPFIND /dav/HippoTrophy/inbox"])
     }
 
     @Test func knowsItsOwnBackupWhenTheServerMarksTheEtagWeak() async throws {

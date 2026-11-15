@@ -151,6 +151,13 @@ final class SyncCenter {
         }
         if workoutRunning() { return .workoutRunning }
 
+        // What Desk changed comes in first, so the upload after carries it.
+        // Not over a backup that is not this device's: Desk's changes rest on
+        // that one.
+        if !state.foreignBackupOnServer {
+            if let problem = await takeInbox(in: context, connection: connection) { return fail(problem) }
+        }
+
         let upload: SyncUpload
         do {
             let package = try BackupExporter.everything(in: context, at: now())
@@ -199,6 +206,136 @@ final class SyncCenter {
             state.lastErrorAt = now()
         }
         return .uploaded
+    }
+
+    // MARK: - What Desk sends
+
+    /// What came from Desk, until the user closes it: the changes, what had
+    /// to wait, and the templates before them, for Undo.
+    struct InboxNotice: Equatable {
+        var changes: [InboxPlanner.Change] = []
+        var conflicts: [InboxPlanner.Conflict] = []
+        /// A file from a newer Desk waits for an update of this app.
+        var needsUpdate = false
+        var before: TemplateState
+        /// The templates the changes touched.
+        var touched: Set<UUID> = []
+        var reordered = false
+    }
+
+    private(set) var inboxNotice: InboxNotice?
+
+    /// Whether Desk left anything: a look at the inbox, nothing taken. When
+    /// the app comes back, a sync runs only if there is.
+    func syncIfInboxHasMail(in context: ModelContext) {
+        guard let connection, !state.foreignBackupOnServer, !workoutRunning(), let password = secrets.read() else { return }
+        let client = WebDAVClient(user: connection.user, password: password, session: session)
+        Task {
+            let names = (try? await client.list(connection.layout.inbox))?.filter { !$0.isCollection }.map(\.name) ?? []
+            if names.contains(where: SyncLayout.isInboxName) {
+                syncInBackground(.automatic, in: context)
+            }
+        }
+    }
+
+    /// Takes the inbox: plans every file on the templates here, writes what
+    /// applies in one save, then deletes those files and moves the ones in
+    /// conflict aside for Desk. A file from a newer Desk, or one that cannot
+    /// be read, stays where it is.
+    private func takeInbox(in context: ModelContext, connection: Connection) async -> SyncProblem? {
+        guard let password = secrets.read() else { return .credentials }
+        let client = WebDAVClient(user: connection.user, password: password, session: session)
+        let layout = connection.layout
+        do {
+            let names = try await client.list(layout.inbox)
+                .filter { !$0.isCollection && SyncLayout.isInboxName($0.name) }
+                .map(\.name)
+            guard !names.isEmpty else { return nil }
+            var files: [InboxPlanner.File] = []
+            for name in names {
+                guard let data = try await client.get(layout.inbox.appending(path: name, directoryHint: .notDirectory)) else { continue }
+                files.append(InboxPlanner.File(name: name, content: InboxFile.read(from: data)))
+            }
+
+            let before = try InboxApplier.state(in: context)
+            let plan = InboxPlanner.plan(files, on: before)
+            if plan.result != before {
+                do {
+                    try InboxApplier.make(plan.result, from: before, in: context)
+                    try context.save()
+                } catch {
+                    context.rollback()
+                    return .other("What Desk sent could not be saved: \(error.localizedDescription)")
+                }
+            }
+
+            for (name, outcome) in plan.outcomes {
+                let file = layout.inbox.appending(path: name, directoryHint: .notDirectory)
+                switch outcome {
+                case .apply:
+                    try await client.delete(file)
+                case .conflict:
+                    try await client.makeFolder(layout.conflicts)
+                    try await client.move(file, to: layout.conflicts.appending(path: name, directoryHint: .notDirectory))
+                case .tooNew, .unreadable:
+                    break
+                }
+            }
+            note(plan, before: before)
+            return nil
+        } catch {
+            return SyncProblem.from(error)
+        }
+    }
+
+    /// Adds what a run took to the notice still open, so one Undo goes back
+    /// to before the first of them.
+    private func note(_ plan: InboxPlanner.Plan, before: TemplateState) {
+        let needsUpdate = plan.outcomes.contains { if case .tooNew = $0.outcome { true } else { false } }
+        guard !plan.changes.isEmpty || !plan.conflicts.isEmpty || needsUpdate else { return }
+        var notice = inboxNotice ?? InboxNotice(before: before)
+        notice.changes += plan.changes
+        notice.conflicts += plan.conflicts
+        notice.needsUpdate = notice.needsUpdate || needsUpdate
+        let ids = Set(before.templates.keys).union(plan.result.templates.keys)
+        notice.touched.formUnion(ids.filter { before.templates[$0] != plan.result.templates[$0] })
+        notice.reordered = notice.reordered || before.order != plan.result.order
+        inboxNotice = notice
+    }
+
+    func dismissInboxNotice() {
+        inboxNotice = nil
+    }
+
+    /// Puts back what Desk changed: the templates it touched as they were,
+    /// and their order if it moved them. What was changed here since stays.
+    /// The upload after carries it to the server and to Desk.
+    func undoInbox(in context: ModelContext) {
+        guard let notice = inboxNotice else { return }
+        inboxNotice = nil
+        do {
+            let current = try InboxApplier.state(in: context)
+            var target = current
+            for id in notice.touched {
+                target.templates[id] = notice.before.templates[id]
+            }
+            let kept = target.templates.keys
+            if notice.reordered {
+                let earlier = notice.before.order.filter { kept.contains($0) }
+                target.order = current.order.filter { !earlier.contains($0) && kept.contains($0) } + earlier
+            } else {
+                target.order = current.order.filter { kept.contains($0) }
+                    + notice.before.order.filter { kept.contains($0) && !current.order.contains($0) }
+            }
+            try InboxApplier.make(target, from: current, in: context)
+            try context.save()
+        } catch {
+            context.rollback()
+            state.lastError = "Undo failed: \(error.localizedDescription)"
+            state.lastErrorAt = now()
+            return
+        }
+        syncInBackground(.automatic, in: context)
     }
 
     // MARK: - Bringing the server's backup in

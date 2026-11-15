@@ -41,12 +41,13 @@ struct HippoTrophyApp: App {
     }
 
     /// Going away, the sync puts up what changed. Coming back, it tries again
-    /// only if the last upload failed.
+    /// if the last upload failed, or takes what Desk left in the inbox.
     private func sync(on phase: ScenePhase, in context: ModelContext) {
         let center = SyncCenter.shared
         switch phase {
         case .background: center.syncInBackground(.automatic, in: context)
         case .active where center.owesUpload: center.syncInBackground(.automatic, in: context)
+        case .active: center.syncIfInboxHasMail(in: context)
         default: break
         }
     }

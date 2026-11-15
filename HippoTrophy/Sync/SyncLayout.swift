@@ -1,9 +1,9 @@
 import Foundation
 
-/// Where the sync puts things on the server, and nothing else: one folder,
-/// the newest backup in it under a name that never changes, and a copy a day
-/// beside it. Everything else in the folder belongs to someone else — a later
-/// step of the sync, the web app, the user — and is left alone.
+/// Where the sync puts things on the server: one folder, the newest backup
+/// in it under a name that never changes, a copy a day beside it, and the
+/// inbox Desk writes its changes to. Everything else in the folder belongs to
+/// someone else and is left alone.
 nonisolated struct SyncLayout: Equatable {
     static let folderName = "HippoTrophy"
     static let backupName = "backup.zip"
@@ -25,6 +25,14 @@ nonisolated struct SyncLayout: Equatable {
     var uploading: URL { folder.appending(path: Self.uploadingName, directoryHint: .notDirectory) }
     var writeTest: URL { folder.appending(path: Self.writeTestName, directoryHint: .notDirectory) }
     var history: URL { folder.appending(path: Self.historyFolderName, directoryHint: .isDirectory) }
+    /// Where Desk puts its changes for this app to take, one file a save.
+    var inbox: URL { folder.appending(path: "inbox", directoryHint: .isDirectory) }
+    /// Where a change waits that could not be applied, for Desk to show.
+    var conflicts: URL { inbox.appending(path: "conflicts", directoryHint: .isDirectory) }
+
+    static func isInboxName(_ name: String) -> Bool {
+        name.hasSuffix(".json") && !name.hasPrefix(".")
+    }
 
     func historyFile(for date: Date, calendar: Calendar = .current) -> URL {
         history.appending(path: Self.historyName(for: date, calendar: calendar), directoryHint: .notDirectory)

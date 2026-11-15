@@ -17,6 +17,10 @@ tests its own code against it.
   group for every heat-map period (all categories, and Strength alone), and
   the progress points of every exercise for every metric it offers. Weights
   are in kilograms.
+- `coverage-sync-templates.json` — the templates of `coverage-backup.json` in
+  the sync format, in their order, as this app compares them: what Desk has
+  to make of a backup's templates, so that the `base` of a change it sends
+  matches. See `HippoTrophy/Sync/SyncFormat.swift`.
 
 `exportIsCurrent` fails when the app counts or draws differently from these
 files. If the change is meant, write them anew and take them over into the

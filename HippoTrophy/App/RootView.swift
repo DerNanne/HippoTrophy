@@ -34,6 +34,12 @@ struct RootView: View {
             .tabItem { Label("Statistics", systemImage: "chart.bar") }
             .tag(Tab.statistics)
         }
+        // What Desk sent shows over whichever tab is open.
+        .safeAreaInset(edge: .bottom, spacing: 0) {
+            InboxNoticeBanner()
+                .padding(.bottom, 49)
+        }
+        .animation(.default, value: SyncCenter.shared.inboxNotice != nil)
     }
 
     /// The workout lives on the Workouts tab's stack, so going back into it
