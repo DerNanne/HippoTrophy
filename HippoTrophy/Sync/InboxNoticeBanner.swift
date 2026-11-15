@@ -17,7 +17,7 @@ struct InboxNoticeBanner: View {
                     Label("From Desk", systemImage: "desktopcomputer")
                         .font(.subheadline.weight(.semibold))
                     Spacer()
-                    if !notice.touched.isEmpty || notice.reordered {
+                    if notice.canUndo {
                         Button("Undo") { center.undoInbox(in: modelContext) }
                             .font(.subheadline.weight(.semibold))
                     }

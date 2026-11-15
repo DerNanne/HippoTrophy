@@ -63,9 +63,12 @@ nonisolated enum SyncOperation: Codable, Equatable {
     case deleteTemplate(id: UUID, base: SyncTemplate)
     /// The templates' order, as Desk knew them.
     case orderTemplates(ids: [UUID])
+    /// A workout logged in Desk (`base` nil) or a trained one changed.
+    case putWorkout(workout: SyncWorkout, base: SyncWorkout?)
+    case deleteWorkout(id: UUID, base: SyncWorkout)
 
     private enum CodingKeys: String, CodingKey {
-        case op, template, base, id, ids
+        case op, template, workout, base, id, ids
     }
 
     init(from decoder: Decoder) throws {
@@ -80,6 +83,13 @@ nonisolated enum SyncOperation: Codable, Equatable {
             self = .deleteTemplate(id: try container.decode(UUID.self, forKey: .id), base: try container.decode(SyncTemplate.self, forKey: .base))
         case "orderTemplates":
             self = .orderTemplates(ids: try container.decode([UUID].self, forKey: .ids))
+        case "putWorkout":
+            self = .putWorkout(
+                workout: try container.decode(SyncWorkout.self, forKey: .workout),
+                base: try container.decodeIfPresent(SyncWorkout.self, forKey: .base)
+            )
+        case "deleteWorkout":
+            self = .deleteWorkout(id: try container.decode(UUID.self, forKey: .id), base: try container.decode(SyncWorkout.self, forKey: .base))
         case let other:
             throw DecodingError.dataCorruptedError(forKey: .op, in: container, debugDescription: "Unknown operation \(other)")
         }
@@ -99,6 +109,14 @@ nonisolated enum SyncOperation: Codable, Equatable {
         case .orderTemplates(let ids):
             try container.encode("orderTemplates", forKey: .op)
             try container.encode(ids, forKey: .ids)
+        case .putWorkout(let workout, let base):
+            try container.encode("putWorkout", forKey: .op)
+            try container.encode(workout, forKey: .workout)
+            try container.encodeIfPresent(base, forKey: .base)
+        case .deleteWorkout(let id, let base):
+            try container.encode("deleteWorkout", forKey: .op)
+            try container.encode(id, forKey: .id)
+            try container.encode(base, forKey: .base)
         }
     }
 }
@@ -114,6 +132,19 @@ nonisolated struct SyncTemplate: Codable, Equatable {
     var archived: Bool
     /// Set on a day variant only.
     var plannedFor: Date?
+    var gym: String?
+    var exercises: [SyncEntry]
+}
+
+/// A trained workout as the sync format carries it — its own type, not the
+/// backup's `WorkoutRecord`, like a template.
+nonisolated struct SyncWorkout: Codable, Equatable {
+    var id: UUID
+    var name: String
+    var date: Date
+    var notes: String
+    /// In whole seconds; absent when it was not timed.
+    var durationSeconds: Int?
     var gym: String?
     var exercises: [SyncEntry]
 }
@@ -178,6 +209,28 @@ extension SyncTemplate {
     var normalized: SyncTemplate {
         let encoded = try? SyncFormat.encoder.encode(self)
         return encoded.flatMap { try? SyncFormat.decoder.decode(SyncTemplate.self, from: $0) } ?? self
+    }
+}
+
+extension SyncWorkout {
+    init(_ record: WorkoutRecord) {
+        self.init(
+            id: record.id, name: record.name, date: record.date, notes: record.notes,
+            durationSeconds: record.durationSeconds, gym: record.gym, exercises: record.exercises.map(SyncEntry.init)
+        )
+    }
+
+    var record: WorkoutRecord {
+        WorkoutRecord(
+            id: id, name: name, date: date, notes: notes, durationSeconds: durationSeconds, gym: gym,
+            exercises: exercises.map(\.record)
+        )
+    }
+
+    /// As it reads after a trip through the format: the date to the second.
+    var normalized: SyncWorkout {
+        let encoded = try? SyncFormat.encoder.encode(self)
+        return encoded.flatMap { try? SyncFormat.decoder.decode(SyncWorkout.self, from: $0) } ?? self
     }
 }
 

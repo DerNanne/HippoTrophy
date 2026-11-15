@@ -217,10 +217,15 @@ final class SyncCenter {
         var conflicts: [InboxPlanner.Conflict] = []
         /// A file from a newer Desk waits for an update of this app.
         var needsUpdate = false
-        var before: TemplateState
+        var before: InboxState
         /// The templates the changes touched.
         var touched: Set<UUID> = []
+        /// The workouts the changes touched.
+        var touchedWorkouts: Set<UUID> = []
         var reordered = false
+
+        /// Whether Undo has anything to put back.
+        var canUndo: Bool { !touched.isEmpty || !touchedWorkouts.isEmpty || reordered }
     }
 
     private(set) var inboxNotice: InboxNotice?
@@ -290,7 +295,7 @@ final class SyncCenter {
 
     /// Adds what a run took to the notice still open, so one Undo goes back
     /// to before the first of them.
-    private func note(_ plan: InboxPlanner.Plan, before: TemplateState) {
+    private func note(_ plan: InboxPlanner.Plan, before: InboxState) {
         let needsUpdate = plan.outcomes.contains { if case .tooNew = $0.outcome { true } else { false } }
         guard !plan.changes.isEmpty || !plan.conflicts.isEmpty || needsUpdate else { return }
         var notice = inboxNotice ?? InboxNotice(before: before)
@@ -299,6 +304,8 @@ final class SyncCenter {
         notice.needsUpdate = notice.needsUpdate || needsUpdate
         let ids = Set(before.templates.keys).union(plan.result.templates.keys)
         notice.touched.formUnion(ids.filter { before.templates[$0] != plan.result.templates[$0] })
+        let workoutIDs = Set(before.workouts.keys).union(plan.result.workouts.keys)
+        notice.touchedWorkouts.formUnion(workoutIDs.filter { before.workouts[$0] != plan.result.workouts[$0] })
         notice.reordered = notice.reordered || before.order != plan.result.order
         inboxNotice = notice
     }
@@ -307,8 +314,8 @@ final class SyncCenter {
         inboxNotice = nil
     }
 
-    /// Puts back what Desk changed: the templates it touched as they were,
-    /// and their order if it moved them. What was changed here since stays.
+    /// Puts back what Desk changed: the templates and workouts it touched as
+    /// they were, and the templates' order if it moved them. What was changed here since stays.
     /// The upload after carries it to the server and to Desk.
     func undoInbox(in context: ModelContext) {
         guard let notice = inboxNotice else { return }
@@ -318,6 +325,9 @@ final class SyncCenter {
             var target = current
             for id in notice.touched {
                 target.templates[id] = notice.before.templates[id]
+            }
+            for id in notice.touchedWorkouts {
+                target.workouts[id] = notice.before.workouts[id]
             }
             let kept = target.templates.keys
             if notice.reordered {

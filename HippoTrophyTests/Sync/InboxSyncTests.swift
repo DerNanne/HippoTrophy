@@ -168,4 +168,86 @@ struct InboxSyncTests {
         let pushNow = try #require(try templates().first { $0.id == push.id })
         #expect(pushNow.exercises.first?.sortedSets.first?.weightKg == 60)
     }
+
+    // MARK: - Workouts
+
+    private func workouts() throws -> [WorkoutSession] {
+        try context.fetch(FetchDescriptor(predicate: WorkoutSession.trained, sortBy: [SortDescriptor(\.date)]))
+    }
+
+    @Test func takesAWorkoutLoggedInDesk() async throws {
+        let center = try await connected()
+        let seen = try InboxApplier.state(in: context)
+        let entry = try #require(template("x").exercises.first)
+        var set = entry.sets[0]
+        set.done = true
+        let legs = SyncWorkout(
+            id: UUID(), name: "Legs", date: Date(timeIntervalSinceReferenceDate: 810_000_000), notes: "From Desk",
+            durationSeconds: 2700, gym: nil, exercises: [{ var e = entry; e.sets = [set]; return e }()]
+        )
+        try leave("1.json", .putWorkout(workout: legs, base: nil))
+        #expect(await center.sync(.automatic, in: context) == .uploaded)
+
+        #expect(try workouts().map(\.name) == ["Chest", "Legs"])
+        let made = try #require(try workouts().last)
+        #expect(made.id == legs.id && made.durationSeconds == 2700 && made.notes == "From Desk")
+        #expect(made.exercises.first?.definitionID == bench.id)
+        #expect(made.setCount == 1)
+        #expect(!made.isTemplate)
+        #expect(try InboxApplier.state(in: context).workouts.count == seen.workouts.count + 1)
+        let uploaded = try BackupPackage.read(from: try #require(server.files["/dav/HippoTrophy/backup.zip"]).data)
+        #expect(uploaded.file.workouts?.contains { $0.id == legs.id } == true)
+        #expect(center.inboxNotice?.changes == [.workoutAdded("Legs", legs.date)])
+    }
+
+    @Test func changesAndDeletesATrainedWorkoutAndLeavesTheTemplatesAlone() async throws {
+        let center = try await connected()
+        try leave("1.json", .putTemplate(template: template("Push"), base: nil))
+        await center.sync(.automatic, in: context)
+
+        let seen = try InboxApplier.state(in: context)
+        let chest = try #require(seen.workoutsByDate.first)
+        var renamed = chest
+        renamed.name = "Chest and Back"
+        renamed.date = Date(timeIntervalSinceReferenceDate: 800_003_600)
+        try leave("2.json", .putWorkout(workout: renamed, base: chest))
+        await center.sync(.automatic, in: context)
+        #expect(try workouts().map(\.name) == ["Chest and Back"])
+        #expect(try workouts().first?.date == renamed.date)
+        #expect(try templates().map(\.name) == ["Push"])
+
+        let now = try #require(try InboxApplier.state(in: context).workouts[chest.id])
+        try leave("3.json", .deleteWorkout(id: chest.id, base: now))
+        await center.sync(.automatic, in: context)
+        #expect(try workouts().isEmpty)
+        #expect(try templates().map(\.name) == ["Push"])
+    }
+
+    @Test func movesAWorkoutChangeOnAnOldStateAside() async throws {
+        let center = try await connected()
+        await center.sync(.automatic, in: context)
+        let chest = try #require(try InboxApplier.state(in: context).workoutsByDate.first)
+        try workouts().first?.notes = "Changed on the phone"
+        try context.save()
+        var desk = chest
+        desk.notes = "Changed in Desk"
+        try leave("1.json", .putWorkout(workout: desk, base: chest))
+        await center.sync(.automatic, in: context)
+        #expect(try workouts().first?.notes == "Changed on the phone")
+        #expect(server.files["/dav/HippoTrophy/inbox/conflicts/1.json"] != nil)
+        #expect(center.inboxNotice?.conflicts == [.workoutChangedHere("Chest", chest.date)])
+    }
+
+    @Test func undoBringsBackAWorkoutDeskDeleted() async throws {
+        let center = try await connected()
+        await center.sync(.automatic, in: context)
+        let chest = try #require(try InboxApplier.state(in: context).workoutsByDate.first)
+        try leave("1.json", .deleteWorkout(id: chest.id, base: chest))
+        await center.sync(.automatic, in: context)
+        #expect(try workouts().isEmpty)
+        #expect(center.inboxNotice?.canUndo == true)
+
+        center.undoInbox(in: context)
+        #expect(try workouts().map(\.id) == [chest.id])
+    }
 }

@@ -1,22 +1,30 @@
 import Foundation
 
-/// The templates as the inbox sees them: each by id, and their order, the
-/// archived ones in it too — `templateOrder`, which an archived template
-/// keeps while it is away.
-nonisolated struct TemplateState: Equatable {
+/// What the inbox can change, as it sees it: the templates by id and their
+/// order, the archived ones in it too — `templateOrder`, which an archived
+/// template keeps while it is away — and the trained workouts by id.
+nonisolated struct InboxState: Equatable {
     var templates: [UUID: SyncTemplate]
     var order: [UUID]
+    var workouts: [UUID: SyncWorkout]
 
-    init(templates: [SyncTemplate] = []) {
+    init(templates: [SyncTemplate] = [], workouts: [SyncWorkout] = []) {
         self.templates = Dictionary(templates.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
         self.order = templates.map(\.id)
+        self.workouts = Dictionary(workouts.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
     }
 
     var inOrder: [SyncTemplate] { order.compactMap { templates[$0] } }
+
+    /// The workouts by date, then id: an order that is the same every time.
+    var workoutsByDate: [SyncWorkout] {
+        workouts.values.sorted { ($0.date, $0.id.uuidString) < ($1.date, $1.id.uuidString) }
+    }
 }
 
 /// What the inbox comes to, worked out before anything is written: which
-/// files apply, which wait in Desk for a decision, and the templates after.
+/// files apply, which wait in Desk for a decision, and the templates and
+/// workouts after.
 /// A file is one save in Desk, applied whole or not at all.
 nonisolated enum InboxPlanner {
     struct File {
@@ -31,9 +39,12 @@ nonisolated enum InboxPlanner {
         case restored(String)
         case deleted(String)
         case reordered
+        case workoutAdded(String, Date)
+        case workoutChanged(String, Date)
+        case workoutDeleted(String, Date)
     }
 
-    /// Why a file waits in Desk. Named by the template it is about.
+    /// Why a file waits in Desk. Named by the template or workout it is about.
     enum Conflict: Equatable {
         /// Changed here since Desk read it.
         case changedHere(String)
@@ -42,6 +53,9 @@ nonisolated enum InboxPlanner {
         /// A new template whose id is already one here, and not the same —
         /// only a copied file could do that.
         case alreadyHere(String)
+        case workoutChangedHere(String, Date)
+        case workoutDeletedHere(String, Date)
+        case workoutAlreadyHere(String, Date)
     }
 
     enum Outcome: Equatable {
@@ -55,7 +69,7 @@ nonisolated enum InboxPlanner {
 
     struct Plan: Equatable {
         var outcomes: [(name: String, outcome: Outcome)]
-        var result: TemplateState
+        var result: InboxState
 
         static func == (lhs: Plan, rhs: Plan) -> Bool {
             lhs.result == rhs.result && lhs.outcomes.map(\.name) == rhs.outcomes.map(\.name)
@@ -79,7 +93,7 @@ nonisolated enum InboxPlanner {
 
     /// The files in their order — Desk names them by time, so by name — each
     /// on the state the ones before it left.
-    static func plan(_ files: [File], on state: TemplateState) -> Plan {
+    static func plan(_ files: [File], on state: InboxState) -> Plan {
         var state = state
         var outcomes: [(name: String, outcome: Outcome)] = []
         for file in files.sorted(by: { $0.name < $1.name }) {
@@ -106,7 +120,7 @@ nonisolated enum InboxPlanner {
         var conflict: Conflict
     }
 
-    private static func apply(_ operations: [SyncOperation], to state: inout TemplateState) -> Result<[Change], Refused> {
+    private static func apply(_ operations: [SyncOperation], to state: inout InboxState) -> Result<[Change], Refused> {
         var changes: [Change] = []
         for operation in operations {
             switch operation {
@@ -132,6 +146,29 @@ nonisolated enum InboxPlanner {
                 state.templates[id] = nil
                 state.order.removeAll { $0 == id }
                 changes.append(.deleted(current.name))
+            case .putWorkout(let workout, let base):
+                let current = state.workouts[workout.id]?.normalized
+                let wanted = workout.normalized
+                if current == wanted { continue }
+                guard let base else {
+                    if current != nil { return .failure(Refused(conflict: .workoutAlreadyHere(workout.name, workout.date))) }
+                    state.workouts[workout.id] = wanted
+                    changes.append(.workoutAdded(wanted.name, wanted.date))
+                    continue
+                }
+                guard let current else { return .failure(Refused(conflict: .workoutDeletedHere(base.name, base.date))) }
+                guard current == base.normalized else {
+                    return .failure(Refused(conflict: .workoutChangedHere(current.name, current.date)))
+                }
+                state.workouts[workout.id] = wanted
+                changes.append(.workoutChanged(wanted.name, wanted.date))
+            case .deleteWorkout(let id, let base):
+                guard let current = state.workouts[id]?.normalized else { continue }
+                guard current == base.normalized else {
+                    return .failure(Refused(conflict: .workoutChangedHere(current.name, current.date)))
+                }
+                state.workouts[id] = nil
+                changes.append(.workoutDeleted(current.name, current.date))
             case .orderTemplates(let ids):
                 // The order Desk gave for the templates it knew; one made here
                 // since stays in front, as a new template stands first.
@@ -167,6 +204,9 @@ extension InboxPlanner.Change {
         case .restored(let name): "\(name) back from the archive"
         case .deleted(let name): "\(name) deleted"
         case .reordered: "templates reordered"
+        case .workoutAdded(let name, let date): "\(workoutLabel(name, date)) added"
+        case .workoutChanged(let name, let date): "\(workoutLabel(name, date)) changed"
+        case .workoutDeleted(let name, let date): "\(workoutLabel(name, date)) deleted"
         }
     }
 }
@@ -177,6 +217,17 @@ extension InboxPlanner.Conflict {
         case .changedHere(let name): "\(name) was changed on this iPhone in the meantime"
         case .deletedHere(let name): "\(name) was deleted on this iPhone in the meantime"
         case .alreadyHere(let name): "\(name) is here already as another template"
+        case .workoutChangedHere(let name, let date): "\(workoutLabel(name, date)) was changed on this iPhone in the meantime"
+        case .workoutDeletedHere(let name, let date): "\(workoutLabel(name, date)) was deleted on this iPhone in the meantime"
+        case .workoutAlreadyHere(let name, let date): "\(workoutLabel(name, date)) is here already as another workout"
         }
     }
+}
+
+/// A workout as a line names it: its name and day — "Push of Nov 13" —
+/// or "The workout of Nov 13" when it has no name.
+nonisolated func workoutLabel(_ name: String, _ date: Date) -> String {
+    let day = date.formatted(.dateTime.month(.abbreviated).day())
+    let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
+    return trimmed.isEmpty ? "the workout of \(day)" : "\(trimmed) of \(day)"
 }

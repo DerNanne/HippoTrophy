@@ -25,7 +25,7 @@ struct InboxPlannerTests {
     private let legs = SyncTemplate(id: UUID(), name: "Legs", notes: "", archived: false, plannedFor: nil, gym: nil, exercises: [])
 
     @Test func aNewTemplateStandsFirst() {
-        let state = TemplateState(templates: [legs])
+        let state = InboxState(templates: [legs])
         let push = template("Push")
         let plan = InboxPlanner.plan([file("1.json", .putTemplate(template: push, base: nil))], on: state)
         #expect(plan.outcomes.map(\.outcome) == [.apply([.added("Push")])])
@@ -37,7 +37,7 @@ struct InboxPlannerTests {
         let push = template("Push")
         var changed = push
         changed.notes = "Slow negatives"
-        let plan = InboxPlanner.plan([file("1.json", .putTemplate(template: changed, base: push))], on: TemplateState(templates: [legs, push]))
+        let plan = InboxPlanner.plan([file("1.json", .putTemplate(template: changed, base: push))], on: InboxState(templates: [legs, push]))
         #expect(plan.outcomes.map(\.outcome) == [.apply([.changed("Push")])])
         #expect(plan.result.templates[push.id]?.notes == "Slow negatives")
         #expect(plan.result.order == [legs.id, push.id])
@@ -49,7 +49,7 @@ struct InboxPlannerTests {
         here.name = "Push A"
         var desk = push
         desk.notes = "Slow negatives"
-        let state = TemplateState(templates: [here])
+        let state = InboxState(templates: [here])
         let plan = InboxPlanner.plan([file("1.json", .putTemplate(template: desk, base: push))], on: state)
         #expect(plan.outcomes.map(\.outcome) == [.conflict(.changedHere("Push A"))])
         #expect(plan.result == state)
@@ -59,7 +59,7 @@ struct InboxPlannerTests {
         let push = template("Push")
         var desk = push
         desk.notes = "Slow negatives"
-        let plan = InboxPlanner.plan([file("1.json", .putTemplate(template: desk, base: push))], on: TemplateState(templates: [legs]))
+        let plan = InboxPlanner.plan([file("1.json", .putTemplate(template: desk, base: push))], on: InboxState(templates: [legs]))
         #expect(plan.outcomes.map(\.outcome) == [.conflict(.deletedHere("Push"))])
     }
 
@@ -67,7 +67,7 @@ struct InboxPlannerTests {
         let push = template("Push")
         var archived = push
         archived.archived = true
-        let plan = InboxPlanner.plan([file("1.json", .putTemplate(template: archived, base: push))], on: TemplateState(templates: [push]))
+        let plan = InboxPlanner.plan([file("1.json", .putTemplate(template: archived, base: push))], on: InboxState(templates: [push]))
         #expect(plan.changes == [.archived("Push")])
         var back = archived
         back.archived = false
@@ -76,26 +76,26 @@ struct InboxPlannerTests {
 
     @Test func deletesOnlyWhatDeskSaw() {
         let push = template("Push")
-        let plan = InboxPlanner.plan([file("1.json", .deleteTemplate(id: push.id, base: push))], on: TemplateState(templates: [legs, push]))
+        let plan = InboxPlanner.plan([file("1.json", .deleteTemplate(id: push.id, base: push))], on: InboxState(templates: [legs, push]))
         #expect(plan.changes == [.deleted("Push")])
         #expect(plan.result.order == [legs.id])
 
         var here = push
         here.notes = "Changed on the phone"
-        let refused = InboxPlanner.plan([file("1.json", .deleteTemplate(id: push.id, base: push))], on: TemplateState(templates: [here]))
+        let refused = InboxPlanner.plan([file("1.json", .deleteTemplate(id: push.id, base: push))], on: InboxState(templates: [here]))
         #expect(refused.conflicts == [.changedHere("Push")])
         #expect(refused.result.templates[push.id] != nil)
     }
 
     @Test func deletingWhatIsGoneAlreadyChangesNothing() {
         let push = template("Push")
-        let plan = InboxPlanner.plan([file("1.json", .deleteTemplate(id: push.id, base: push))], on: TemplateState(templates: [legs]))
+        let plan = InboxPlanner.plan([file("1.json", .deleteTemplate(id: push.id, base: push))], on: InboxState(templates: [legs]))
         #expect(plan.outcomes.map(\.outcome) == [.apply([])])
     }
 
     @Test func theOrderFromDeskLeavesTemplatesMadeHereInFront() {
         let a = template("A"), b = template("B"), new = template("New here")
-        let state = TemplateState(templates: [new, a, b])
+        let state = InboxState(templates: [new, a, b])
         let plan = InboxPlanner.plan([file("1.json", .orderTemplates(ids: [b.id, a.id, UUID()]))], on: state)
         #expect(plan.result.order == [new.id, b.id, a.id])
         #expect(plan.changes == [.reordered])
@@ -108,7 +108,7 @@ struct InboxPlannerTests {
         let files = [
             file("1.json", .putTemplate(template: push, base: nil), .putTemplate(template: changed, base: push)),
         ]
-        let once = InboxPlanner.plan(files, on: TemplateState())
+        let once = InboxPlanner.plan(files, on: InboxState())
         let twice = InboxPlanner.plan(files, on: once.result)
         #expect(twice.result == once.result)
         #expect(twice.changes.isEmpty)
@@ -121,7 +121,7 @@ struct InboxPlannerTests {
         stale.notes = "As Desk saw it"
         let plan = InboxPlanner.plan(
             [file("1.json", .putTemplate(template: push, base: nil), .deleteTemplate(id: other.id, base: stale))],
-            on: TemplateState(templates: [other])
+            on: InboxState(templates: [other])
         )
         #expect(plan.conflicts == [.changedHere("Other")])
         #expect(plan.result.templates[push.id] == nil)
@@ -133,7 +133,7 @@ struct InboxPlannerTests {
         changed.notes = "Second save"
         let plan = InboxPlanner.plan(
             [file("2.json", .putTemplate(template: changed, base: push)), file("1.json", .putTemplate(template: push, base: nil))],
-            on: TemplateState()
+            on: InboxState()
         )
         #expect(plan.outcomes.map(\.name) == ["1.json", "2.json"])
         #expect(plan.changes == [.added("Push"), .changed("Push")])
@@ -143,9 +143,9 @@ struct InboxPlannerTests {
         let plan = InboxPlanner.plan([
             InboxPlanner.File(name: "1.json", content: .failure(.tooNew(2))),
             InboxPlanner.File(name: "2.json", content: .failure(.unreadable)),
-        ], on: TemplateState(templates: [legs]))
+        ], on: InboxState(templates: [legs]))
         #expect(plan.outcomes.map(\.outcome) == [.tooNew(2), .unreadable])
-        #expect(plan.result == TemplateState(templates: [legs]))
+        #expect(plan.result == InboxState(templates: [legs]))
     }
 
     @Test func comparesDatesToTheSecondAsTheFileHasThem() {
@@ -155,8 +155,76 @@ struct InboxPlannerTests {
         desk.plannedFor = Date(timeIntervalSinceReferenceDate: 800_000_000)
         var changed = desk
         changed.notes = "Lighter today"
-        let plan = InboxPlanner.plan([file("1.json", .putTemplate(template: changed, base: desk))], on: TemplateState(templates: [here]))
+        let plan = InboxPlanner.plan([file("1.json", .putTemplate(template: changed, base: desk))], on: InboxState(templates: [here]))
         #expect(plan.changes == [.changed("Variant")])
+    }
+}
+
+/// The same rules for trained workouts: a change applies while the workout
+/// is as Desk saw it, and is named by name and day.
+struct InboxPlannerWorkoutTests {
+    private let day = Date(timeIntervalSinceReferenceDate: 815_000_000)
+
+    private func workout(_ name: String, notes: String = "") -> SyncWorkout {
+        SyncWorkout(id: UUID(), name: name, date: day, notes: notes, durationSeconds: 3600, gym: nil, exercises: [])
+    }
+
+    private func file(_ name: String, _ operations: SyncOperation...) -> InboxPlanner.File {
+        InboxPlanner.File(name: name, content: .success(InboxFile(syncFormat: 1, createdAt: .now, operations: operations)))
+    }
+
+    @Test func aWorkoutLoggedInDeskIsAdded() {
+        let push = workout("Push")
+        let plan = InboxPlanner.plan([file("1.json", .putWorkout(workout: push, base: nil))], on: InboxState())
+        #expect(plan.changes == [.workoutAdded("Push", day)])
+        #expect(plan.result.workouts[push.id] == push)
+        #expect(plan.result.order.isEmpty)
+    }
+
+    @Test func aChangeAppliesWhileTheWorkoutIsAsDeskSawIt() {
+        let push = workout("Push")
+        var changed = push
+        changed.notes = "Shoulder fine"
+        let plan = InboxPlanner.plan([file("1.json", .putWorkout(workout: changed, base: push))], on: InboxState(workouts: [push]))
+        #expect(plan.changes == [.workoutChanged("Push", day)])
+        #expect(plan.result.workouts[push.id]?.notes == "Shoulder fine")
+    }
+
+    @Test func aChangeWaitsWhenTheWorkoutChangedOrWentHere() {
+        let push = workout("Push")
+        var desk = push
+        desk.notes = "Desk"
+        let changedHere = InboxPlanner.plan([file("1.json", .putWorkout(workout: desk, base: push))], on: InboxState(workouts: [workout("Other"), { var w = push; w.notes = "Phone"; return w }()]))
+        #expect(changedHere.conflicts == [.workoutChangedHere("Push", day)])
+        let goneHere = InboxPlanner.plan([file("1.json", .putWorkout(workout: desk, base: push))], on: InboxState())
+        #expect(goneHere.conflicts == [.workoutDeletedHere("Push", day)])
+    }
+
+    @Test func deletesOnlyWhatDeskSaw() {
+        let push = workout("Push")
+        let plan = InboxPlanner.plan([file("1.json", .deleteWorkout(id: push.id, base: push))], on: InboxState(workouts: [push]))
+        #expect(plan.changes == [.workoutDeleted("Push", day)])
+        #expect(plan.result.workouts.isEmpty)
+        var here = push
+        here.name = "Push A"
+        #expect(InboxPlanner.plan([file("1.json", .deleteWorkout(id: push.id, base: push))], on: InboxState(workouts: [here])).conflicts
+            == [.workoutChangedHere("Push A", day)])
+        #expect(InboxPlanner.plan([file("1.json", .deleteWorkout(id: push.id, base: push))], on: InboxState()).changes.isEmpty)
+    }
+
+    @Test func comparesTheDateToTheSecondAsTheFileHasIt() {
+        var here = workout("Push")
+        here.date = Date(timeIntervalSinceReferenceDate: 815_000_000.4)
+        var desk = here
+        desk.date = Date(timeIntervalSinceReferenceDate: 815_000_000)
+        var changed = desk
+        changed.notes = "n"
+        #expect(InboxPlanner.plan([file("1.json", .putWorkout(workout: changed, base: desk))], on: InboxState(workouts: [here])).changes.count == 1)
+    }
+
+    @Test func aWorkoutWithoutANameIsNamedByItsDay() {
+        #expect(workoutLabel("  ", day).hasPrefix("the workout of "))
+        #expect(workoutLabel("Push", day).hasPrefix("Push of "))
     }
 }
 
@@ -167,6 +235,8 @@ struct InboxFileTests {
             .putTemplate(template: template, base: nil),
             .deleteTemplate(id: template.id, base: template),
             .orderTemplates(ids: [template.id]),
+            .putWorkout(workout: SyncWorkout(id: UUID(), name: "Legs", date: Date(timeIntervalSinceReferenceDate: 800_000_000), notes: "", durationSeconds: nil, gym: "Home", exercises: []), base: nil),
+            .deleteWorkout(id: template.id, base: SyncWorkout(id: template.id, name: "", date: Date(timeIntervalSinceReferenceDate: 800_000_000), notes: "", durationSeconds: 60, gym: nil, exercises: [])),
         ])
         #expect(InboxFile.read(from: try SyncFormat.encoder.encode(file)) == .success(file))
     }
