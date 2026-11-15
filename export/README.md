@@ -23,6 +23,7 @@ tests its own code against it.
   matches. See `HippoTrophy/Sync/SyncFormat.swift`.
 - `coverage-sync-workouts.json` — its workouts the same way, by date: what
   Desk has to make of a backup's workouts for the same reason.
+- `coverage-sync-exercises.json` — its own exercises the same way, by name.
 
 `exportIsCurrent` fails when the app counts or draws differently from these
 files. If the change is meant, write them anew and take them over into the

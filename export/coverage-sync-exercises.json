@@ -1,0 +1,301 @@
+[
+  {
+    "category" : "",
+    "fields" : [
+      {
+        "key" : "f1",
+        "label" : "Hardest Grade",
+        "type" : "text"
+      },
+      {
+        "key" : "f2",
+        "label" : "Tops",
+        "type" : "number"
+      },
+      {
+        "key" : "f3",
+        "label" : "Session",
+        "type" : "time"
+      }
+    ],
+    "muscleGroupNames" : [
+      "forearms",
+      "back"
+    ],
+    "name" : "Bouldering",
+    "offersAssistance" : false,
+    "secondaryMuscleGroupNames" : [
+
+    ],
+    "sides" : "both",
+    "tracksSets" : false
+  },
+  {
+    "category" : "Mobility",
+    "fields" : [
+      {
+        "key" : "f1",
+        "label" : "Hold",
+        "type" : "time"
+      }
+    ],
+    "muscleGroupNames" : [
+      "quads"
+    ],
+    "name" : "Couch Stretch",
+    "offersAssistance" : false,
+    "restSeconds" : 0,
+    "secondaryMuscleGroupNames" : [
+
+    ],
+    "sides" : "one",
+    "tracksSets" : true
+  },
+  {
+    "category" : "Mobility",
+    "fields" : [
+      {
+        "key" : "f1",
+        "label" : "Hold",
+        "type" : "time"
+      }
+    ],
+    "muscleGroupNames" : [
+      "forearms",
+      "back"
+    ],
+    "name" : "Dead Hang",
+    "offersAssistance" : false,
+    "secondaryMuscleGroupNames" : [
+
+    ],
+    "sides" : "both",
+    "tracksSets" : true
+  },
+  {
+    "category" : "Strength",
+    "fields" : [
+      {
+        "key" : "weight",
+        "label" : "Weight",
+        "type" : "weight"
+      },
+      {
+        "key" : "f1",
+        "label" : "Distance (m)",
+        "type" : "number"
+      },
+      {
+        "key" : "f2",
+        "label" : "Duration",
+        "type" : "time"
+      }
+    ],
+    "muscleGroupNames" : [
+      "forearms",
+      "core"
+    ],
+    "name" : "Farmer's Carry",
+    "offersAssistance" : false,
+    "secondaryMuscleGroupNames" : [
+
+    ],
+    "sides" : "either",
+    "tracksSets" : true
+  },
+  {
+    "category" : "",
+    "fields" : [
+      {
+        "key" : "f1",
+        "label" : "Areas",
+        "type" : "text"
+      }
+    ],
+    "muscleGroupNames" : [
+
+    ],
+    "name" : "Foam Rolling",
+    "offersAssistance" : false,
+    "secondaryMuscleGroupNames" : [
+
+    ],
+    "sides" : "both",
+    "tracksSets" : false
+  },
+  {
+    "category" : "Strength",
+    "fields" : [
+      {
+        "key" : "weight",
+        "label" : "Weight",
+        "type" : "weight"
+      },
+      {
+        "key" : "reps",
+        "label" : "Reps",
+        "type" : "reps"
+      }
+    ],
+    "muscleGroupNames" : [
+      "quads"
+    ],
+    "name" : "Leg Extension",
+    "offersAssistance" : false,
+    "secondaryMuscleGroupNames" : [
+
+    ],
+    "sides" : "both",
+    "tracksSets" : true
+  },
+  {
+    "category" : "Strength",
+    "fields" : [
+      {
+        "key" : "reps",
+        "label" : "Reps",
+        "type" : "reps"
+      }
+    ],
+    "muscleGroupNames" : [
+      "hamstrings"
+    ],
+    "name" : "Nordic Curl",
+    "offersAssistance" : false,
+    "secondaryMuscleGroupNames" : [
+
+    ],
+    "sides" : "both",
+    "tracksSets" : true
+  },
+  {
+    "category" : "Strength",
+    "fields" : [
+      {
+        "key" : "reps",
+        "label" : "Reps",
+        "type" : "reps"
+      }
+    ],
+    "muscleGroupNames" : [
+      "chest",
+      "triceps"
+    ],
+    "name" : "Push-Up",
+    "offersAssistance" : false,
+    "secondaryMuscleGroupNames" : [
+
+    ],
+    "sides" : "both",
+    "tracksSets" : true
+  },
+  {
+    "category" : "Cardio",
+    "fields" : [
+      {
+        "key" : "f1",
+        "label" : "Duration",
+        "type" : "time"
+      },
+      {
+        "key" : "f2",
+        "label" : "Distance (m)",
+        "type" : "number"
+      },
+      {
+        "key" : "f3",
+        "label" : "Avg. Watts",
+        "type" : "number"
+      },
+      {
+        "key" : "f4",
+        "label" : "Stroke Rate",
+        "type" : "number"
+      },
+      {
+        "key" : "f5",
+        "label" : "Damper",
+        "type" : "number"
+      },
+      {
+        "key" : "f6",
+        "label" : "Feel",
+        "type" : "text"
+      }
+    ],
+    "muscleGroupNames" : [
+      "back",
+      "quads"
+    ],
+    "name" : "Rowing Erg",
+    "offersAssistance" : false,
+    "secondaryMuscleGroupNames" : [
+      "glutes",
+      "biceps"
+    ],
+    "sides" : "both",
+    "tracksSets" : false
+  },
+  {
+    "category" : "Cardio",
+    "fields" : [
+      {
+        "key" : "f1",
+        "label" : "Distance (km)",
+        "type" : "number"
+      },
+      {
+        "key" : "f3",
+        "label" : "Duration",
+        "type" : "time"
+      },
+      {
+        "key" : "f4",
+        "label" : "Route",
+        "type" : "text"
+      }
+    ],
+    "muscleGroupNames" : [
+
+    ],
+    "name" : "Running",
+    "offersAssistance" : false,
+    "secondaryMuscleGroupNames" : [
+
+    ],
+    "sides" : "both",
+    "tracksSets" : false
+  },
+  {
+    "category" : "Strength",
+    "fields" : [
+      {
+        "key" : "weight",
+        "label" : "Weight",
+        "type" : "weight"
+      },
+      {
+        "key" : "reps",
+        "label" : "Reps",
+        "type" : "reps"
+      },
+      {
+        "key" : "f1",
+        "label" : "Tempo",
+        "type" : "text"
+      }
+    ],
+    "muscleGroupNames" : [
+      "back",
+      "glutes",
+      "hamstrings"
+    ],
+    "name" : "Rückenstrecker",
+    "offersAssistance" : false,
+    "secondaryMuscleGroupNames" : [
+
+    ],
+    "sides" : "either",
+    "tracksSets" : true
+  }
+]

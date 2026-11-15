@@ -98,11 +98,12 @@ enum DeskExport {
             ("outlines.json", try encoder.encode(outlines()) + Data("\n".utf8)),
             ("coverage-backup.json", try BackupCoding.encoder.encode(BackupExporter.everything(in: context, at: now).file) + Data("\n".utf8)),
             ("coverage-expected.json", try encoder.encode(expected(in: context)) + Data("\n".utf8)),
-            // The templates and workouts as the sync format carries them: what
+            // The templates, workouts and own exercises as the sync format carries them: what
             // Desk has to make of the backup's for a change's `base` to match
             // this app's.
             ("coverage-sync-templates.json", try encoder.encode(InboxApplier.state(in: context).inOrder) + Data("\n".utf8)),
             ("coverage-sync-workouts.json", try encoder.encode(InboxApplier.state(in: context).workoutsByDate) + Data("\n".utf8)),
+            ("coverage-sync-exercises.json", try encoder.encode(InboxApplier.state(in: context).exercises.values.sorted { $0.name < $1.name }) + Data("\n".utf8)),
         ]
     }
 

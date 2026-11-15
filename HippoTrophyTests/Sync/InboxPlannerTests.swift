@@ -228,6 +228,92 @@ struct InboxPlannerWorkoutTests {
     }
 }
 
+/// Own exercises: found by name, renamed with their entries, and how they
+/// log their sets left alone while something is logged with them.
+struct InboxPlannerExerciseTests {
+    private func exercise(_ name: String, category: String = "Strength", tracksSets: Bool = true) -> SyncExercise {
+        SyncExercise(
+            name: name, category: category, muscleGroupNames: ["chest"], secondaryMuscleGroupNames: [],
+            tracksSets: tracksSets, sides: "both", offersAssistance: false,
+            fields: [SyncField(key: "weight", label: "Weight", type: "weight"), SyncField(key: "reps", label: "Reps", type: "reps")],
+            restSeconds: nil
+        )
+    }
+
+    private func file(_ operations: SyncOperation...) -> InboxPlanner.File {
+        InboxPlanner.File(name: "1.json", content: .success(InboxFile(syncFormat: 1, createdAt: .now, operations: operations)))
+    }
+
+    private func workout(with name: String) -> SyncWorkout {
+        SyncWorkout(id: UUID(), name: "Push", date: .now, notes: "", durationSeconds: nil, gym: nil, exercises: [
+            SyncEntry(exercise: name, catalogKey: nil, notes: "", instructions: "", mode: "bilateral", assistance: "unassisted",
+                      effortScale: "off", supersetGroup: nil, machine: nil, startSide: nil, sets: []),
+        ])
+    }
+
+    @Test func aNewOneIsAddedUnlessTheNameIsTaken() {
+        let press = exercise("Floor Press")
+        let added = InboxPlanner.plan([file(.putExercise(exercise: press, base: nil))], on: InboxState())
+        #expect(added.changes == [.exerciseAdded("Floor Press")])
+        #expect(Array(added.result.exercises.values) == [press])
+        let taken = InboxPlanner.plan([file(.putExercise(exercise: exercise("floor press", category: "Cardio"), base: nil))], on: added.result)
+        #expect(taken.conflicts == [.exerciseNameTaken("floor press")])
+        #expect(InboxPlanner.plan([file(.putExercise(exercise: press, base: nil))], on: added.result).changes.isEmpty)
+    }
+
+    @Test func aRenameReachesItsEntries() {
+        let id = UUID()
+        let press = exercise("Floor Press")
+        var renamed = press
+        renamed.name = "Floor Press (Dumbbell)"
+        let state = InboxState(workouts: [workout(with: "floor press")], exercises: [id: press])
+        let plan = InboxPlanner.plan([file(.putExercise(exercise: renamed, base: press))], on: state)
+        #expect(plan.changes == [.exerciseChanged("Floor Press (Dumbbell)")])
+        #expect(plan.result.exercises[id]?.name == "Floor Press (Dumbbell)")
+        #expect(plan.result.workouts.values.first?.exercises.first?.exercise == "Floor Press (Dumbbell)")
+        // Taken a second time, it finds the new name and changes nothing.
+        #expect(InboxPlanner.plan([file(.putExercise(exercise: renamed, base: press))], on: plan.result).changes.isEmpty)
+    }
+
+    @Test func aRenameOntoAnotherOwnExerciseWaits() {
+        let press = exercise("Floor Press")
+        var renamed = press
+        renamed.name = "Dip"
+        let plan = InboxPlanner.plan([file(.putExercise(exercise: renamed, base: press))], on: InboxState(exercises: [UUID(): press, UUID(): exercise("Dip")]))
+        #expect(plan.conflicts == [.exerciseNameTaken("Dip")])
+    }
+
+    @Test func howItLogsChangesOnlyWhileNothingIsLogged() {
+        let press = exercise("Floor Press")
+        let once = exercise("Floor Press", tracksSets: false)
+        let free = InboxPlanner.plan([file(.putExercise(exercise: once, base: press))], on: InboxState(exercises: [UUID(): press]))
+        #expect(free.changes == [.exerciseChanged("Floor Press")])
+        let used = InboxState(workouts: [workout(with: "Floor Press")], exercises: [UUID(): press])
+        #expect(InboxPlanner.plan([file(.putExercise(exercise: once, base: press))], on: used).conflicts == [.exerciseInUse("Floor Press")])
+        // Category, muscles and rest are free all the same.
+        var refiled = press
+        refiled.category = "Isometrics"
+        refiled.restSeconds = 90
+        #expect(InboxPlanner.plan([file(.putExercise(exercise: refiled, base: press))], on: used).changes == [.exerciseChanged("Floor Press")])
+    }
+
+    @Test func changesAndDeletesOnlyWhatDeskSaw() {
+        let press = exercise("Floor Press")
+        var here = press
+        here.muscleGroupNames = ["triceps"]
+        var desk = press
+        desk.restSeconds = 60
+        let state = InboxState(exercises: [UUID(): here])
+        #expect(InboxPlanner.plan([file(.putExercise(exercise: desk, base: press))], on: state).conflicts == [.exerciseChangedHere("Floor Press")])
+        #expect(InboxPlanner.plan([file(.deleteExercise(base: press))], on: state).conflicts == [.exerciseChangedHere("Floor Press")])
+        #expect(InboxPlanner.plan([file(.putExercise(exercise: desk, base: press))], on: InboxState()).conflicts == [.exerciseDeletedHere("Floor Press")])
+        let deleted = InboxPlanner.plan([file(.deleteExercise(base: here))], on: state)
+        #expect(deleted.changes == [.exerciseDeleted("Floor Press")])
+        #expect(deleted.result.exercises.isEmpty)
+        #expect(InboxPlanner.plan([file(.deleteExercise(base: here))], on: deleted.result).changes.isEmpty)
+    }
+}
+
 struct InboxFileTests {
     @Test func readsWhatItWrites() throws {
         let template = SyncTemplate(id: UUID(), name: "Push", notes: "", archived: false, plannedFor: nil, gym: "Home", exercises: [])
@@ -237,6 +323,8 @@ struct InboxFileTests {
             .orderTemplates(ids: [template.id]),
             .putWorkout(workout: SyncWorkout(id: UUID(), name: "Legs", date: Date(timeIntervalSinceReferenceDate: 800_000_000), notes: "", durationSeconds: nil, gym: "Home", exercises: []), base: nil),
             .deleteWorkout(id: template.id, base: SyncWorkout(id: template.id, name: "", date: Date(timeIntervalSinceReferenceDate: 800_000_000), notes: "", durationSeconds: 60, gym: nil, exercises: [])),
+            .putExercise(exercise: SyncExercise(name: "Floor Press", category: "", muscleGroupNames: [], secondaryMuscleGroupNames: [], tracksSets: true, sides: "one", offersAssistance: true, fields: [SyncField(key: "f1", label: "Band", type: "text")], restSeconds: 90), base: nil),
+            .deleteExercise(base: SyncExercise(name: "Dip", category: "Strength", muscleGroupNames: ["triceps"], secondaryMuscleGroupNames: ["chest"], tracksSets: true, sides: "both", offersAssistance: false, fields: [], restSeconds: nil)),
         ])
         #expect(InboxFile.read(from: try SyncFormat.encoder.encode(file)) == .success(file))
     }

@@ -222,10 +222,12 @@ final class SyncCenter {
         var touched: Set<UUID> = []
         /// The workouts the changes touched.
         var touchedWorkouts: Set<UUID> = []
+        /// The own exercises the changes touched.
+        var touchedExercises: Set<UUID> = []
         var reordered = false
 
         /// Whether Undo has anything to put back.
-        var canUndo: Bool { !touched.isEmpty || !touchedWorkouts.isEmpty || reordered }
+        var canUndo: Bool { !touched.isEmpty || !touchedWorkouts.isEmpty || !touchedExercises.isEmpty || reordered }
     }
 
     private(set) var inboxNotice: InboxNotice?
@@ -306,6 +308,8 @@ final class SyncCenter {
         notice.touched.formUnion(ids.filter { before.templates[$0] != plan.result.templates[$0] })
         let workoutIDs = Set(before.workouts.keys).union(plan.result.workouts.keys)
         notice.touchedWorkouts.formUnion(workoutIDs.filter { before.workouts[$0] != plan.result.workouts[$0] })
+        let exerciseIDs = Set(before.exercises.keys).union(plan.result.exercises.keys)
+        notice.touchedExercises.formUnion(exerciseIDs.filter { before.exercises[$0] != plan.result.exercises[$0] })
         notice.reordered = notice.reordered || before.order != plan.result.order
         inboxNotice = notice
     }
@@ -314,8 +318,8 @@ final class SyncCenter {
         inboxNotice = nil
     }
 
-    /// Puts back what Desk changed: the templates and workouts it touched as
-    /// they were, and the templates' order if it moved them. What was changed here since stays.
+    /// Puts back what Desk changed: the templates, workouts and own exercises
+    /// it touched as they were, and the templates' order if it moved them. What was changed here since stays.
     /// The upload after carries it to the server and to Desk.
     func undoInbox(in context: ModelContext) {
         guard let notice = inboxNotice else { return }
@@ -328,6 +332,9 @@ final class SyncCenter {
             }
             for id in notice.touchedWorkouts {
                 target.workouts[id] = notice.before.workouts[id]
+            }
+            for id in notice.touchedExercises {
+                target.exercises[id] = notice.before.exercises[id]
             }
             let kept = target.templates.keys
             if notice.reordered {

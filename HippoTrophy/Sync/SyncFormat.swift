@@ -66,9 +66,14 @@ nonisolated enum SyncOperation: Codable, Equatable {
     /// A workout logged in Desk (`base` nil) or a trained one changed.
     case putWorkout(workout: SyncWorkout, base: SyncWorkout?)
     case deleteWorkout(id: UUID, base: SyncWorkout)
+    /// One of the user's own exercises, made in Desk (`base` nil) or changed.
+    /// Found by `base`'s name, so a rename is a change like any other.
+    case putExercise(exercise: SyncExercise, base: SyncExercise?)
+    /// Deletes an own exercise; what was logged with it keeps its values.
+    case deleteExercise(base: SyncExercise)
 
     private enum CodingKeys: String, CodingKey {
-        case op, template, workout, base, id, ids
+        case op, template, workout, exercise, base, id, ids
     }
 
     init(from decoder: Decoder) throws {
@@ -90,6 +95,13 @@ nonisolated enum SyncOperation: Codable, Equatable {
             )
         case "deleteWorkout":
             self = .deleteWorkout(id: try container.decode(UUID.self, forKey: .id), base: try container.decode(SyncWorkout.self, forKey: .base))
+        case "putExercise":
+            self = .putExercise(
+                exercise: try container.decode(SyncExercise.self, forKey: .exercise),
+                base: try container.decodeIfPresent(SyncExercise.self, forKey: .base)
+            )
+        case "deleteExercise":
+            self = .deleteExercise(base: try container.decode(SyncExercise.self, forKey: .base))
         case let other:
             throw DecodingError.dataCorruptedError(forKey: .op, in: container, debugDescription: "Unknown operation \(other)")
         }
@@ -116,6 +128,13 @@ nonisolated enum SyncOperation: Codable, Equatable {
         case .deleteWorkout(let id, let base):
             try container.encode("deleteWorkout", forKey: .op)
             try container.encode(id, forKey: .id)
+            try container.encode(base, forKey: .base)
+        case .putExercise(let exercise, let base):
+            try container.encode("putExercise", forKey: .op)
+            try container.encode(exercise, forKey: .exercise)
+            try container.encodeIfPresent(base, forKey: .base)
+        case .deleteExercise(let base):
+            try container.encode("deleteExercise", forKey: .op)
             try container.encode(base, forKey: .base)
         }
     }
@@ -147,6 +166,40 @@ nonisolated struct SyncWorkout: Codable, Equatable {
     var durationSeconds: Int?
     var gym: String?
     var exercises: [SyncEntry]
+}
+
+/// One of the user's own exercises as the sync format carries it: what it
+/// is, without its photo, which stays the iPhone's. Catalog exercises are
+/// the catalog's and not in it.
+nonisolated struct SyncExercise: Codable, Equatable {
+    var name: String
+    var category: String
+    var muscleGroupNames: [String]
+    var secondaryMuscleGroupNames: [String]
+    var tracksSets: Bool
+    var sides: String
+    var offersAssistance: Bool
+    var fields: [SyncField]
+    var restSeconds: Int?
+
+    /// What a new entry logs and how: changed only while nothing is logged
+    /// with it, since logged sets would have to follow.
+    var shape: Shape {
+        Shape(tracksSets: tracksSets, sides: sides, offersAssistance: offersAssistance, fields: fields)
+    }
+
+    struct Shape: Equatable {
+        var tracksSets: Bool
+        var sides: String
+        var offersAssistance: Bool
+        var fields: [SyncField]
+    }
+}
+
+nonisolated struct SyncField: Codable, Equatable {
+    var key: String
+    var label: String
+    var type: String
 }
 
 nonisolated struct SyncEntry: Codable, Equatable {
@@ -231,6 +284,18 @@ extension SyncWorkout {
     var normalized: SyncWorkout {
         let encoded = try? SyncFormat.encoder.encode(self)
         return encoded.flatMap { try? SyncFormat.decoder.decode(SyncWorkout.self, from: $0) } ?? self
+    }
+}
+
+extension SyncExercise {
+    init(_ record: ExerciseRecord) {
+        self.init(
+            name: record.name, category: record.category, muscleGroupNames: record.muscleGroupNames,
+            secondaryMuscleGroupNames: record.secondaryMuscleGroupNames, tracksSets: record.tracksSets,
+            sides: record.sides, offersAssistance: record.offersAssistance,
+            fields: record.fields.map { SyncField(key: $0.key, label: $0.label, type: $0.type) },
+            restSeconds: record.restSeconds
+        )
     }
 }
 

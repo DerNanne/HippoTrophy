@@ -13,9 +13,11 @@ enum InboxApplier {
             predicate: WorkoutSession.templates, sortBy: [SortDescriptor(\.templateOrder)]
         ))
         let workouts = try context.fetch(FetchDescriptor(predicate: WorkoutSession.trained))
+        let own = try context.fetch(FetchDescriptor<ExerciseDefinition>()).filter { $0.catalogKey == nil }
         return InboxState(
             templates: templates.map { SyncTemplate(BackupExporter.templateRecord($0)).normalized },
-            workouts: workouts.map { SyncWorkout(BackupExporter.record($0)).normalized }
+            workouts: workouts.map { SyncWorkout(BackupExporter.record($0)).normalized },
+            exercises: Dictionary(own.map { ($0.id, SyncExercise(BackupExporter.record($0))) }, uniquingKeysWith: { first, _ in first })
         )
     }
 
@@ -23,8 +25,70 @@ enum InboxApplier {
     /// from `current` are written anew, those gone are deleted, and every
     /// template gets its place. Not saved — the caller saves, or rolls back.
     static func make(_ target: InboxState, from current: InboxState, in context: ModelContext) throws {
-        try makeWorkouts(target, from: current, in: context)
-        try makeTemplates(target, from: current, in: context)
+        // The exercises first: a rename reaches the entries already here,
+        // which then need no writing anew. What is left to do to templates
+        // and workouts is measured from there.
+        try makeExercises(target, from: current, in: context)
+        let now = current.exercises == target.exercises ? current : try state(in: context)
+        try makeWorkouts(target, from: now, in: context)
+        try makeTemplates(target, from: now, in: context)
+    }
+
+    /// The own exercises as `target` has them: changed ones in place, their
+    /// entries renamed with them; new ones made under the id the state gave
+    /// them — the one they had, when Undo brings one back, so the entries
+    /// logged with it are its own again; gone ones deleted, their entries
+    /// keeping what was logged.
+    private static func makeExercises(_ target: InboxState, from current: InboxState, in context: ModelContext) throws {
+        guard target.exercises != current.exercises else { return }
+        let definitions = try context.fetch(FetchDescriptor<ExerciseDefinition>())
+        let byID = Dictionary(definitions.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        let entries = try context.fetch(FetchDescriptor<ExerciseEntry>())
+
+        for id in current.exercises.keys where target.exercises[id] == nil {
+            if let definition = byID[id] { context.delete(definition) }
+        }
+        var nextIndex = (definitions.map(\.orderIndex).max() ?? -1) + 1
+        for (id, exercise) in target.exercises where current.exercises[id] != exercise {
+            let definition: ExerciseDefinition
+            if let found = byID[id] {
+                definition = found
+            } else {
+                definition = ExerciseDefinition(name: exercise.name, orderIndex: nextIndex)
+                definition.id = id
+                nextIndex += 1
+                context.insert(definition)
+            }
+            write(exercise, onto: definition, in: context)
+            for entry in entries where entry.definitionID == id && entry.name != exercise.name {
+                entry.name = exercise.name
+            }
+        }
+    }
+
+    /// What an exercise is, written as the exercise editor writes it. Fields
+    /// are replaced only when they differ: the planner lets that happen only
+    /// while nothing is logged with the exercise.
+    private static func write(_ exercise: SyncExercise, onto definition: ExerciseDefinition, in context: ModelContext) {
+        definition.name = exercise.name
+        definition.categoryName = ExerciseCategory.resolve(exercise.category)?.name ?? ""
+        definition.muscleGroupNames = exercise.muscleGroupNames
+        definition.secondaryMuscleGroupNames = exercise.secondaryMuscleGroupNames
+        definition.tracksSets = exercise.tracksSets
+        definition.sides = ExerciseSides(rawValue: exercise.sides) ?? .both
+        definition.offersAssistance = exercise.offersAssistance
+        definition.restSeconds = exercise.restSeconds
+        let fields = definition.sortedFields.map { SyncField(key: $0.key, label: $0.label, type: $0.typeRawValue) }
+        guard fields != exercise.fields else { return }
+        for field in definition.fields {
+            context.delete(field)
+        }
+        definition.fields = []
+        for (index, field) in exercise.fields.enumerated() {
+            let stored = FieldDefinition(key: field.key, label: field.label, typeRawValue: field.type, orderIndex: index, definition: definition)
+            definition.fields.append(stored)
+            context.insert(stored)
+        }
     }
 
     private static func makeWorkouts(_ target: InboxState, from current: InboxState, in context: ModelContext) throws {

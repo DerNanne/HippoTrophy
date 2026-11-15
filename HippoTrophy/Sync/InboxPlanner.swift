@@ -2,16 +2,57 @@ import Foundation
 
 /// What the inbox can change, as it sees it: the templates by id and their
 /// order, the archived ones in it too — `templateOrder`, which an archived
-/// template keeps while it is away — and the trained workouts by id.
+/// template keeps while it is away — the trained workouts by id, and the
+/// user's own exercises by the id of their definition here. Desk knows an
+/// exercise by its name; one name is one own exercise.
 nonisolated struct InboxState: Equatable {
     var templates: [UUID: SyncTemplate]
     var order: [UUID]
     var workouts: [UUID: SyncWorkout]
+    var exercises: [UUID: SyncExercise]
 
-    init(templates: [SyncTemplate] = [], workouts: [SyncWorkout] = []) {
+    init(templates: [SyncTemplate] = [], workouts: [SyncWorkout] = [], exercises: [UUID: SyncExercise] = [:]) {
         self.templates = Dictionary(templates.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
         self.order = templates.map(\.id)
         self.workouts = Dictionary(workouts.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
+        self.exercises = exercises
+    }
+
+    /// The own exercise of a name, found as `ExerciseIdentity` finds it.
+    func ownExercise(named name: String) -> UUID? {
+        exercises.first { $0.value.name.exerciseKey == name.exerciseKey }?.key
+    }
+
+    /// Whether a template or a workout has an entry of the own exercise of
+    /// this name: then how its sets are logged is no longer free to change.
+    func isInUse(_ name: String) -> Bool {
+        let key = name.exerciseKey
+        let entries = templates.values.flatMap(\.exercises) + workouts.values.flatMap(\.exercises)
+        return entries.contains { $0.catalogKey == nil && $0.exercise.exerciseKey == key }
+    }
+
+    /// What renaming an own exercise does to its entries: they carry its
+    /// name, as the exercise editor writes it onto them.
+    mutating func renameEntries(from old: String, to new: String) {
+        let key = old.exerciseKey
+        func renamed(_ entries: [SyncEntry]) -> [SyncEntry] {
+            entries.map { entry in
+                guard entry.catalogKey == nil, entry.exercise.exerciseKey == key else { return entry }
+                var entry = entry
+                entry.exercise = new
+                return entry
+            }
+        }
+        templates = templates.mapValues { template in
+            var template = template
+            template.exercises = renamed(template.exercises)
+            return template
+        }
+        workouts = workouts.mapValues { workout in
+            var workout = workout
+            workout.exercises = renamed(workout.exercises)
+            return workout
+        }
     }
 
     var inOrder: [SyncTemplate] { order.compactMap { templates[$0] } }
@@ -42,6 +83,9 @@ nonisolated enum InboxPlanner {
         case workoutAdded(String, Date)
         case workoutChanged(String, Date)
         case workoutDeleted(String, Date)
+        case exerciseAdded(String)
+        case exerciseChanged(String)
+        case exerciseDeleted(String)
     }
 
     /// Why a file waits in Desk. Named by the template or workout it is about.
@@ -56,6 +100,13 @@ nonisolated enum InboxPlanner {
         case workoutChangedHere(String, Date)
         case workoutDeletedHere(String, Date)
         case workoutAlreadyHere(String, Date)
+        case exerciseChangedHere(String)
+        case exerciseDeletedHere(String)
+        /// A new name that is already one of the user's own exercises here.
+        case exerciseNameTaken(String)
+        /// How its sets are logged, changed while something is logged with
+        /// it here: the iPhone's editor has to carry the sets along.
+        case exerciseInUse(String)
     }
 
     enum Outcome: Equatable {
@@ -169,6 +220,39 @@ nonisolated enum InboxPlanner {
                 }
                 state.workouts[id] = nil
                 changes.append(.workoutDeleted(current.name, current.date))
+            case .putExercise(let exercise, let base):
+                guard let base else {
+                    if let id = state.ownExercise(named: exercise.name) {
+                        if state.exercises[id] == exercise { continue }
+                        return .failure(Refused(conflict: .exerciseNameTaken(exercise.name)))
+                    }
+                    state.exercises[UUID()] = exercise
+                    changes.append(.exerciseAdded(exercise.name))
+                    continue
+                }
+                guard let id = state.ownExercise(named: base.name), let current = state.exercises[id] else {
+                    // Renamed already: a file taken twice.
+                    if let id = state.ownExercise(named: exercise.name), state.exercises[id] == exercise { continue }
+                    return .failure(Refused(conflict: .exerciseDeletedHere(base.name)))
+                }
+                if current == exercise { continue }
+                guard current == base else { return .failure(Refused(conflict: .exerciseChangedHere(current.name))) }
+                if exercise.name.exerciseKey != base.name.exerciseKey, state.ownExercise(named: exercise.name) != nil {
+                    return .failure(Refused(conflict: .exerciseNameTaken(exercise.name)))
+                }
+                if exercise.shape != base.shape, state.isInUse(base.name) {
+                    return .failure(Refused(conflict: .exerciseInUse(base.name)))
+                }
+                state.exercises[id] = exercise
+                if exercise.name != base.name {
+                    state.renameEntries(from: base.name, to: exercise.name)
+                }
+                changes.append(.exerciseChanged(exercise.name))
+            case .deleteExercise(let base):
+                guard let id = state.ownExercise(named: base.name), let current = state.exercises[id] else { continue }
+                guard current == base else { return .failure(Refused(conflict: .exerciseChangedHere(current.name))) }
+                state.exercises[id] = nil
+                changes.append(.exerciseDeleted(base.name))
             case .orderTemplates(let ids):
                 // The order Desk gave for the templates it knew; one made here
                 // since stays in front, as a new template stands first.
@@ -207,6 +291,9 @@ extension InboxPlanner.Change {
         case .workoutAdded(let name, let date): "\(workoutLabel(name, date)) added"
         case .workoutChanged(let name, let date): "\(workoutLabel(name, date)) changed"
         case .workoutDeleted(let name, let date): "\(workoutLabel(name, date)) deleted"
+        case .exerciseAdded(let name): "exercise \(name) added"
+        case .exerciseChanged(let name): "exercise \(name) changed"
+        case .exerciseDeleted(let name): "exercise \(name) deleted"
         }
     }
 }
@@ -220,6 +307,10 @@ extension InboxPlanner.Conflict {
         case .workoutChangedHere(let name, let date): "\(workoutLabel(name, date)) was changed on this iPhone in the meantime"
         case .workoutDeletedHere(let name, let date): "\(workoutLabel(name, date)) was deleted on this iPhone in the meantime"
         case .workoutAlreadyHere(let name, let date): "\(workoutLabel(name, date)) is here already as another workout"
+        case .exerciseChangedHere(let name): "exercise \(name) was changed on this iPhone in the meantime"
+        case .exerciseDeletedHere(let name): "exercise \(name) was deleted on this iPhone in the meantime"
+        case .exerciseNameTaken(let name): "an exercise named \(name) is here already"
+        case .exerciseInUse(let name): "\(name) has sets logged here now; how it logs them changes on the iPhone"
         }
     }
 }

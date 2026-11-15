@@ -250,4 +250,72 @@ struct InboxSyncTests {
         center.undoInbox(in: context)
         #expect(try workouts().map(\.id) == [chest.id])
     }
+
+    // MARK: - Own exercises
+
+    private func definitions() throws -> [ExerciseDefinition] {
+        try context.fetch(FetchDescriptor<ExerciseDefinition>(sortBy: [SortDescriptor(\.name)]))
+    }
+
+    @Test func makesAnExerciseFromDeskWithItsFields() async throws {
+        let center = try await connected()
+        let carry = SyncExercise(
+            name: "Sled Push", category: "Cardio", muscleGroupNames: ["quads"], secondaryMuscleGroupNames: ["glutes"],
+            tracksSets: true, sides: "both", offersAssistance: false,
+            fields: [SyncField(key: "weight", label: "Weight", type: "weight"), SyncField(key: "f1", label: "Distance", type: "number")],
+            restSeconds: 120
+        )
+        try leave("1.json", .putExercise(exercise: carry, base: nil))
+        await center.sync(.automatic, in: context)
+        let made = try #require(try definitions().first { $0.name == "Sled Push" })
+        #expect(made.category == .cardio && made.restSeconds == 120 && made.secondaryMuscleGroupNames == ["glutes"])
+        #expect(made.sortedFields.map(\.label) == ["Weight", "Distance"])
+        #expect(made.catalogKey == nil)
+        #expect(center.inboxNotice?.changes == [.exerciseAdded("Sled Push")])
+        let uploaded = try BackupPackage.read(from: try #require(server.files["/dav/HippoTrophy/backup.zip"]).data)
+        #expect(uploaded.file.exercises?.contains { $0.name == "Sled Push" } == true)
+    }
+
+    @Test func aRenameFromDeskRenamesWhatWasLoggedAndUndoTakesItBack() async throws {
+        let center = try await connected()
+        try leave("1.json", .putTemplate(template: template("Push"), base: nil))
+        await center.sync(.automatic, in: context)
+        center.dismissInboxNotice()
+
+        let seen = try InboxApplier.state(in: context)
+        let base = try #require(seen.exercises[bench.id])
+        var renamed = base
+        renamed.name = "Bench Press"
+        try leave("2.json", .putExercise(exercise: renamed, base: base))
+        await center.sync(.automatic, in: context)
+
+        #expect(bench.name == "Bench Press")
+        #expect(try templates().first?.exercises.first?.name == "Bench Press")
+        #expect(try templates().first?.exercises.first?.definitionID == bench.id)
+        // The template was not written anew: the rename reached it in place.
+        #expect(center.inboxNotice?.changes == [.exerciseChanged("Bench Press")])
+
+        center.undoInbox(in: context)
+        #expect(bench.name == "Bench")
+        #expect(try templates().first?.exercises.first?.name == "Bench")
+    }
+
+    @Test func deletingFromDeskLeavesWhatWasLoggedAndUndoRelinksIt() async throws {
+        let center = try await connected()
+        try leave("1.json", .putTemplate(template: template("Push"), base: nil))
+        await center.sync(.automatic, in: context)
+        center.dismissInboxNotice()
+        let base = try #require(try InboxApplier.state(in: context).exercises[bench.id])
+        let entryID = try #require(try templates().first?.exercises.first?.id)
+
+        try leave("2.json", .deleteExercise(base: base))
+        await center.sync(.automatic, in: context)
+        #expect(try definitions().isEmpty)
+        #expect(try templates().first?.exercises.first?.id == entryID)
+
+        center.undoInbox(in: context)
+        let back = try #require(try definitions().first)
+        #expect(back.id == bench.id && back.name == "Bench")
+        #expect(back.sortedFields.map(\.key) == ["weight", "reps"])
+    }
 }
