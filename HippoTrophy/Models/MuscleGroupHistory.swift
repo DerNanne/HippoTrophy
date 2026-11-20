@@ -33,6 +33,13 @@ struct MuscleGroupHistory {
         let sets: MuscleSets
 
         var id: Date { start }
+
+        /// Which of `count` weeks carry a label under their bar: every third,
+        /// counted back from the last, so the current week always has one.
+        /// Twelve labels side by side would run into each other.
+        static func labelled(count: Int) -> Set<Int> {
+            Set(stride(from: count - 1, through: 0, by: -3))
+        }
     }
 
     /// Every entry that belongs in a history — see `belongsInHistory` — and

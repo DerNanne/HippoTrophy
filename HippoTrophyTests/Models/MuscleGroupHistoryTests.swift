@@ -214,4 +214,13 @@ struct MuscleGroupHistoryTests {
 
         #expect(try history(in: context).unfiledNames == ["Arm Circles", "Plank"])
     }
+
+    /// Every third week has a label, counted back from this one, so the
+    /// current week always shows its date and twelve do not overlap.
+    @Test func everyThirdWeekIsLabelledCountingBackFromThisOne() {
+        #expect(MuscleGroupHistory.Week.labelled(count: 12) == [11, 8, 5, 2])
+        #expect(MuscleGroupHistory.Week.labelled(count: 4) == [3, 0])
+        #expect(MuscleGroupHistory.Week.labelled(count: 1) == [0])
+        #expect(MuscleGroupHistory.Week.labelled(count: 0).isEmpty)
+    }
 }
