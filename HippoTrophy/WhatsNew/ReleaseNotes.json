@@ -1,6 +1,13 @@
 {
   "builds": [
     {
+      "build": 32,
+      "highlights": [],
+      "changes": [
+        "The notification at the end of a rest now names the exercise that comes next: after an exercise's last set the next one, in a superset the one that starts the next round."
+      ]
+    },
+    {
       "build": 31,
       "highlights": [],
       "changes": [

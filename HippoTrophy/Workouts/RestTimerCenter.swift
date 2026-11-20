@@ -35,8 +35,8 @@ final class RestTimerCenter: NSObject {
         UNUserNotificationCenter.current().delegate = self
     }
 
-    func start(seconds: Int, exerciseName: String, setID: UUID? = nil, kind: RestKind = .afterSet) {
-        let timer = RestTimer(seconds: seconds, exerciseName: exerciseName, setID: setID, kind: kind, from: .now)
+    func start(seconds: Int, exerciseName: String, nextExerciseName: String? = nil, setID: UUID? = nil, kind: RestKind = .afterSet) {
+        let timer = RestTimer(seconds: seconds, exerciseName: exerciseName, nextExerciseName: nextExerciseName, setID: setID, kind: kind, from: .now)
         self.timer = timer
         askForNotificationsOnce()
         scheduleNotification(for: timer)
@@ -141,17 +141,10 @@ final class RestTimerCenter: NSObject {
     private func scheduleNotification(for timer: RestTimer) {
         let center = UNUserNotificationCenter.current()
         center.removePendingNotificationRequests(withIdentifiers: [Self.notificationID])
+        let message = RestEndMessage(for: timer)
         let content = UNMutableNotificationContent()
-        switch timer.kind {
-        case .afterSet:
-            content.title = "Rest Over"
-            content.body = timer.exerciseName.isEmpty
-                ? "Time for the next set."
-                : "Time for the next set of \(timer.exerciseName)."
-        case .betweenSides:
-            content.title = "Switch Sides"
-            content.body = "Time for the other side of \(timer.exerciseName)."
-        }
+        content.title = message.title
+        content.body = message.body
         content.sound = .default
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: max(1, timer.remaining(at: .now)), repeats: false)
         center.add(UNNotificationRequest(identifier: Self.notificationID, content: content, trigger: trigger))

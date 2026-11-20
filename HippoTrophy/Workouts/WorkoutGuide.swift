@@ -30,6 +30,15 @@ enum WorkoutGuide {
         return done[(index + 1)...].firstIndex(of: false) ?? done[..<index].firstIndex(of: false)
     }
 
+    /// The set that comes once `set` is done: the one the guide goes on to,
+    /// among `order`. Nil when it is not there or nothing is left to do.
+    static func set(after set: SetEntry, in order: [SetEntry]) -> SetEntry? {
+        guard let index = order.firstIndex(where: { $0.id == set.id }),
+              let next = next(after: index, done: order.map(\.isDone))
+        else { return nil }
+        return order[next]
+    }
+
     /// The field Next moves to from `field`, among a set's `fields` in
     /// order; nil from the last, where Next ticks the set off.
     static func field<ID: Equatable>(after field: ID, in fields: [ID]) -> ID? {
