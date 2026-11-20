@@ -928,7 +928,7 @@ struct WorkoutEditorView: View {
         guard RestAfterSet.rests(afterSetAt: index, in: pair.map { pair in ordered.map(pair.member(of:)) }),
               let seconds = RestDuration.seconds(exercise: definition(of: pair?.b ?? exercise)?.restSeconds, setting: settings.defaultRestSeconds)
         else { return }
-        restTimer.start(seconds: seconds, exerciseName: exercise.name, setID: set.id)
+        restTimer.start(seconds: seconds, exerciseName: exercise.name, nextExerciseName: WorkoutGuide.set(after: set, in: guideOrder)?.exercise?.name, setID: set.id)
     }
 
     /// The rest before a set's other side: after the first tick of a Same

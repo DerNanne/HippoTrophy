@@ -138,4 +138,18 @@ struct RestTimerTests {
         let members = ["A", "A", "B", "B"]
         #expect(members.indices.map { RestAfterSet.rests(afterSetAt: $0, in: members) } == [true, false, true, true])
     }
+
+    @Test func theEndOfARestNamesTheExerciseThatComesNext() {
+        let same = RestTimer(seconds: 60, exerciseName: "Bench", nextExerciseName: "Bench", from: start)
+        let other = RestTimer(seconds: 60, exerciseName: "Row", nextExerciseName: "Bench", from: start)
+        let last = RestTimer(seconds: 60, exerciseName: "Row", from: start)
+        let sides = RestTimer(seconds: 30, exerciseName: "Lunge", nextExerciseName: "Squat", kind: .betweenSides, from: start)
+
+        #expect(RestEndMessage(for: same).title == "Rest Over")
+        #expect(RestEndMessage(for: same).body == "Time for the next set of Bench.")
+        #expect(RestEndMessage(for: other).body == "Next up: Bench.")
+        #expect(RestEndMessage(for: last).body == "Time for the next set.")
+        #expect(RestEndMessage(for: sides).title == "Switch Sides")
+        #expect(RestEndMessage(for: sides).body == "Time for the other side of Lunge.")
+    }
 }

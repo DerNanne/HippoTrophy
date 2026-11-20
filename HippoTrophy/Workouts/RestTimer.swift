@@ -16,6 +16,10 @@ nonisolated struct RestTimer: Equatable, Codable {
     private(set) var endsAt: Date
     /// The exercise the rest follows, for the bar and the lock screen.
     var exerciseName: String
+    /// The exercise of the set the rest leads to, which the notification at
+    /// its end names: in a superset the other one, after an exercise's last
+    /// set the next exercise. Nil when nothing is known to follow.
+    var nextExerciseName: String?
     /// The set the rest follows, which shows it under itself; nil for a rest
     /// started by hand.
     var setID: UUID?
@@ -27,10 +31,11 @@ nonisolated struct RestTimer: Equatable, Codable {
     /// How far one tap on minus or plus moves the end.
     static let step: TimeInterval = 15
 
-    init(seconds: Int, exerciseName: String, setID: UUID? = nil, kind: RestKind = .afterSet, from now: Date) {
+    init(seconds: Int, exerciseName: String, nextExerciseName: String? = nil, setID: UUID? = nil, kind: RestKind = .afterSet, from now: Date) {
         duration = TimeInterval(seconds)
         endsAt = now.addingTimeInterval(duration)
         self.exerciseName = exerciseName
+        self.nextExerciseName = nextExerciseName
         self.setID = setID
         self.kind = kind
     }
@@ -82,6 +87,32 @@ nonisolated struct RestTimer: Equatable, Codable {
         endsAt = now.addingTimeInterval(left + change)
         if isPaused { pausedRemaining = left + change }
         duration = max(0, duration + change)
+    }
+}
+
+/// What the notification at a rest's end says. A rest after a set names
+/// what comes next — the set the rest leads to, not the one it follows: in
+/// a superset the round starts again with the other exercise, and after an
+/// exercise's last set the next exercise is up.
+nonisolated struct RestEndMessage: Equatable {
+    let title: String
+    let body: String
+
+    init(for timer: RestTimer) {
+        switch timer.kind {
+        case .afterSet:
+            title = "Rest Over"
+            if let next = timer.nextExerciseName, !next.isEmpty {
+                body = next == timer.exerciseName
+                    ? "Time for the next set of \(next)."
+                    : "Next up: \(next)."
+            } else {
+                body = "Time for the next set."
+            }
+        case .betweenSides:
+            title = "Switch Sides"
+            body = "Time for the other side of \(timer.exerciseName)."
+        }
     }
 }
 

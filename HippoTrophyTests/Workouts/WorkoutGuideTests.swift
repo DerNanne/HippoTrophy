@@ -55,4 +55,36 @@ struct WorkoutGuideTests {
         let order = WorkoutGuide.order(of: [row, squat, bench]).map { "\($0.exercise?.name ?? "")\($0.setNumber)" }
         #expect(order == ["Squat1", "Squat2", "Bench1", "Row1", "Bench2", "Row2"])
     }
+
+    /// What the notification at a rest's end names: after an exercise's
+    /// last set the next exercise, in a superset the one that starts the
+    /// next round — not the one whose set the rest follows.
+    @Test func theSetAfterARestIsTheOneTheGuideGoesOnTo() throws {
+        let context = ModelContext(try ModelContainer(for: Schema(AppSchema.models), configurations: ModelConfiguration(isStoredInMemoryOnly: true)))
+        let session = WorkoutSession()
+        context.insert(session)
+        let supersetID = UUID()
+        let squat = ExerciseEntry(name: "Squat", orderIndex: 0, definitionID: UUID(), effortScale: .off, session: session)
+        let bench = ExerciseEntry(name: "Bench", orderIndex: 1, definitionID: UUID(), supersetID: supersetID, effortScale: .off, session: session)
+        let row = ExerciseEntry(name: "Row", orderIndex: 2, definitionID: UUID(), supersetID: supersetID, effortScale: .off, session: session)
+        for entry in [squat, bench, row] { context.insert(entry) }
+        for _ in 0..<2 { squat.addSet(on: .both, definition: nil, in: context) }
+        let pair = try #require(SupersetPair([bench, row]))
+        for _ in 0..<2 {
+            pair.addSet(to: bench, definition: nil, in: context)
+            pair.addSet(to: row, definition: nil, in: context)
+        }
+        let order = WorkoutGuide.order(of: [squat, bench, row])
+        func nameAfter(_ index: Int) -> String? {
+            order[index].isDone = true
+            return WorkoutGuide.set(after: order[index], in: order)?.exercise?.name
+        }
+
+        #expect(nameAfter(0) == "Squat")
+        #expect(nameAfter(1) == "Bench")
+        #expect(nameAfter(2) == "Row")
+        #expect(nameAfter(3) == "Bench")
+        #expect(nameAfter(4) == "Row")
+        #expect(nameAfter(5) == nil)
+    }
 }
