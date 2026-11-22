@@ -151,10 +151,12 @@ struct WeeklySetsChart: View {
         week.start.formatted(.dateTime.day().month(.abbreviated))
     }
 
-    private var labelled: [String] {
-        weeks.reversed().enumerated()
-            .filter { $0.offset % 3 == 0 }
-            .map { label($0.element) }
+    /// The labels to draw. Every week is still a value on the axis; the
+    /// chart is not left to pick, because given only these as values it has
+    /// drawn all twelve on a device, one over the other.
+    private var labelled: Set<String> {
+        let indices = MuscleGroupHistory.Week.labelled(count: weeks.count)
+        return Set(weeks.enumerated().filter { indices.contains($0.offset) }.map { label($0.element) })
     }
 
     var body: some View {
@@ -177,11 +179,12 @@ struct WeeklySetsChart: View {
         .chartForegroundStyleScale(["Main": Color.accentColor, "Secondary": Color.accentColor.opacity(0.35)])
         .chartLegend(weeks.contains { $0.sets.secondary > 0 } ? .visible : .hidden)
         .chartXAxis {
-            AxisMarks(values: labelled) { value in
+            let labelled = labelled
+            AxisMarks(values: weeks.map(label)) { value in
                 // A label may run wider than its bar — the bars beside it
                 // carry none — instead of being cut to "Oc…".
                 AxisValueLabel {
-                    if let text = value.as(String.self) {
+                    if let text = value.as(String.self), labelled.contains(text) {
                         Text(text).fixedSize()
                     }
                 }
