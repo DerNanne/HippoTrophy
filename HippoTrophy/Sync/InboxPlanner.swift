@@ -13,10 +13,18 @@ nonisolated struct InboxState: Equatable {
     /// Gyms and machines by their id here; Desk knows them by name.
     var gyms: [UUID: SyncGym]
     var machines: [UUID: SyncMachine]
+    /// The catalog exercises by catalog key: what an own exercise can be
+    /// merged into. Read only — nothing from Desk changes the catalog.
+    var catalog: [String: SyncExercise]
+    /// Own exercises merged away whose photo goes to the one they were
+    /// merged into, if that has none: source id → target id. Not part of
+    /// what Desk sees — the sync format carries no photos — and nothing the
+    /// store says afterwards, so Undo leaves the photo where it went.
+    var photoHandovers: [UUID: UUID] = [:]
 
     init(
         templates: [SyncTemplate] = [], workouts: [SyncWorkout] = [], exercises: [UUID: SyncExercise] = [:],
-        gyms: [UUID: SyncGym] = [:], machines: [UUID: SyncMachine] = [:]
+        gyms: [UUID: SyncGym] = [:], machines: [UUID: SyncMachine] = [:], catalog: [String: SyncExercise] = [:]
     ) {
         self.templates = Dictionary(templates.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
         self.order = templates.map(\.id)
@@ -24,6 +32,7 @@ nonisolated struct InboxState: Equatable {
         self.exercises = exercises
         self.gyms = gyms
         self.machines = machines
+        self.catalog = catalog
     }
 
     func gym(named name: String) -> UUID? {
@@ -115,6 +124,66 @@ nonisolated struct InboxState: Equatable {
         }
     }
 
+    /// What merging an own exercise does to its entries, as
+    /// `ExerciseMerging.attach` writes it onto them: they carry the target's
+    /// name and catalog key, and every set its values under the keys the
+    /// merge gave them, labelled and ordered as the target's fields, with an
+    /// empty value for each field it had none for. A value under a key the
+    /// target does not know stays where it was. The mapping pairs fields of
+    /// one type only, so no value changes its type.
+    mutating func moveEntries(of source: String, to target: String, catalogKey: String?, fields: [SyncField], keyRewrite: [String: String]) {
+        let key = source.exerciseKey
+        func moved(_ entries: [SyncEntry]) -> [SyncEntry] {
+            entries.map { entry in
+                guard entry.catalogKey == nil, entry.exercise.exerciseKey == key else { return entry }
+                var entry = entry
+                entry.exercise = target
+                entry.catalogKey = catalogKey
+                let assistance = Assistance(rawValue: entry.assistance) ?? .unassisted
+                entry.sets = entry.sets.map { set in
+                    var set = set
+                    set.values = Self.aligned(set.values, to: fields, assistance: assistance, keyRewrite: keyRewrite)
+                    return set
+                }
+                return entry
+            }
+        }
+        templates = templates.mapValues { template in
+            var template = template
+            template.exercises = moved(template.exercises)
+            return template
+        }
+        workouts = workouts.mapValues { workout in
+            var workout = workout
+            workout.exercises = moved(workout.exercises)
+            return workout
+        }
+    }
+
+    /// `ExerciseMerging.align` on a set's values as the format carries them:
+    /// in their order, which is the store's `orderIndex`.
+    private static func aligned(_ values: [SyncValue], to fields: [SyncField], assistance: Assistance, keyRewrite: [String: String]) -> [SyncValue] {
+        var placed: [(index: Int, value: SyncValue)] = values.enumerated().map { index, value in
+            var value = value
+            if let key = keyRewrite[value.key] { value.key = key }
+            return (index, value)
+        }
+        for (index, field) in fields.enumerated() {
+            let type = FieldType(rawValue: field.type) ?? .text
+            let loggedType = assistance.loggedType(for: type)
+            let label = assistance.loggedLabel(for: type, label: field.label)
+            if let at = placed.firstIndex(where: { $0.value.key == field.key }) {
+                placed[at].value.label = label
+                placed[at].index = index
+            } else {
+                placed.append((index, SyncValue(key: field.key, label: label, type: loggedType.rawValue, text: nil, number: nil)))
+            }
+        }
+        return placed.enumerated()
+            .sorted { ($0.element.index, $0.offset) < ($1.element.index, $1.offset) }
+            .map(\.element.value)
+    }
+
     var inOrder: [SyncTemplate] { order.compactMap { templates[$0] } }
 
     /// The workouts by date, then id: an order that is the same every time.
@@ -152,6 +221,7 @@ nonisolated enum InboxPlanner {
         case machineAdded(String)
         case machineChanged(String)
         case machineDeleted(String)
+        case exerciseMerged(String, into: String)
     }
 
     /// Why a file waits in Desk. Named by the template or workout it is about.
@@ -179,6 +249,9 @@ nonisolated enum InboxPlanner {
         case machineChangedHere(String)
         case machineDeletedHere(String)
         case machineNameTaken(String)
+        /// Two exercises that cannot be one, however Desk came to send it:
+        /// another kind, sides that do not mix, a mapping that does not hold.
+        case exerciseCannotMerge(String, into: String)
     }
 
     enum Outcome: Equatable {
@@ -384,6 +457,50 @@ nonisolated enum InboxPlanner {
                 state.machines[id] = nil
                 state.remachine(from: base.name, to: nil)
                 changes.append(.machineDeleted(base.name))
+            case .mergeExercise(let base, let into, let moves):
+                guard let sourceID = state.ownExercise(named: base.name), let source = state.exercises[sourceID] else {
+                    // Merged already, a file taken twice — or deleted here
+                    // with nothing logged, which comes to the same.
+                    if !state.isInUse(base.name) { continue }
+                    return .failure(Refused(conflict: .exerciseDeletedHere(base.name)))
+                }
+                guard source == base else { return .failure(Refused(conflict: .exerciseChangedHere(source.name))) }
+                let targetID: UUID?
+                let target: SyncExercise
+                if let catalogKey = into.catalogKey {
+                    guard let current = state.catalog[catalogKey] else {
+                        return .failure(Refused(conflict: .exerciseDeletedHere(into.exercise.name)))
+                    }
+                    targetID = nil
+                    target = current
+                } else {
+                    guard let id = state.ownExercise(named: into.exercise.name), let current = state.exercises[id] else {
+                        return .failure(Refused(conflict: .exerciseDeletedHere(into.exercise.name)))
+                    }
+                    targetID = id
+                    target = current
+                }
+                guard target == into.exercise else { return .failure(Refused(conflict: .exerciseChangedHere(target.name))) }
+                let refused = Refused(conflict: .exerciseCannotMerge(base.name, into: target.name))
+                let mapping = FieldMapping(moves)
+                guard targetID != sourceID, source.tracksSets == target.tracksSets,
+                      let sourceSides = ExerciseSides(rawValue: source.sides), let targetSides = ExerciseSides(rawValue: target.sides),
+                      sourceSides.canMerge(into: targetSides),
+                      into.catalogKey == nil || !mapping.destinations.values.contains(.newField),
+                      case .success(let merge) = DefinitionMerge.merge(
+                          source: source.record(), into: target.record(catalogKey: into.catalogKey), mapping: mapping
+                      )
+                else { return .failure(refused) }
+                let merged = SyncExercise(merge.merged)
+                state.exercises[sourceID] = nil
+                if let targetID {
+                    state.exercises[targetID] = merged
+                    state.photoHandovers[sourceID] = targetID
+                }
+                state.moveEntries(
+                    of: source.name, to: target.name, catalogKey: into.catalogKey, fields: merged.fields, keyRewrite: merge.keyRewrite
+                )
+                changes.append(.exerciseMerged(source.name, into: target.name))
             case .orderTemplates(let ids):
                 // The order Desk gave for the templates it knew; one made here
                 // since stays in front, as a new template stands first.
@@ -431,6 +548,7 @@ extension InboxPlanner.Change {
         case .machineAdded(let name): "machine \(name) added"
         case .machineChanged(let name): "machine \(name) changed"
         case .machineDeleted(let name): "machine \(name) deleted"
+        case .exerciseMerged(let name, let target): "exercise \(name) merged into \(target)"
         }
     }
 }
@@ -454,6 +572,7 @@ extension InboxPlanner.Conflict {
         case .machineChangedHere(let name): "machine \(name) was changed on this iPhone in the meantime"
         case .machineDeletedHere(let name): "machine \(name) was deleted on this iPhone in the meantime"
         case .machineNameTaken(let name): "a machine named \(name) is here already"
+        case .exerciseCannotMerge(let name, let target): "\(name) cannot be merged into \(target)"
         }
     }
 }

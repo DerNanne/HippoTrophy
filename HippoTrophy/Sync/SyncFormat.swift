@@ -79,9 +79,13 @@ nonisolated enum SyncOperation: Codable, Equatable {
     case putMachine(machine: SyncMachine, base: SyncMachine?)
     /// Deletes a machine; the exercises done at it lose only the machine.
     case deleteMachine(base: SyncMachine)
+    /// Folds one own exercise (`base`) into another or into a catalog
+    /// exercise, as the iPhone's Merge Exercises does: what was logged with
+    /// it moves over, its fields as `fields` says, and it goes.
+    case mergeExercise(base: SyncExercise, into: SyncMergeTarget, fields: [SyncFieldMove])
 
     private enum CodingKeys: String, CodingKey {
-        case op, template, workout, exercise, gym, machine, base, id, ids
+        case op, template, workout, exercise, gym, machine, base, id, ids, into, fields
     }
 
     init(from decoder: Decoder) throws {
@@ -121,6 +125,12 @@ nonisolated enum SyncOperation: Codable, Equatable {
             )
         case "deleteMachine":
             self = .deleteMachine(base: try container.decode(SyncMachine.self, forKey: .base))
+        case "mergeExercise":
+            self = .mergeExercise(
+                base: try container.decode(SyncExercise.self, forKey: .base),
+                into: try container.decode(SyncMergeTarget.self, forKey: .into),
+                fields: try container.decode([SyncFieldMove].self, forKey: .fields)
+            )
         case let other:
             throw DecodingError.dataCorruptedError(forKey: .op, in: container, debugDescription: "Unknown operation \(other)")
         }
@@ -169,6 +179,11 @@ nonisolated enum SyncOperation: Codable, Equatable {
         case .deleteMachine(let base):
             try container.encode("deleteMachine", forKey: .op)
             try container.encode(base, forKey: .base)
+        case .mergeExercise(let base, let into, let fields):
+            try container.encode("mergeExercise", forKey: .op)
+            try container.encode(base, forKey: .base)
+            try container.encode(into, forKey: .into)
+            try container.encode(fields, forKey: .fields)
         }
     }
 }
@@ -227,6 +242,22 @@ nonisolated struct SyncExercise: Codable, Equatable {
         var offersAssistance: Bool
         var fields: [SyncField]
     }
+}
+
+/// What an own exercise is merged into: another own exercise, found by its
+/// name, or a catalog exercise, found by `catalogKey`. `exercise` is it as
+/// Desk saw it, for telling whether it changed on the iPhone since.
+nonisolated struct SyncMergeTarget: Codable, Equatable {
+    var catalogKey: String?
+    var exercise: SyncExercise
+}
+
+/// Where the values of one field of the merged exercise go: under the key
+/// of a field of the target of the same type (`to`), or, `to` absent, onto
+/// the target as a new field — as `FieldMapping` says it on the iPhone.
+nonisolated struct SyncFieldMove: Codable, Equatable {
+    var from: String
+    var to: String?
 }
 
 /// A gym and the names of the machines standing in it. Two gyms are the
@@ -345,6 +376,29 @@ extension SyncExercise {
             fields: record.fields.map { SyncField(key: $0.key, label: $0.label, type: $0.type) },
             restSeconds: record.restSeconds
         )
+    }
+}
+
+extension SyncExercise {
+    /// As the backup spells it, for `DefinitionMerge`: the user's own, or the
+    /// catalog's under `catalogKey`.
+    func record(catalogKey: String? = nil) -> ExerciseRecord {
+        ExerciseRecord(
+            name: name, category: category, muscleGroupNames: muscleGroupNames,
+            secondaryMuscleGroupNames: secondaryMuscleGroupNames, tracksSets: tracksSets, sides: sides,
+            offersAssistance: offersAssistance, fields: fields.map { FieldRecord(key: $0.key, label: $0.label, type: $0.type) },
+            catalogKey: catalogKey, restSeconds: restSeconds
+        )
+    }
+}
+
+extension FieldMapping {
+    /// The mapping a merge from Desk carries.
+    init(_ moves: [SyncFieldMove]) {
+        self.init(destinations: Dictionary(
+            moves.map { ($0.from, $0.to.map { .field(targetKey: $0) } ?? .newField) },
+            uniquingKeysWith: { first, _ in first }
+        ))
     }
 }
 

@@ -8,7 +8,7 @@ import Foundation
 /// dialog, and that is the one thing a merge must never do. What the user
 /// decides is *which* target field a source field means, because behind
 /// every field is a title they wrote themselves.
-struct FieldMapping: Equatable {
+nonisolated struct FieldMapping: Equatable {
     enum Destination: Hashable {
         /// The values logged under the source field belong to this target key.
         case field(targetKey: String)
@@ -44,7 +44,7 @@ struct FieldMapping: Equatable {
     }
 }
 
-enum DefinitionMerge {
+nonisolated enum DefinitionMerge {
     struct Result: Equatable {
         /// The target with the carried-over fields appended.
         var merged: ExerciseRecord

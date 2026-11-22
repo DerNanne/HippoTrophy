@@ -26,6 +26,11 @@ tests its own code against it.
 - `coverage-sync-exercises.json` — its own exercises the same way, by name.
 - `coverage-sync-gyms.json` — its gyms the same way, by name, each with its
   machines.
+- `coverage-sync-merges.json` — merges of own exercises from Desk, each on
+  `coverage-backup.json` as it is: the `mergeExercise` operation and the own
+  exercises, templates and workouts after it, as this app plans them. Into a
+  catalog exercise, into an own one with a field more, and into one that
+  takes a field over.
 
 `exportIsCurrent` fails when the app counts or draws differently from these
 files. If the change is meant, write them anew and take them over into the

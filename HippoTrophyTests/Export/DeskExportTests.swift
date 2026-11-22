@@ -105,7 +105,53 @@ enum DeskExport {
             ("coverage-sync-workouts.json", try encoder.encode(InboxApplier.state(in: context).workoutsByDate) + Data("\n".utf8)),
             ("coverage-sync-exercises.json", try encoder.encode(InboxApplier.state(in: context).exercises.values.sorted { $0.name < $1.name }) + Data("\n".utf8)),
             ("coverage-sync-gyms.json", try encoder.encode(InboxApplier.state(in: context).gyms.values.sorted { $0.name < $1.name }) + Data("\n".utf8)),
+            ("coverage-sync-merges.json", try encoder.encode(merges(on: InboxApplier.state(in: context))) + Data("\n".utf8)),
         ]
+    }
+
+    // MARK: Merges
+
+    /// One merge from Desk and what it leaves: the own exercises, templates
+    /// and workouts afterwards, as Desk has to foresee them.
+    struct Merge: Encodable {
+        let operation: SyncOperation
+        let exercises: [SyncExercise]
+        let templates: [SyncTemplate]
+        let workouts: [SyncWorkout]
+    }
+
+    /// Into a catalog exercise of the same name, into an own exercise with a
+    /// field more, and into one that takes a field over: each from the
+    /// backup as it is, with the mapping the iPhone would suggest.
+    static let mergeCases: [(source: String, target: String, catalogKey: String?)] = [
+        ("Push-Up", "Push-Up", "push-up"),
+        ("Leg Extension", "Rückenstrecker", nil),
+        ("Dead Hang", "Nordic Curl", nil),
+    ]
+
+    static func mergeOperation(_ source: String, into target: String, catalogKey: String?, on state: InboxState) throws -> SyncOperation {
+        let base = try #require(state.ownExercise(named: source).flatMap { state.exercises[$0] })
+        let into = try #require(catalogKey.map { state.catalog[$0] } ?? state.ownExercise(named: target).flatMap { state.exercises[$0] })
+        let mapping = FieldMapping.suggested(from: base.record(), into: into.record(catalogKey: catalogKey))
+        let moves = base.fields.map { field -> SyncFieldMove in
+            if case .field(let key) = mapping.destinations[field.key] { return SyncFieldMove(from: field.key, to: key) }
+            return SyncFieldMove(from: field.key, to: nil)
+        }
+        return .mergeExercise(base: base, into: SyncMergeTarget(catalogKey: catalogKey, exercise: into), fields: moves)
+    }
+
+    static func merges(on state: InboxState) throws -> [Merge] {
+        try mergeCases.map { source, target, catalogKey in
+            let operation = try mergeOperation(source, into: target, catalogKey: catalogKey, on: state)
+            let file = InboxPlanner.File(name: "1.json", content: .success(InboxFile(syncFormat: 1, createdAt: now, operations: [operation])))
+            let result = InboxPlanner.plan([file], on: state).result
+            return Merge(
+                operation: operation,
+                exercises: result.exercises.values.sorted { $0.name < $1.name },
+                templates: result.inOrder,
+                workouts: result.workoutsByDate
+            )
+        }
     }
 
     /// `CoverageBackup.json` brought in as the app brings in any backup. Its

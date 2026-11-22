@@ -13,7 +13,11 @@ enum InboxApplier {
             predicate: WorkoutSession.templates, sortBy: [SortDescriptor(\.templateOrder)]
         ))
         let workouts = try context.fetch(FetchDescriptor(predicate: WorkoutSession.trained))
-        let own = try context.fetch(FetchDescriptor<ExerciseDefinition>()).filter { $0.catalogKey == nil }
+        let definitions = try context.fetch(FetchDescriptor<ExerciseDefinition>())
+        let own = definitions.filter { $0.catalogKey == nil }
+        let catalog = definitions.compactMap { definition in
+            definition.catalogKey.map { ($0, SyncExercise(BackupExporter.record(definition))) }
+        }
         let gyms = try context.fetch(FetchDescriptor<Gym>())
         let machines = try context.fetch(FetchDescriptor<Machine>())
         return InboxState(
@@ -21,7 +25,8 @@ enum InboxApplier {
             workouts: workouts.map { SyncWorkout(BackupExporter.record($0)).normalized },
             exercises: Dictionary(own.map { ($0.id, SyncExercise(BackupExporter.record($0))) }, uniquingKeysWith: { first, _ in first }),
             gyms: Dictionary(gyms.map { ($0.id, SyncGym(BackupExporter.record($0))) }, uniquingKeysWith: { first, _ in first }),
-            machines: Dictionary(machines.map { ($0.id, SyncMachine(name: $0.name)) }, uniquingKeysWith: { first, _ in first })
+            machines: Dictionary(machines.map { ($0.id, SyncMachine(name: $0.name)) }, uniquingKeysWith: { first, _ in first }),
+            catalog: Dictionary(catalog, uniquingKeysWith: { first, _ in first })
         )
     }
 
@@ -88,13 +93,20 @@ enum InboxApplier {
     /// entries renamed with them; new ones made under the id the state gave
     /// them — the one they had, when Undo brings one back, so the entries
     /// logged with it are its own again; gone ones deleted, their entries
-    /// keeping what was logged.
+    /// keeping what was logged. One merged into another hands its photo on
+    /// first, as `ExerciseMerging` does, if that one has none.
     private static func makeExercises(_ target: InboxState, from current: InboxState, in context: ModelContext) throws {
         guard target.exercises != current.exercises else { return }
         let definitions = try context.fetch(FetchDescriptor<ExerciseDefinition>())
         let byID = Dictionary(definitions.map { ($0.id, $0) }, uniquingKeysWith: { first, _ in first })
         let entries = try context.fetch(FetchDescriptor<ExerciseEntry>())
 
+        for (sourceID, targetID) in target.photoHandovers where target.exercises[sourceID] == nil {
+            guard let source = byID[sourceID], let receiver = byID[targetID], receiver.photo == nil, !receiver.isCatalog,
+                  let photo = source.ownPhoto else { continue }
+            source.photo = nil
+            receiver.photo = photo
+        }
         for id in current.exercises.keys where target.exercises[id] == nil {
             if let definition = byID[id] { context.delete(definition) }
         }
