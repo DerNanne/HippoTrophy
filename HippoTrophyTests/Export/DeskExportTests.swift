@@ -284,6 +284,16 @@ enum DeskExport {
         let identity: String
         let metrics: [String]
         let points: [Series]
+        /// The personal records, in the order the history lists them.
+        let records: [Record]
+    }
+
+    struct Record: Encodable {
+        let date: Date
+        let mode: String
+        let side: String
+        let weightKg: Double
+        let reps: Int
     }
 
     struct Series: Encodable {
@@ -343,6 +353,9 @@ enum DeskExport {
                     Series(metric: metric.rawValue, points: progress.points(for: metric).map {
                         Point(date: $0.date, line: $0.line.rawValue, mode: $0.mode.rawValue, value: $0.value, setCount: $0.setCount)
                     })
+                },
+                records: progress.records.map {
+                    Record(date: $0.date, mode: $0.mode.rawValue, side: $0.side.rawValue, weightKg: $0.set.weightKg, reps: $0.set.reps)
                 }
             )
         }

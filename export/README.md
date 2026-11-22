@@ -15,7 +15,8 @@ tests its own code against it.
   counted at `now` in UTC with
   weeks from Monday: each workout's sets, the sets a day, the sets per muscle
   group for every heat-map period (all categories, and Strength alone), and
-  the progress points of every exercise for every metric it offers. Weights
+  the progress points of every exercise for every metric it offers and its
+  personal records. Weights
   are in kilograms.
 - `coverage-sync-templates.json` — the templates of `coverage-backup.json` in
   the sync format, in their order, as this app compares them: what Desk has

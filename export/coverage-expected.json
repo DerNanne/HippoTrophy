@@ -1009,6 +1009,15 @@
             }
           ]
         }
+      ],
+      "records" : [
+        {
+          "date" : "2026-09-24T05:15:00Z",
+          "mode" : "bilateral",
+          "reps" : 5,
+          "side" : "both",
+          "weightKg" : 102.05828325
+        }
       ]
     },
     {
@@ -1152,6 +1161,15 @@
             }
           ]
         }
+      ],
+      "records" : [
+        {
+          "date" : "2026-09-28T16:00:00Z",
+          "mode" : "bilateral",
+          "reps" : 6,
+          "side" : "both",
+          "weightKg" : 82.5
+        }
       ]
     },
     {
@@ -1239,6 +1257,22 @@
             }
           ]
         }
+      ],
+      "records" : [
+        {
+          "date" : "2026-09-24T05:15:00Z",
+          "mode" : "perSide",
+          "reps" : 10,
+          "side" : "left",
+          "weightKg" : 20
+        },
+        {
+          "date" : "2026-09-24T05:15:00Z",
+          "mode" : "perSide",
+          "reps" : 10,
+          "side" : "right",
+          "weightKg" : 20
+        }
       ]
     },
     {
@@ -1297,6 +1331,15 @@
               "value" : 12
             }
           ]
+        }
+      ],
+      "records" : [
+        {
+          "date" : "2026-09-28T16:00:00Z",
+          "mode" : "bilateral",
+          "reps" : 12,
+          "side" : "both",
+          "weightKg" : 11.25
         }
       ]
     },
@@ -1413,6 +1456,22 @@
             }
           ]
         }
+      ],
+      "records" : [
+        {
+          "date" : "2026-09-28T16:00:00Z",
+          "mode" : "oneSided",
+          "reps" : 10,
+          "side" : "left",
+          "weightKg" : 32.5
+        },
+        {
+          "date" : "2026-09-28T16:00:00Z",
+          "mode" : "oneSided",
+          "reps" : 10,
+          "side" : "right",
+          "weightKg" : 32.5
+        }
       ]
     },
     {
@@ -1471,6 +1530,15 @@
               "value" : 12
             }
           ]
+        }
+      ],
+      "records" : [
+        {
+          "date" : "2026-09-10T16:00:00Z",
+          "mode" : "bilateral",
+          "reps" : 10,
+          "side" : "both",
+          "weightKg" : 59
         }
       ]
     },
@@ -1545,6 +1613,15 @@
             }
           ]
         }
+      ],
+      "records" : [
+        {
+          "date" : "2026-09-28T16:00:00Z",
+          "mode" : "bilateral",
+          "reps" : 6,
+          "side" : "both",
+          "weightKg" : 10
+        }
       ]
     },
     {
@@ -1553,6 +1630,9 @@
 
       ],
       "points" : [
+
+      ],
+      "records" : [
 
       ]
     },
@@ -1563,6 +1643,9 @@
       ],
       "points" : [
 
+      ],
+      "records" : [
+
       ]
     },
     {
@@ -1571,6 +1654,9 @@
 
       ],
       "points" : [
+
+      ],
+      "records" : [
 
       ]
     },
@@ -1581,6 +1667,9 @@
       ],
       "points" : [
 
+      ],
+      "records" : [
+
       ]
     },
     {
@@ -1589,6 +1678,9 @@
 
       ],
       "points" : [
+
+      ],
+      "records" : [
 
       ]
     },
@@ -1649,6 +1741,15 @@
             }
           ]
         }
+      ],
+      "records" : [
+        {
+          "date" : "2026-09-24T05:15:00Z",
+          "mode" : "oneSided",
+          "reps" : 12,
+          "side" : "both",
+          "weightKg" : 25
+        }
       ]
     },
     {
@@ -1657,6 +1758,9 @@
 
       ],
       "points" : [
+
+      ],
+      "records" : [
 
       ]
     },
@@ -1667,6 +1771,9 @@
       ],
       "points" : [
 
+      ],
+      "records" : [
+
       ]
     },
     {
@@ -1675,6 +1782,9 @@
 
       ],
       "points" : [
+
+      ],
+      "records" : [
 
       ]
     },
@@ -1734,6 +1844,15 @@
               "value" : 20
             }
           ]
+        }
+      ],
+      "records" : [
+        {
+          "date" : "2026-09-24T05:15:00Z",
+          "mode" : "bilateral",
+          "reps" : 12,
+          "side" : "both",
+          "weightKg" : 20
         }
       ]
     }
