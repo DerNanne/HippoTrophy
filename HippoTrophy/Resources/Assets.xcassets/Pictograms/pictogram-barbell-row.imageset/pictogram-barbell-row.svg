@@ -15,8 +15,8 @@
   <circle cx="86.9" cy="149.3" r="13.0" fill="#E8862A"/>
   <circle cx="86.9" cy="149.3" r="4.0" fill="#B9661A"/>
   <line x1="158.0" y1="186.0" x2="292.0" y2="186.0" stroke="#D5D9DF" stroke-width="3" stroke-linecap="round"/>
-  <line x1="236.9" y1="101.3" x2="218.4" y2="118.1" stroke="#8E96A3" stroke-width="8" stroke-linecap="round"/>
-  <line x1="218.4" y1="118.1" x2="237.2" y2="131.3" stroke="#8E96A3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="236.9" y1="101.3" x2="212.0" y2="99.2" stroke="#8E96A3" stroke-width="8" stroke-linecap="round"/>
+  <line x1="212.0" y1="99.2" x2="212.8" y2="122.2" stroke="#8E96A3" stroke-width="8" stroke-linecap="round"/>
   <line x1="196.1" y1="117.8" x2="207.8" y2="149.8" stroke="#8E96A3" stroke-width="9" stroke-linecap="round"/>
   <line x1="207.8" y1="149.8" x2="198.7" y2="181.5" stroke="#8E96A3" stroke-width="9" stroke-linecap="round"/>
   <line x1="198.7" y1="181.5" x2="207.7" y2="181.5" stroke="#8E96A3" stroke-width="7" stroke-linecap="round"/>
@@ -25,8 +25,8 @@
   <line x1="196.1" y1="117.8" x2="207.8" y2="149.8" stroke="#2F3540" stroke-width="9" stroke-linecap="round"/>
   <line x1="207.8" y1="149.8" x2="198.7" y2="181.5" stroke="#2F3540" stroke-width="9" stroke-linecap="round"/>
   <line x1="198.7" y1="181.5" x2="207.7" y2="181.5" stroke="#2F3540" stroke-width="7" stroke-linecap="round"/>
-  <line x1="236.9" y1="101.3" x2="218.4" y2="118.1" stroke="#2F3540" stroke-width="8" stroke-linecap="round"/>
-  <line x1="218.4" y1="118.1" x2="237.2" y2="131.3" stroke="#2F3540" stroke-width="8" stroke-linecap="round"/>
-  <circle cx="237.2" cy="131.3" r="13.0" fill="#E8862A"/>
-  <circle cx="237.2" cy="131.3" r="4.0" fill="#B9661A"/>
+  <line x1="236.9" y1="101.3" x2="212.0" y2="99.2" stroke="#2F3540" stroke-width="8" stroke-linecap="round"/>
+  <line x1="212.0" y1="99.2" x2="212.8" y2="122.2" stroke="#2F3540" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="212.8" cy="122.2" r="13.0" fill="#E8862A"/>
+  <circle cx="212.8" cy="122.2" r="4.0" fill="#B9661A"/>
 </svg>
